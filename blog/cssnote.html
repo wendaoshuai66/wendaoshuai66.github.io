@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS 简介及实用技巧 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/30.0414a72d.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="active sidebar-link">CSS 简介及实用技巧</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/cssnote.html#css-设计理念" class="sidebar-link">CSS 设计理念</a></li><li class="sidebar-sub-header"><a href="/blog/cssnote.html#css-选择器" class="sidebar-link">CSS 选择器</a></li><li class="sidebar-sub-header"><a href="/blog/cssnote.html#圣杯布局" class="sidebar-link">圣杯布局</a></li><li class="sidebar-sub-header"><a href="/blog/cssnote.html#双飞翼布局" class="sidebar-link">双飞翼布局</a></li><li class="sidebar-sub-header"><a href="/blog/cssnote.html#flex-布局" class="sidebar-link">flex 布局</a></li><li class="sidebar-sub-header"><a href="/blog/cssnote.html#bfc" class="sidebar-link">BFC</a></li></ul></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css-简介及实用技巧"><a href="#css-简介及实用技巧" class="header-anchor">#</a> CSS 简介及实用技巧</h1> <h2 id="css-设计理念"><a href="#css-设计理念" class="header-anchor">#</a> CSS 设计理念</h2> <p>CSS2.1 作为 CSS2 和 CSS1 的后序版本，基于一下一组设计理念：</p> <ul><li>向前和向后兼容。CSS2.1 的用户代理能够理解 CSS1 的样式表。 CSS1 的用户代理能够读取 CSS2.1 的样式表，并且丢弃他们不能理解的部分。同时，对于不支持 CSS 的用户代理可以显示样式增强的文档。当然通过 CSS 增强的样式将不被渲染，但所有的内容可以被表现。</li> <li>作为结构化文档的补充。样式表补充结构化文档（例如，HTML 和 XML 应用程序），为标记文本提供样式信息。样式表应该非常容易修改，并对标记的影像甚微或没有。</li> <li>供应商，平台和设备无关。样式表使文档保持供应商，平台和设备无关。样式表本身也是供应商和平台无关的，但 CSS2.1 允许你为一组设备指定一个样式表（例如，打印机）。</li> <li>可维护性。通过在文档中指向样式表，网站管理员能简化站点的维护和保持整个站点的一致外观和感觉。例如，如果组织的背景色发生改变，仅需更改一个文件。</li> <li>简单。CSS 是一门简单的样式语言，是对人类读写友好的。CSS 的属性保持最大程度上的相互独立，一般实现一个效果只有一种方法。</li> <li>网络性能。CSS 为内容的呈现方式提供了紧凑的编码。图片或音频文件常被作者用来实现某种特定的渲染效果，样式表和其比起来体积要小的多。同时，减少网络链接的次数，进一步提高网络性能。</li> <li>灵活性。有几种方法可以将 CSS 应用到内容。关键特征是不同位置的样式信息能够层叠，包括默认（用户代理）样式表，用户样式表，链接样式表，内嵌样式，和元素属性中的样式信息。渴求的某些渲染效果和设备无关相冲突，但 CSS2.1</li> <li>丰富的。为作者提供一组丰富的渲染效果，增加网站作为表达媒介的丰富性。设计师们已经对桌面版和幻灯片应用中的常见功能渴望许久。但 CSS2.1 为满足设计师的要求，向前迈了一大步。</li> <li>可选的语言绑定。规范中描述的一组 CSS 属性使视觉和听觉格式化模型表现一致。其格式化模型可以通过 CSS 语言访问，但也可以绑定到其他语言。例如，在 JavaScript 程序中可以动态改变某个元素的‘color’属性值。</li> <li>可访问性。一些 CSS 功能将使网络更方便残障用户：
+<ul><li>控制字体外观属性允许作者消除不可访问的文图图片。</li> <li>位置属性允许作者消除强制布局的标记技巧（例如，不可见图片）。</li> <li>!improtan 规则的意义在于有特别演示要求的用户可以覆盖作者的样式表。</li> <li>所有属性的‘inherit’值用来提升层叠的通用性，和更容易生成一致的风格。</li> <li>改进媒体支持，包括媒体分组和 braille，embossed，和 tty 媒体类型，允许用户或作者为这些设备定制页面。</li></ul></li></ul> <h2 id="css-选择器"><a href="#css-选择器" class="header-anchor">#</a> CSS 选择器</h2> <p><a href="https://wendaoshuai66.github.io/study/note/images/css%E9%80%89%E6%8B%A9%E5%99%A8.svg" target="_blank" rel="noopener noreferrer"><img src="https://wendaoshuai66.github.io/study/note/images/css%E9%80%89%E6%8B%A9%E5%99%A8.svg" alt="css选择器"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="圣杯布局"><a href="#圣杯布局" class="header-anchor">#</a> 圣杯布局</h2> <p><a href="https://yanhaijing.com/css/2018/01/17/horizontal-vertical-center/" target="_blank" rel="noopener noreferrer">CSS 实现水平垂直居中的 1010 种方式 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> &lt;div class=&quot;contant&quot;&gt;
+     &lt;!--        //类似京东商城banner，中间需要提前加载--&gt;
+     &lt;div class=&quot;middle&quot;&gt;中间&lt;/div&gt;
+     &lt;div class=&quot;left&quot;&gt;
+         &lt;p&gt;你好&lt;/p&gt;
+         &lt;p&gt;您好&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;right&quot;&gt;右边&lt;/div&gt;
+ &lt;/div&gt;
+  &lt;style&gt;
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            text-align: center;
+        }
+        .contant{
+            padding: 0 200px 0 150px;
+            overflow: hidden;
+        }
+        .middle{
+            float: left;
+            background: pink;
+            width: 100%;
+        }
+        .left{
+            float: left;
+            width: 150px;
+            margin-left: -100%;
+            background: yellow;
+            position: relative;
+            left: -150px;
+        }
+        .right{
+            float: left;
+            width: 200px;
+            margin-left: -200px;
+            background: blue;
+            position: relative;
+            left: 200px;
+        }
+        .left ,.middle ,.right{
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+        }
+    &lt;/style&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br></div></div><h2 id="双飞翼布局"><a href="#双飞翼布局" class="header-anchor">#</a> 双飞翼布局</h2> <p>margin 不改变盒子布局</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&lt;div class=&quot;contant&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+        &lt;div class=&quot;inner&quot;&gt;
+            中间
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;left&quot;&gt;
+        左边
+    &lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;
+        右边
+    &lt;/div&gt;
+&lt;/div&gt;
+    &lt;style&gt;
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .contant{
+            overflow: hidden;
+        }
+        .middle{
+            width: 100%;
+            float: left;
+            background: yellow;
+        }
+        .inner{
+            margin-left: 200px;
+            margin-right: 150px;
+        }
+        .left{
+            float: left;
+            margin-left: -100%;
+            width: 200px;
+            background: red;
+        }
+        .right{
+            width: 150px;
+            background: blue;
+            float: left;
+            margin-left: -150px;
+        }
+        .left,.middle,.right{
+            padding-bottom:9999px;
+            margin-bottom:-9999px;
+        }
+    &lt;/style&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br></div></div><h2 id="flex-布局"><a href="#flex-布局" class="header-anchor">#</a> flex 布局</h2> <p>在 flex 之前，传统布局有流式布局（就是默认的方式），绝对定位布局，弹性布局（em），和浮动布局，其中浮动布局并不是为布局而设计的，使用起来略显繁琐</p> <p>2009 年，对前端来说是不平凡的一年，html5 定稿，es5.1 发布，flex 应运而生，天生响应式，生而为布局，使用及其简单</p> <h3 id="容器的属性"><a href="#容器的属性" class="header-anchor">#</a> 容器的属性</h3> <p>容器属性包括：</p> <ul><li>display</li> <li>flex-direction</li> <li>flex-wrap</li> <li>flex-flow</li> <li>justify-content</li> <li>align-items</li> <li>align-content</li></ul> <p>display</p> <table><thead><tr><th>标准版</th> <th>09 版</th></tr></thead> <tbody><tr><td>display: flex</td> <td>display: box</td></tr> <tr><td>display: inline-flex</td> <td>display: inline-box</td></tr></tbody></table> <p>flex-direction</p> <table><thead><tr><th>标准版</th> <th>09 版</th></tr></thead> <tbody><tr><td>flex-direction: row</td> <td>box-orient: horizontal; box-direction: normal</td></tr> <tr><td>flex-direction: row-reverse</td> <td>box-orient: horizontal; box-direction: reverse</td></tr> <tr><td>flex-direction: column</td> <td>box-orient: vertical; box-direction: normal</td></tr> <tr><td>flex-direction: column-reverse</td> <td>box-orient: vertical; box-direction: reverse</td></tr></tbody></table> <p>flex-wrap</p> <table><thead><tr><th>标准版</th> <th>09 版</th></tr></thead> <tbody><tr><td>flex-wrap: nowrap</td> <td>box-lines: single</td></tr> <tr><td>flex-wrap: wrap</td> <td>box-lines: multiple</td></tr> <tr><td>flex-wrap: wrap-reverse</td> <td>无</td></tr></tbody></table> <p>flex-flow 是 flex-direction 和 flex-wrap 两个属性的简写，09 版无对应属性，09 版可以分开写两条属性</p> <p>justify-content</p> <table><thead><tr><th>标准版</th> <th>09 版</th></tr></thead> <tbody><tr><td>justify-content: flex-start</td> <td>box-pack: start</td></tr> <tr><td>justify-content: flex-end</td> <td>box-pack: end</td></tr> <tr><td>justify-content: center</td> <td>box-pack: center</td></tr> <tr><td>justify-content: space-between</td> <td>box-pack: justify</td></tr> <tr><td>justify-content: space-around</td> <td>无</td></tr></tbody></table> <p>align-items</p> <table><thead><tr><th>标准版</th> <th>09 版</th></tr></thead> <tbody><tr><td>align-items: flex-start</td> <td>box-align: start</td></tr> <tr><td>align-items: flex-end</td> <td>box-align: end</td></tr> <tr><td>align-items: center</td> <td>box-align: center</td></tr> <tr><td>align-items: baseline</td> <td>box-align: baseline</td></tr> <tr><td>align-items: stretch</td> <td>box-align: stretch</td></tr></tbody></table> <p>align-content，09 版无对应属性</p> <h3 id="项目属性"><a href="#项目属性" class="header-anchor">#</a> 项目属性</h3> <p>项目属性包括：</p> <ul><li>order</li> <li>flex-grow</li> <li>flex-shrink</li> <li>flex-basis</li> <li>flex</li> <li>align-self</li></ul> <p>order</p> <table><thead><tr><th>标准版</th> <th>09 版</th></tr></thead> <tbody><tr><td>order: number</td> <td>box-ordinal-group: number</td></tr></tbody></table> <p>flex-grow，09 版无对应属性</p> <p>flex-shrink，09 版无对应属性</p> <p>flex-basis，09 版无对应属性</p> <p>flex，标准版的 flex 是一个复合属性，09 版的 box-flex 仅支持配置数字</p> <table><thead><tr><th>标准版</th> <th>09 版</th></tr></thead> <tbody><tr><td>flex: flex-grow flex-shrink flex-basis</td> <td>box-flex: number</td></tr></tbody></table> <p>align-self，09 版无对应属性</p> <h3 id="弹性盒模型与-reset-的选择"><a href="#弹性盒模型与-reset-的选择" class="header-anchor">#</a> 弹性盒模型与 reset 的选择</h3> <p>*的杀伤力太大</p> <p>Reset.css 重置 Normalize.css 修复   Neat.css 融合了 Reset.css 与 Normalize.css</p> <p>html{box-sizing: border-box;} <em>,</em>:before,X:after{box-sizing: inherit;} inherit 继承</p> <h3 id="相关资料"><a href="#相关资料" class="header-anchor">#</a> 相关资料</h3> <ul><li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener noreferrer">Flex 布局教程：语法篇<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener noreferrer">Flex 布局教程：实例篇<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h2 id="bfc"><a href="#bfc" class="header-anchor">#</a> BFC</h2> <p>Box: CSS 布局的基本单位</p> <p>Box 是 CSS 布局的对象和基本单位， 直观点来说，就是一个页面是由很多个 Box 组成的。元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此 Box 内的元素会以不同的方式渲染。让我们看看有哪些盒子：</p> <p>block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block fomatting context；</p> <p>inline-level box:display 属性为 inline, inline-block, inline-table 的元素，会生成 inline-level box。并且参与 inline formatting context；</p> <p>Formatting context 是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。最常见的 Formatting context 有 Block fomatting context (简称 BFC)和 Inline formatting context (简称 IFC)</p> <h3 id="哪些元素会生成-bfc"><a href="#哪些元素会生成-bfc" class="header-anchor">#</a> 哪些元素会生成 BFC</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>根元素
+
+float属性不为none
+
+position为absolute或fixed
+
+display为inline-block, table-cell, table-caption, flex, inline-flex
+
+overflow不为visible
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>根据 BFC 布局规则：每个元素的 margin box 的左边，与包含块 border box 的左边相接触（对于从左往右的格式化）。即使存在浮动也是如此。BFC 的区域不会与 float box 重叠</p> <p>根据 BFC 布局规则：每个元素的 margin box 的左边，与包含块 border box 的左边相接触（对于从左往右的格式化）。即使存在浮动也是如此。BFC 的区域不会与 float box 重叠</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&lt;style&gt;
+    body {
+        width: 300px;
+        position: relative;
+    }
+
+    .aside {
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: #f66;
+    }
+
+    .main {
+        height: 200px;
+        background: #fcc;
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;aside&quot;&gt;1111&lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p><img src="https://wendaoshuai66.github.io/study/note/images/bfc2.jpg" alt="bfc1"></p> <p>自适应两栏布局</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>.main {overflow: hidden;}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="https://wendaoshuai66.github.io/study/note/images/bfc1.jpg" alt="bfc1"></p> <p>清除内部浮动，生成 BFC 元素，计算 BFC 高度时，浮动元素也会参与计算</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>        .par {
+            border: 5px solid #fcc;
+            width: 300px;
+        }
+
+        .child {
+             border: 5px solid #f66;
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+    &lt;/style&gt;
+
+&lt;body&gt;
+&lt;div class=&quot;par&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;
+ &lt;/div&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><img src="https://wendaoshuai66.github.io/study/note/images/bfc3.jpg" alt="bfc1"></p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>.par{
+              overflow: hidden;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><img src="https://wendaoshuai66.github.io/study/note/images/bfc4.png" alt="bfc1"></p> <p>Box 垂直方向的距离由 margin 决定。属于同一个 BFC 的两个相邻 box 的 margin 会发生重叠·。我们可以在 p 外面包裹一层容器，并触发该容器生成 BFC，那 p 标签在不同的 BFC，margin 就不会发生重叠了。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&lt;style&gt;    
+    p {
+         color: #f55;
+         background: #fcc;
+         width: 200px;
+        line-height: 100px;
+         text-align: center;
+         margin: 100px;
+    }
+
+  &lt;/style&gt;
+    
+&lt;body&gt;
+&lt;p&gt;Haha&lt;/p&gt;
+&lt;p&gt;Hehe&lt;/p&gt; 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>##CSS 绘制特殊图形</p> <p>等腰三角形</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> /* 相邻的border组合成矩形，各负责一个三角形 */
+ div.dengyaosanjiaoxing {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border: 30px solid;
+            border-left-color: transparent;
+            border-bottom-color: yellowgreen;
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>直角三角形</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>div.zhijiaosanjiaoxing {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border: 30px solid;
+            border-left: 0;
+            border-bottom: 0;
+            border-right-color: yellow;
+            border-top-color: transparent;
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>绘制五角星</p> <p>实现三个三角形，可以是通过三个标签；但是这里用的是 CSS 的伪元素选择器(::before, ::after)来实现的并且对于三个选择器通过 position 定位就能组合成一个完整的五角星了</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> 
+        .star-five {
+            width: 0;
+            height: 0;
+            position: relative;
+            border-bottom: 70px solid blue;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            transform: rotate(35deg);
+            -moz-transform: rotate(35deg);
+            /* Firefox */
+            -o-transform: rotate(35deg);
+            /* Opera */
+            -webkit-transform: rotate(35deg);
+            /* Safari and Chrome */
+            -ms-transform: rotate(35deg);
+            /* IE 9 */
+            margin-top: 80px;
+        }
+        
+        .star-five::before {
+            content: '';
+            width: 0;
+            height: 0;
+            display: block;
+            border-bottom: 70px solid red;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            position: absolute;
+            top: 0;
+            left: -94px;
+            transform: rotate(75deg);
+            -moz-transform: rotate(75deg);
+            /* Firefox */
+            -o-transform: rotate(75deg);
+            /* Opera */
+            -webkit-transform: rotate(75deg);
+            /* Safari and Chrome */
+            -ms-transform: rotate(75deg);
+            /* IE 9 */
+        }
+        
+        .star-five::after {
+            content: '';
+            width: 0;
+            height: 0;
+            color: blue;
+            border-bottom: 70px solid green;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            transform: rotate(-70deg);
+            -moz-transform: rotate(-70deg);
+            /* Firefox */
+            -o-transform: rotate(-70deg);
+            /* Opera */
+            -webkit-transform: rotate(-70deg);
+            /* Safari and Chrome */
+            -ms-transform: rotate(-70deg);
+            /* IE 9 */
+            position: absolute;
+            left: -100px;
+            top: 0;
+        }
+        
+        /* 上半圆 */
+        
+        .semi-circle {
+            margin-top: 100px;
+            width: 100px;
+            height: 50px;
+            border-radius: 50px 50px 0 0;
+            background: orange;
+        }
+        /* 下半圆 */
+        
+        .semi-circle1 {
+            margin-top: 100px;
+            width: 100px;
+            height: 50px;
+            border-radius: 0 0 50px 50px;
+            background: orange;
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br></div></div><p>css 绘制腾讯公司<a href="http://www.333cn.com/shejizixun/201806/43498_141178.html" target="_blank" rel="noopener noreferrer">企鹅 logo<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/cssnote.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/unknowHtml1.html" class="prev">
+        你不知道的 HTML
+      </a></span> <span class="next"><a href="/blog/3d.html">
+        CSS3 构造 3D 世界
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/30.0414a72d.js" defer></script>
+  </body>
+</html>

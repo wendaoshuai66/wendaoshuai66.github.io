@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Promise | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/21.3321d072.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="active sidebar-link">Promise</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Promise.html#什么是-promise" class="sidebar-link">什么是 Promise</a></li><li class="sidebar-sub-header"><a href="/blog/Promise.html#promise-值" class="sidebar-link">Promise 值</a></li><li class="sidebar-sub-header"><a href="/blog/Promise.html#实现⼀个完整的-promise-a" class="sidebar-link">实现⼀个完整的 Promise/A+</a></li></ul></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="promise"><a href="#promise" class="header-anchor">#</a> Promise</h1> <h2 id="什么是-promise"><a href="#什么是-promise" class="header-anchor">#</a> 什么是 Promise</h2> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function add(getX,getY,cb){
+	var x,y;
+	getX(function(val){
+	   x= val;
+	   // 两者都准备好了？
+		if(y!=undefined){
+		  cb(x+y) // 发送加法的结果
+		}
+	})
+	getY(function(val){
+		y= val;
+		// 两者都准备好了？
+		if(x!=undefined){
+		 cb(x+y) // 发送加法的结果
+		}
+	})
+}
+var fetchX =function(fn){
+	setTimeout(function(){
+	 fn(1)
+	},1000)
+}
+var fetchY =function(fn){
+	setTimeout(function(){
+	 fn(3)
+	},2000)
+}
+add(fetchX,fetchY,function(sum){
+  console.log(sum)//4
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>花点儿时间来感受一下这段代码的美妙（或者丑陋），我耐心地等你。</p> <p>虽然丑陋是无法否认的，但是关于这种异步模式有一些非常重要的事情需要注意。</p> <p>在这段代码中，我们将 x 和 y 作为未来的值对待，我们将 add(..)操作表达为：（从外部看来）它并不关心 x 或 y 或它们两者现在是否可用。换句话所，它泛化了 现在 和 稍后，如此我们可以信赖 add(..)操作的一个可预测的结果。</p> <p>通过使用一个临时一致的 add(..)——它跨越 现在 和 稍后 的行为是相同的——异步代码的推理变得容易的多了。</p> <p>更直白地说：为了一致地处理 现在 和 稍后，我们将它们都作为 稍后：所有的操作都变成异步的。</p> <p>当然，这种粗略的基于回调的方法留下了许多提升的空间。为了理解在不用关心 未来的值 在时间上什么时候变得可用的情况下推理它而带来的好处，这仅仅是迈出的一小步。</p> <h2 id="promise-值"><a href="#promise-值" class="header-anchor">#</a> Promise 值</h2> <p>我们先简单地看一下我们如何通过 Promise 来表达 x + y 的例子：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function add (xPromise,yPromise){
+         // `Promise.all([ .. ])`接收一个Promise的数组，
+        // 并返回一个等待它们全部完成的新Promise
+        return Promise.all([xPromise,yPromise])
+         // 当这个Promise被解析后，我们拿起收到的`X`和`Y`的值，并把它们相加
+        .then(values=&gt;{
+         // `values`是一个从先前被解析的Promise那里收到的消息数组
+            return values[0]+values[1]
+        })
+    }
+
+var fetchX =function(){
+   return new Promise((reslove,reject)=&gt;{
+        setTimeout(function(){
+            reslove(1)
+        },1000)
+   })
+}
+var fetchY =function(){
+  return new Promise((reslove,reject)=&gt;{
+        setTimeout(function(){
+            reslove(2)
+        },2000)
+   })
+}
+
+// 为了将两个数字相加，我们得到一个Promise。
+// 现在我们链式地调用`then(..)`来等待返回的Promise被解析
+add(fetchX(),fetchY()).then(sum=&gt;{
+ console.log(sum)//3
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>注意： 在 add(..)内部。Promise.all([ .. ])调用创建了一个 promise（它在等待 promiseX 和 promiseY 被解析）。链式调用.then(..)创建了另一个 promise，它的 return values[0] + values[1]这一行会被立即解析（使用加法的结果）。这样，我们链接在 add(..)调用末尾的 then(..)调用——在代码段最后——实际上是在第二个被返回的 promise 上进行操作，而非被 Promise.all([ .. ])创建的第一个 promise。另外，虽然我们没有在这第二个 then(..)的末尾链接任何操作，它也已经创建了另一个 promise，我们可以选择监听/使用它。</p> <h2 id="实现⼀个完整的-promise-a"><a href="#实现⼀个完整的-promise-a" class="header-anchor">#</a> 实现⼀个完整的 Promise/A+</h2> <p>简单来说，promise 主要就是为了解决异步回调问题。其主流规范目前主要是 Promise/A+在开始前，我们先写⼀个 promise 应⽤场景来体会下 promise 的作⽤</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function fn1(resolve,reject) {
+        setTimeout(()=&gt;{
+            console.log('步骤1：执行')
+            resolve(1)
+        },500)
+    }
+    function fn2(resolve,reject) {
+        setTimeout(()=&gt;{
+            console.log('步骤2：执行')
+            resolve(2)
+        },100)
+    }
+    new Promise(fn1).then(res=&gt;{
+        console.log(res)
+        return new Promise(fn2)
+    }).then(res=&gt;{
+        console.log(res)
+        return 333
+    }).then(res=&gt;{
+        console.log(res)
+    })
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="初步构建"><a href="#初步构建" class="header-anchor">#</a> 初步构建</h3> <p>写一个简单的 promise，promise 的参数是函数 fn，把内部定义 resolve 方法作为参数传到 fn 中，调用 fn。当异步操作成功后会调用 reslove，然后就会执行 then 注册的回调</p> <p>废话不多说上代码</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+function Promsie(fn) {
+    //需要一个成功时的回调
+    var callback;
+    //一个实例的方法，用来注册异步事件
+    this.then = function(done) {
+        callback = done;
+    }
+
+    function reslove(value) {
+        callback(value);
+    }
+    fn(reslove)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="加入链式支持"><a href="#加入链式支持" class="header-anchor">#</a> 加入链式支持</h3> <p>下面加入链式，成功回调的方法就得变成数组才能存储。同时我们给 resolve ⽅法添加参数，这样就不会输出 undefined。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function Promise() {
+    var promsie = this,
+        value = null,
+        promise._resloves = [];
+    this.then = function (onFulfiled) {
+        promise._resloves.push(onFulfiled)
+        return this;
+    }
+     function reslove(value) {
+         promise._resloves.forEach(callback=&gt;{
+             callback(value)
+         })
+     }
+     fn(reslove)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>1.promise = this， 这样我们不用担心某个时刻 this 指向突然改变问题。</p> <p>2.调用 then 方法，将回调放⼊promise._resloves 队列；</p> <p>3.创建 Promise 对象同时，调用其 fn, 并传入 resolve 方法，当 fn 的异步操作执⾏成功后，就会调用 resolve ，也就是执行 promise._resloves 队列中的回调；</p> <p>4.resolve 方法接收⼀个参数，即异步操作返回的结果，⽅便传值</p> <p>5.then⽅法中的 return this 实现了链式调用⽤。但是目前的 Promise 还存在一些问题，如果我传入的是一个不包含异步操作的函数，</p> <p>reslove 就会先于 then 执⾏，也就是说 promise._resloves 是⼀个空数组。
+解决方法：为了解决这个问题，我们可以在 reslove 中添加 setTimeout，来将 reslove 中执⾏回调的逻辑放置到 JS 任务队列末尾</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function Promise() {
+        var promsie = this,
+            value = null,
+            promise._resloves = [];
+        this.then = function (onFulfiled) {
+            promise._resloves.push(onFulfiled)
+            return this;
+        }
+        function reslove(value) {
+            setTimeout(()=&gt;{
+                promise._resloves.forEach(callback=&gt;{
+                    callback(value)
+                })
+            },0)
+        }
+        fn(reslove)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="引入状态，干干，干就完了"><a href="#引入状态，干干，干就完了" class="header-anchor">#</a> 引入状态，干干，干就完了</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function Promise() {
+    var promise = this,
+        value = null;
+        promise_resloves = [],
+        promise._status = &quot;PENDING&quot;;
+    this.then = function (onFulfilled) {
+        if(promise._status === &quot;PENDING&quot;){
+            promise_resloves.push(onFulfilled)
+        }
+        return this;
+    }
+    function reslove(value) {
+       setTimeout(()=&gt;{
+           promise._status = 'FULFILLED'
+           promise_resloves.forEach(callback=&gt;{
+               callback(value)
+           })
+       },0)
+    }
+    fn(reslove);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>每个 Promise 存在三个互斥状态：pending、fulfilled、rejected。Promise 对象的状态改变，只有两种可能：从 pending 变为 fulfilled 和从 pending 变为 rejected。只要这两种情况发⽣，状态就凝固了，不会再变了，会⼀直保持这个结果。就算改变已经发⽣了，你再对 Promise 对象添加回调函数，也会⽴即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</p> <h3 id="加上异步结果的传递"><a href="#加上异步结果的传递" class="header-anchor">#</a> 加上异步结果的传递</h3> <p>前的写法都没有考虑异步返回的结果的传递，我们来加上结果的传递：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function Promise(fn) {
+    var promise = this,
+        value = null,
+        promise._reslove = [],
+        promise._status = 'PENDING';
+    this.then = function (onFulfilled) {
+        if(promise._status === 'PENDING'){
+            promise._reslove.push(onFulfilled)
+        }
+        return this;
+    }
+    function reslove(value) {
+        setTimeout(()=&gt;{
+            promise._status = 'FULFILLED';
+            promise._reslove.forEach(callback=&gt;{
+                value=callback(value)
+            })
+        },0)
+    }
+    fn(reslove)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="串行-promise"><a href="#串行-promise" class="header-anchor">#</a> 串行 Promise</h3> <p>串行 Promise 是指在当前 promise 达到 fulfilled 状态后，即开始进行⾏下⼀一个 promise（后邻 promise）。例如我们先⽤ajax 从后台获取⽤用户的的数据，再根据该数据去获取其他数据。这⾥我们主要对 then ⽅法进⾏改造：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function Promsie(fn) {
+        var promise = this,
+            value = null,
+            promise._reslove = [],
+            promise._status = 'PENDING';
+        this.then = function (onfuilled) {
+            return new Promsie(function (reslove) {
+                function handle(value) {
+                    var ret = isFunction(onfuilled) &amp;&amp; onfuilled(value) || value;
+                    reslove(ret)
+                }
+                if(promise._status === 'PENDING'){
+                    promise._reslove.push(handle)
+                }else if(promise._status === 'FULFILLED'){
+                    handle(value);
+                }
+            })
+        }
+        function reslove(value) {
+            setTimeout(()=&gt;{
+                promise._status = 'FULFIILED';
+                promise._reslove.forEach(callback=&gt;{
+                    value = callback(value)
+                })
+            },0)
+        }
+        fn(reslove)
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>then 方法该改变⽐较多啊，这⾥我解释下：</p> <p>注意的是，new Promise() 中匿名函数中的 promise （promise._resolves 中的 promise）指向的都是上⼀个 promise 对象， ⽽不是当前这个刚刚创建的。先我们返回的是新的⼀个 promise 对象，因为是同类型，所以链式仍然可以实现。</p> <p>其次，我们添加了⼀个 handle 函数，handle 函数对上一个 promise 的 then 中回调进行了处理，并且调⽤了当前的 promise 中的 resolve ⽅法。</p> <p>接着将 handle 函数添加到 上⼀个 promise 的 promise._resolves 中，当异步操作成功后就会执⾏
+handle 函数，这样就可以 执⾏ 当前 promise 对象的回调⽅法。我们的⽬的就达到了。</p> <p>如果这里你会看到晕看下面的代码</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> new Promise(fn1).then(fn2).then(fn3)})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>1.首先我们创建了一个 Promise 的实例，叫做 promsie1；接着就会运行 fn1(reslove);</p> <p>2.但是 fn1 中有一个 setTimeout 函数，于是就会跳过这一部分；运行后面第一个 then 方法；</p> <p>3 then 返回一个新对象 promise2，promise2 对象的 reslove 方法和 then 方法中回调函数 fn2 都会被封装到 handle 中然后 handle 被添加到 promsie1._reslve 数组中</p> <p>4.接着运行第二个 then 方法，同样返回一个新对象 promise3，promise3 对象的 reslove 方法和 then 方法中回调函数 fn3 都会被封装到 handle 中然后 handle 被添加到 promsie2._reslove 数组中</p> <p>5.到此两个 then 运行结束后 setTimeout 中的延迟时间⼀到，就会调⽤ promise1 的 resolve⽅法。</p> <p>6.resolve ⽅方法的执行⾏，会调用⽤ promise1._resolves 数组中的回调，之前我们添加的 handle ⽅法就会被执行⾏； 也就是 fn2 和 promsie2 的 resolve 方⽅法，都被调⽤用了。</p> <p>7 以此类推，fn3 会和 promise3 的 resolve ⽅法 ⼀起执⾏，因为后⾯没有 then ⽅法了,promise3._resolves 数组是空的 。</p> <p>8 ⾄此所有回调执⾏结束但这⾥还存在⼀个问题，就是我们的 then ⾥⾯函数不能对 Promise 对象进⾏处理。这⾥我们需要再次 对 then 进⾏修改，使其能够处理 promise 对象。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> function Promsie(fn) {
+                var promise = this,
+                    value = null,
+                    promise._reslove = [],
+                    promise._status = 'PENDING';
+                this.then = function(onfuilled) {
+                    return new Promsie(function(reslove) {
+                        function handle(value) {
+                            var ret = typeof onfuilled == &quot;function&quot; &amp;&amp; onfuilled(value) || value;
+                            if (ret &amp;&amp; typeof ret['then'] === &quot;function&quot;) {
+                                ret.then(function(value) {
+                                    reslove(value);
+                                })
+                            } else {
+                                reslove(value)
+                            }
+                            reslove(ret)
+                        }
+                        if (promise._status === 'PENDING') {
+                            promise._reslove.push(handle)
+                        } else if (promise._status === 'FULFILLED') {
+                            handle(value);
+                        }
+                    })
+                }
+
+            function reslove(value) {
+                setTimeout(() =&gt; {
+                    promise._status = 'FULFIILED';
+                    promise._reslove.forEach(callback =&gt; {
+                        value = callback(value)
+                    })
+                }, 0)
+            }
+            fn(reslove)
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h3 id="失败处理"><a href="#失败处理" class="header-anchor">#</a> 失败处理</h3> <p>异步操作不不可能都成功，在异步操作失败时，标记其状态为 rejected，并执⾏行行注册的失败回调。 有了了之前处理理 fulfilled 状态的经验，⽀支持错误处理理变得很容易易。毫⽆无疑问的是，在注册回调、处理理状态</p> <p>变更更上都要加⼊入新的逻辑:</p> <p>上代码吧</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function Promise(fn) {
+            var promise = this;
+            promise._status = 'PENDING';
+            promise._values;
+            promise._reason;
+            promise._reslove = [];
+            promise._reject = [];
+            this.then = function(onFulfilled, onRejected) {
+                return new Promise(function(reslove, reject) {
+                    function handle(values) {
+                        var ret = (typeof onFulfilled === 'function' &amp;&amp; onFulfilled(values)) || values
+                        if (ret &amp;&amp; typeof ret['then'] === 'function') {
+                            ret.then(function(value) {
+                                reslove(value)
+                            }, function(reason) {
+                                reject(reason)
+                            })
+                        } else {
+                            reslove(ret)
+                        }
+                    }
+
+                    function errback(values) {
+                        var reason = (typeof onRejected === 'function' &amp;&amp; onRejected(values)) || values
+                        reject(values)
+                    }
+                    if (promise._status === 'PENDING') {
+                        promise._reslove.push(handle)
+                        promise._reject.push(errback)
+                    } else if (promise._status === 'FULFILLED') {
+                        promise._reslove.push(promise._values)
+                    } else if (promise._status === 'REJECTED') {
+                        promise._reject.push(promise._reason)
+                    }
+                })
+            }
+
+            function reslove(values) {
+                setTimeout(() =&gt; {
+                    promise._status = 'FULFILLED';
+                    promise._reslove.forEach(callback =&gt; {
+                        promise._values = callback(values)
+                    });
+                }, 0)
+            }
+
+            function reject(values) {
+                setTimeout(() =&gt; {
+                    promise._status = 'REJECTED';
+                    promise._reject.forEach(callback =&gt; {
+                        promise._reason = callback(values)
+                    });
+                }, 0)
+            }
+            fn(reslove, reject)
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><h3 id="promise-resolve"><a href="#promise-resolve" class="header-anchor">#</a> Promise.resolve</h3> <p>Promise.resolve(value) 返回一个以给定值解析后的 Promise 对象.</p> <p>1.如果 value 是个 thenable 对象，返回的 promise 会“跟随”这个 thenable 的对象，采用它的最终状态</p> <p>2.如果传入的 value 本身就是 promise 对象，那么 Promise.resolve 将不做任何修改、原封不动地返回这个 promise 对象。</p> <p>3.其他情况，直接返回以该值为成功状态的 promise 对象。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Promise.resolve = function(value) {
+            if (value instanceof Promise) {
+                return value
+            }
+            return new Promise(function(resolve, reject) {
+
+                if (value &amp;&amp; value.then &amp;&amp; typeof value.then === 'function') {
+                    setTimeout(() =&gt; {
+                        value.then(resolve, reject);
+                    });
+                } else {
+                    resolve(value);
+                }
+            })
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="promise-reject"><a href="#promise-reject" class="header-anchor">#</a> Promise.reject</h3> <p>Promise.reject 方法和 Promise.resolve 不同，Promise.reject()方法的参数，会原封不动地作为 reject 的理由，变成后续方法的参数。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Promise.reject = function(value) {
+            return new Promise(function(resolve, reject) {
+                reject(value)
+            })
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="promise-prototype-catch"><a href="#promise-prototype-catch" class="header-anchor">#</a> Promise.prototype.catch</h3> <p>Promise.prototype.catch 用于指定出错时的回调，是特殊的 then 方法，catch 之后，可以继续 .then</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Promise.prototype.catch = function (onRejected) {
+    return this.then(null, onRejected);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="promise-prototype-finally"><a href="#promise-prototype-finally" class="header-anchor">#</a> Promise.prototype.finally</h3> <p>不管成功还是失败，都会走到 finally 中,并且 finally 之后，还可以继续 then。并且会将值原封不动的传递给后面的 then.</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Promise.prototype.finally = function (callback) {
+    return this.then((value) =&gt; {
+        return Promise.resolve(callback()).then(() =&gt; {
+            return value;
+        });
+    }, (err) =&gt; {
+        return Promise.resolve(callback()).then(() =&gt; {
+            throw err;
+        });
+    });
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="promise-all"><a href="#promise-all" class="header-anchor">#</a> Promise.all</h3> <p>Promise.all(promises) 返回一个 promise 对象</p> <p>1.如果传入的参数是一个空的可迭代对象，那么此 promise 对象回调完成(resolve),只有此情况，是同步执行的，其它都是异步返回的。</p> <p>2.如果传入的参数不包含任何 promise，则返回一个异步完成.</p> <p>3.promises 中所有的 promise 都 promise 都“完成”时或参数中不包含 promise 时回调完成。</p> <p>4.如果参数中有一个 promise 失败，那么 Promise.all 返回的 promise 对象失败</p> <p>5.在任何情况下，Promise.all 返回的 promise 的完成状态的结果都是一个数组</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Promise.all = function(promsies) {
+            if (!Array.isArray(promsies)) {
+                throw new TypeError('You must pass to an array')
+            }
+            return new Promise(function(resolve, reject) {
+                var len = promsies.length,
+                    result = [],
+                    count = len;
+
+                function resolver(index) {
+                    return function(value) {
+                        resolverAll(index, value)
+                    }
+                }
+
+                function rejects(value) {
+                    reject(value)
+                    return
+                }
+
+                function resolverAll(index, value) {
+                    result[index] = value;
+                    --count;
+                    if (count === 0) {
+                        resolve(result)
+                    }
+                }
+                for (var i = 0; i &lt; len; i++) {
+                    Promise.resolve(promsies[i]).then(resolver(i), rejects)
+                }
+            })
+        }
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h3 id="promise-race"><a href="#promise-race" class="header-anchor">#</a> Promise.race</h3> <p>Promise.race 函数返回一个 Promise，它将与第一个传递的 promise 相同的完成方式被完成。它可以是完成（ resolves），也可以是失败（rejects），这要取决于第一个完成的方式是两个中的哪个。</p> <p>如果传的参数数组是空，则返回的 promise 将永远等待。</p> <p>如果迭代包含一个或多个非承诺值和/或已解决/拒绝的承诺，则 Promise.race 将解析为迭代中找到的第一个值。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>myPromise.race = function(promsies) {
+            if (!Array.isArray(promsies)) {
+                throw new TypeError('You must pass to an array')
+            }
+            return new myPromise(function(resolve, reject) {
+                var len = promsies.length,
+                    result = [],
+                    count = len;
+
+                function resolver(value) {
+                    resolve(value)
+                }
+
+                function rejects(value) {
+                    reject(value)
+                }
+                for (var i = 0; i &lt; len; i++) {
+                    myPromise.resolve(promsies[i].then(resolver, rejects))
+                }
+            })
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/Promise.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/深拷贝.html" class="prev">
+        对深拷贝的研究
+      </a></span> <span class="next"><a href="/blog/php_up.html">
+        PHP 与 MySQL 开发入门上
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/21.3321d072.js" defer></script>
+  </body>
+</html>

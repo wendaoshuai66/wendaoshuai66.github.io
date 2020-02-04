@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ECMAScript5.1 新增语法上 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/10.0bedbff4.js" as="script"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="active sidebar-link">ECMAScript5.1 新增语法上</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/ES5_top.html#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header"><a href="/blog/ES5_top.html#浏览器支持情况" class="sidebar-link">浏览器支持情况</a></li><li class="sidebar-sub-header"><a href="/blog/ES5_top.html#严格模式" class="sidebar-link">严格模式</a></li><li class="sidebar-sub-header"><a href="/blog/ES5_top.html#json" class="sidebar-link">JSON</a></li><li class="sidebar-sub-header"><a href="/blog/ES5_top.html#添加对象" class="sidebar-link">添加对象</a></li></ul></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ecmascript5-1-新增语法上"><a href="#ecmascript5-1-新增语法上" class="header-anchor">#</a> ECMAScript5.1 新增语法上</h1> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>ECMAScript 5.1 (或仅 ES5) 是 ECMAScript(基于 JavaScript 的规范)标准最新修正。 与 HTML5 规范进程本质类似，ES5 通过对现有 JavaScript 方法添加语句和原生 ECMAScript 对象做合并实现标准化。ES5 还引入了一个语法的严格变种，被称为”严格模式(strict mode)”。</p> <h2 id="浏览器支持情况"><a href="#浏览器支持情况" class="header-anchor">#</a> 浏览器支持情况</h2> <p>随着 Opera 11.60 的发布, 所有 5 大浏览器都支持 ES5, 除了一些实现的 bugs. 除非另有说明，一切可以用在以下浏览器版本（或更高）：</p> <p>Opera 11.60</p> <p>Internet Explorer 9*</p> <p>Firefox 4</p> <p>Safari 5.1**</p> <p>Chrome 13</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>* IE9不支持严格模式 — IE10 添加
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-text"><code>** Safari 5.1 仍不支持 Function.prototype.bind, 
+尽管 Function.prototype.bind现在已经被Webkit所支持。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>对于旧版浏览器的支持信息,查看<a href="http://kangax.github.io/compat-table/es5/" target="_blank" rel="noopener noreferrer">ECMAScript 5 兼容性表<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>想再 ie8 或者其他更低的浏览器用 可以查看<a href="https://www.npmjs.com/package/es5-shim" target="_blank" rel="noopener noreferrer">es5-shim<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="严格模式"><a href="#严格模式" class="header-anchor">#</a> 严格模式</h2> <p>严格模式给作者提供了选择一个限制性更强语言变种的方式——给作者提供额外的可靠性给用户提供额外的安全性。在 JS 文件或是函数的顶部添加<code>&quot;use strict&quot;</code>即可启用严格模式。因为&quot;use strict&quot;就是个字符串，因此其会被旧版浏览器安全地忽视。</p> <p>在 js 文件顶部添加 use strict</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&quot;use strict&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在函数顶部添加 use strict</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function strict(){
+&quot;use strict&quot;;
+return &quot;这是严格模式。&quot;;
+}
+
+
+function notStrict() {
+return &quot;这是正常模式。&quot;;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><a href="https://www.npmjs.com/package/es5-shim" target="_blank" rel="noopener noreferrer">MDSN 的严格模式文章<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>有个关于所有这些差异很有用的总结表格。</p> <h3 id="严格模式下无法再意外创建全局变量"><a href="#严格模式下无法再意外创建全局变量" class="header-anchor">#</a> 严格模式下无法再意外创建全局变量</h3> <p>不允许给未声明的变量赋值</p> <p>例如</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//不在严格模式下
+function test(){
+      a= 1
+    console.log(a)//1
+}
+test()
+
+//在严格模式下
+function test(){
+    &quot;use strict&quot;
+    a= 1
+    console.log(a)//此处就会抛出 ReferenceError ：a is not defined
+}
+test()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="不允许对象字面量属性重复命名"><a href="#不允许对象字面量属性重复命名" class="header-anchor">#</a> 不允许对象字面量属性重复命名</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>!function() {
+    var obj = { x: 1, x: 2 };
+    console.log(obj.x);  //2
+}();
+
+!function() {
+    'use strict';
+    var obj = { x: 1, x: 2 };  
+    console.log(obj.x);  // IE10+报错。IE7~9、Chrome、FF不报错，结果为：2
+}()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="严格模式下给不可写属性赋值-给只读属性-getter-only-赋值赋值-给不可扩展对象-non-extensible-object-的新属性赋值都会抛出异常"><a href="#严格模式下给不可写属性赋值-给只读属性-getter-only-赋值赋值-给不可扩展对象-non-extensible-object-的新属性赋值都会抛出异常" class="header-anchor">#</a> 严格模式下给不可写属性赋值, 给只读属性(getter-only)赋值赋值, 给不可扩展对象(non-extensible object)的新属性赋值都会抛出异常</h3> <p>给不可写的属性赋值</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//正常模式
+(function (){
+    var obj1 = {}
+     Object.defineProperty(obj1,'x',{value:1,writable:false});
+     obj1.x= 9
+     console.log(obj1.x)//1
+})()
+
+//严格模式
+(function (){
+    &quot;use strict&quot;
+    var obj1 = {}
+     Object.defineProperty(obj1,'x',{value:1,writable:false});
+     obj1.x= 9  
+     //抛出TypeError错误 
+     //错误为Cannot assign to read only property 'x' of object '#&lt;Object&gt;'
+     console.log(obj1.x)
+})()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>给只读属性赋值</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+//正常模式下 
+(function (){
+    var obj2 = {get x(){return 17}}
+    obj2.x = 9
+    console.log(obj2.x)//17
+})()
+
+//严格模式下
+(function (){
+    &quot;use strict&quot;
+    var obj2 = {get x(){return 17}}
+    obj2.x = 9
+     //抛出TypeError错误 
+     //错误为Cannot set property x of #&lt;Object&gt; which has only a getter
+     console.log(obj1.x)
+    console.log(obj2.x)
+})()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>给不可扩展的新属性赋值</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//正常模式下
+ (function (){
+    var obj3 ={}
+    Object.preventExtensions(obj3)
+    obj3.x= 3
+    console.log(obj3.x)//undefined
+})()
+
+//严格模式下
+ (function (){
+    &quot;use strict&quot;
+    var obj3 ={}
+    Object.preventExtensions(obj3)
+    obj3.x= 3
+    console.log(obj3.x)
+    //抛出TypeError错误 
+    // Cannot add property x, object is not extensible
+})()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="严格模式下-试图删除不可删除的属性时会抛出异常"><a href="#严格模式下-试图删除不可删除的属性时会抛出异常" class="header-anchor">#</a> 严格模式下, 试图删除不可删除的属性时会抛出异常</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> (function (){
+    &quot;use strict&quot;
+    delete Object.prototype
+    //抛出TypeError错误 
+    //Cannot delete property 'prototype' of function Object() { [native code] }
+})()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="严格模式要求函数的参数名唯一"><a href="#严格模式要求函数的参数名唯一" class="header-anchor">#</a> 严格模式要求函数的参数名唯一</h3> <p>在正常模式下, 最后一个重名参数名会掩盖之前的重名参数. 之前的参数仍然可以通过 arguments[i] 来访问, 还不是完全无法访问. 然而, 这种隐藏毫无意义而且可能是意料之外的 (比如它可能本来是打错了), 所以在严格模式下重名参数被认为是语法错误</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//正常模式下
+(function (a,a,b){
+    console.log(a+a+b)//7
+    //之前的a会被之后的a掩盖
+    console.log(arguments[0])//1
+    //之前的a可以通过arguments[0]访问到
+    console.log(arguments[1])//2
+})(1,2,3)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="严格模式禁止八进制数字语法"><a href="#严格模式禁止八进制数字语法" class="header-anchor">#</a> 严格模式禁止八进制数字语法</h3> <p>CMAScript 并不包含八进制语法, 但所有的浏览器都支持这种以零(0)开头的八进制语法: 0644 === 420 还有 &quot;\045&quot; === &quot;%&quot;.在 ECMAScript 6 中支持为一个数字加&quot;0o&quot;的前缀来表示八进制数.</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+//正常模式下
+(function (){
+    var a = 0644; 
+    //es6写法 a =0o644
+    console.log(a)//420
+})()
+
+//严格模式下
+(function (){
+     'use strice'
+    var a = 0644; 
+    //抛出TypeError错误
+    //错误为：Octal literals are not allowed in strict mode.
+    console.log(a)
+})()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="ecmascript-6-中的严格模式禁止设置-primitive-值的属性-不采用严格模式-设置属性将会简单忽略-no-op-采用严格模式-将抛出-typeerror-错误"><a href="#ecmascript-6-中的严格模式禁止设置-primitive-值的属性-不采用严格模式-设置属性将会简单忽略-no-op-采用严格模式-将抛出-typeerror-错误" class="header-anchor">#</a> ECMAScript 6 中的严格模式禁止设置 primitive 值的属性.不采用严格模式,设置属性将会简单忽略(no-op),采用严格模式,将抛出 TypeError 错误</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> (function (){
+    &quot;use strict&quot;
+    false.true = &quot;&quot;; 
+    //抛出异常Cannot create property 'true' on boolean 'false'
+})()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-text"><code> (function (){
+    &quot;use strict&quot;
+    &quot;with&quot;.you = &quot;far away&quot;; 
+    //抛出异常Cannot create property 'you' on string 'with'
+})()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="严格模式禁用-with"><a href="#严格模式禁用-with" class="header-anchor">#</a> 严格模式禁用 with</h3> <p>with 所引起的问题是块内的任何名称可以映射(map)到 with 传进来的对象的属性, 也可以映射到包围这个块的作用域内的变量(甚至是全局变量), 这一切都是在运行时决定的: 在代码运行之前是无法得知的. 严格模式下, 使用 with 会引起语法错误, 所以就不会存在 with 块内的变量在运行是才决定引用到哪里的情况了</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&quot;use strict&quot;;
+var x = 17;
+with (obj) { // !!! 语法错误
+  // 如果没有开启严格模式，with中的这个x会指向with上面的那个x，还是obj.x？
+  // 如果不运行代码，我们无法知道，因此，这种代码让引擎无法进行优化，速度也就会变慢。
+  x;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>一种取代 with 的简单方法是，将目标对象赋给一个短命名变量，然后访问这个变量上的相应属性.</p> <h3 id="严格模式下的-eval-不再为上层范围（包围-eval-代码块的范围）引入新变量"><a href="#严格模式下的-eval-不再为上层范围（包围-eval-代码块的范围）引入新变量" class="header-anchor">#</a> 严格模式下的 eval 不再为上层范围（包围 eval 代码块的范围）引入新变量</h3> <p>首先理解 eval</p> <p>JavaScript 中的 eval(..) 函数可以接受一个字符串为参数，并将其中的内容视为好像在书 写时就存在于程序中这个位置的代码。换句话说，可以在你写的代码中用程序生成代码并 运行，就好像代码是写在那个位置的一样。</p> <p>在严格模式的程序中，eval(..) 在运行时有其自己的词法作用域，意味着其 中的声明无法修改所在的作用域。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function foo(str) {
+    &quot;use strict&quot;;
+    eval( str );
+    console.log( a ); // ReferenceError: a is not defined
+}
+foo( &quot;var a = 2&quot; );
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="严格模式禁止删除声明变量。delete-name-在严格模式下会引起语法错误"><a href="#严格模式禁止删除声明变量。delete-name-在严格模式下会引起语法错误" class="header-anchor">#</a> 严格模式禁止删除声明变量。delete name 在严格模式下会引起语法错误</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&quot;use strict&quot;;
+
+var x;
+delete x; // !!! 语法错误
+
+eval(&quot;var y; delete y;&quot;); // !!! 语法错误
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="json"><a href="#json" class="header-anchor">#</a> JSON</h2> <p>ES5 提供一个全局的 JSON 对象，用来序列化(JSON.stringify)和反序列化(JSON.parse)对象为 JSON 格式。</p> <p>对于老的浏览器，可以考虑使用 Douglas Crockford 的<a href="https://github.com/douglascrockford/JSON-js/blob/master/json2.js" target="_blank" rel="noopener noreferrer">json2.js<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, 可以让旧的浏览器实现同样的功能（原始支持功能测试后）。</p> <h3 id="json-parse-text-reviver"><a href="#json-parse-text-reviver" class="header-anchor">#</a> JSON.parse(text [, reviver])</h3> <p>JSON.parse 接受文本(JSON 格式)并转换成一个 ECMAScript 值。该可选的 reviver 参数是有带有 key 和 value 两个参数的函数，其作用于结果——让过滤和转换返回值成为可能。</p> <p>如果我们想确保解析的值是个整数，我们可以使用 reviver 方法。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var result = JSON.parse('{&quot;a&quot;: 1, &quot;b&quot;: &quot;2&quot;}', function(key, value){
+  if (typeof value == 'string'){
+    return parseInt(value);
+  } else {
+    return value; 
+  }
+})
+result.b //2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="json-stringify-value-replacer-space"><a href="#json-stringify-value-replacer-space" class="header-anchor">#</a> JSON.stringify(value [, replacer [, space]])</h3> <p>JSON.stringify 允许作者接受一个 ECMAScript 值然后转换成 JSON 格式的字符串。 在其最简单的形式中，JSON.stringify 接受一个值返回一个字符串</p> <p>如果我们需要改变值字符串化的方式，或是对我们选择的提供过滤，我们可以将其传给 replacer 函数。例如，我们想过滤出即将被字符串化的对象中值为 13 的属性：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+var nums = {
+  &quot;first&quot;: 7,
+  &quot;second&quot;: 14,
+  &quot;third&quot;: 13
+}
+
+var luckyNums = JSON.stringify(nums, function(key, value){
+  if (value == 13) {
+    return undefined;
+  } else {
+    return value;
+  }
+});
+
+&gt;&gt; luckyNums
+'{&quot;first&quot;: 7, &quot;second&quot;: 14}'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>如果 replacer 方法返回 undefined, 则键值对就不会包含在最终的 JSON 中。我们同样可以传递一个 space 参数以便获得返回结果的可读性帮助。space 参数可以是个数字，表明了作缩进的 JSON 字符串或字符串每个水平上缩进的空格数。如果参数是个超过 10 的数值，或是超过 10 个字符的字符串，将导致取数值 10 或是截取前 10 个字符</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var luckyNums = JSON.stringify(nums, function(key, value) {
+  if (value == 13) {
+    return undefined;
+  } else {
+    return value;
+  }
+}, 2);
+
+&gt;&gt; luckyNums
+'{
+  &quot;first&quot;:7,
+  &quot;second&quot;:14
+}'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="添加对象"><a href="#添加对象" class="header-anchor">#</a> 添加对象</h2> <h3 id="_1-object-keys-获取对象的-key"><a href="#_1-object-keys-获取对象的-key" class="header-anchor">#</a> 1.Object.keys() 获取对象的 key</h3> <h3 id="_2-object-create-获取对象的副本，实现类的继承"><a href="#_2-object-create-获取对象的副本，实现类的继承" class="header-anchor">#</a> 2.Object.create() 获取对象的副本，实现类的继承</h3> <h3 id="_3-object-assign-浅拷贝"><a href="#_3-object-assign-浅拷贝" class="header-anchor">#</a> 3.Object.assign() 浅拷贝</h3> <h3 id="_4-object-defineproperty-obj-prop-descriptor-直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，-并返回这个对象"><a href="#_4-object-defineproperty-obj-prop-descriptor-直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，-并返回这个对象" class="header-anchor">#</a> 4.Object.defineProperty(obj, prop, descriptor) 直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象</h3> <p>语法  Object.defineProperty(obj, prop, descriptor)</p> <p>obj 要在其上定义属性的对象。</p> <p>prop 要定义或修改的属性的名称。</p> <p>descriptor 将被定义或修改的属性描述符。</p> <p>属性描述符：数据描述符和存取描述符</p> <p>数据描述符和存取描述符均有以下可选键值</p> <p>configurable 默认为 false 为 true  该属性描述符才能够被改变，同时该属性也能从对应的对象上被删除
+数据描述符可选键值</p> <p>该属性对应的值。value： 可以是任何有效的 JavaScript 值（数值，对象，函数等）。默认为 undefined。</p> <p>writable:当且仅当该属性的 writable 为 true 时，value 才能被赋值运算符改变。默认为 false</p> <h3 id="_5-object-defineproperties-obj-props-在其上定义或修改属性的对象"><a href="#_5-object-defineproperties-obj-props-在其上定义或修改属性的对象" class="header-anchor">#</a> 5.Object.defineProperties(obj, props) 在其上定义或修改属性的对象</h3> <h3 id="_6-object-entries-返回一个给定对象自身可枚举属性的键值对数组"><a href="#_6-object-entries-返回一个给定对象自身可枚举属性的键值对数组" class="header-anchor">#</a> 6.Object.entries() 返回一个给定对象自身可枚举属性的键值对数组</h3> <h3 id="_7-onject-fromentries-可以将-map-转化为-object"><a href="#_7-onject-fromentries-可以将-map-转化为-object" class="header-anchor">#</a> 7.Onject.fromEntries() 可以将 Map 转化为 Object</h3> <h3 id="_8-object-freeze"><a href="#_8-object-freeze" class="header-anchor">#</a> 8.Object.freeze()</h3> <p>可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。该方法返回被冻结的对象。</p> <h3 id="_9-object-is-判断两个值是否是相同的值"><a href="#_9-object-is-判断两个值是否是相同的值" class="header-anchor">#</a> 9.Object.is() 判断两个值是否是相同的值</h3> <h3 id="_10-object-values-返回一个数组，其元素是在对象上找到的可枚举属性值"><a href="#_10-object-values-返回一个数组，其元素是在对象上找到的可枚举属性值" class="header-anchor">#</a> 10.Object.values() 返回一个数组，其元素是在对象上找到的可枚举属性值</h3></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/ES5_top.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/php_down.html" class="prev">
+        Php 与 MySql 开发入门下
+      </a></span> <span class="next"><a href="/blog/ES5_bottom.html">
+        ECMAScript5.1 新增语法下
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/10.0bedbff4.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NodeJS 入门 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/18.18dc98f6.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="active sidebar-link">NodeJS 入门</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#什么是-node" class="sidebar-link">什么是 Node</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#为什么要用-nodejs" class="sidebar-link">为什么要用 NodeJS</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#nodejs-的优势在哪里" class="sidebar-link">NodeJS 的优势在哪里</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#学习-nodejs-的前置知识" class="sidebar-link">学习 NodeJS 的前置知识</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#相关资料和学习网站" class="sidebar-link">相关资料和学习网站</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#安装-nodejs" class="sidebar-link">安装 NodeJS</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#检查是否安装成功" class="sidebar-link">检查是否安装成功</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#包管理器-npm" class="sidebar-link">包管理器 npm</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#搭建一个简单的服务" class="sidebar-link">搭建一个简单的服务</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#nodejs-的-repl-环境" class="sidebar-link">NodeJS 的 REPL 环境</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#node-js-回调机制及事件驱动模型" class="sidebar-link">Node.js 回调机制及事件驱动模型</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#阻塞与非阻塞" class="sidebar-link">阻塞与非阻塞</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#nodejs-的回调函数" class="sidebar-link">Nodejs 的回调函数</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#nodejs-的事件驱动模型" class="sidebar-link">NodeJS 的事件驱动模型</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#node-js-模块化" class="sidebar-link">Node.js 模块化</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#node-js-函数" class="sidebar-link">Node.js 函数</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#node-js-路由" class="sidebar-link">Node.js 路由</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#node-js-全局方法和工具函数" class="sidebar-link">Node.js 全局方法和工具函数</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS入门.html#node-js-文件系统" class="sidebar-link">Node.js 文件系统</a></li></ul></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nodejs-入门"><a href="#nodejs-入门" class="header-anchor">#</a> NodeJS 入门</h1> <h2 id="什么是-node"><a href="#什么是-node" class="header-anchor">#</a> 什么是 Node</h2> <p>NodeJS 本质上是一个 JavaScript 的解释器，是 JavaScript 的运行环境。它是一个后端服务器程序，并且允许使用 JavaScript 语言定义数据结构，可以操作磁盘文件和搭建 http 服务。</p> <h5 id="注意：nodejs-并不是一个-web-服务器，它是可以搭建-web-服务器的，可以说-web-服务器是-nodejs-的一个产物。"><a href="#注意：nodejs-并不是一个-web-服务器，它是可以搭建-web-服务器的，可以说-web-服务器是-nodejs-的一个产物。" class="header-anchor">#</a> 注意：NodeJS 并不是一个 Web 服务器，它是可以搭建 Web 服务器的，可以说 Web 服务器是 Nodejs 的一个产物。</h5> <h2 id="为什么要用-nodejs"><a href="#为什么要用-nodejs" class="header-anchor">#</a> 为什么要用 NodeJS</h2> <p>NodeJS 有以下特性值得我们去用</p> <p>1.可以提供高性能的 Web 服务(Node 作者的初衷)</p> <p>2.IO 性能强大(发送数据和接收数据，所依赖的条件就是输入和输出)</p> <p>3.事件处理机制完善</p> <p>4.天然能够处理 DOM(JavaScript 语言的能力)</p> <p>5.社区非常活跃，生态圈日趋完善</p> <h2 id="nodejs-的优势在哪里"><a href="#nodejs-的优势在哪里" class="header-anchor">#</a> NodeJS 的优势在哪里</h2> <p>1.处理大流量数据</p> <p>2.适合实时交互的应用(在线聊天系统)</p> <p>3.完美支持对象型数据库(Mongodb)</p> <p>4.异步处理并发连接(很多人同事链接一台服务器就叫做并发连接)</p> <h2 id="学习-nodejs-的前置知识"><a href="#学习-nodejs-的前置知识" class="header-anchor">#</a> 学习 NodeJS 的前置知识</h2> <p>1.JavaScript</p> <p>2.ES6</p> <p>3.一些服务器相关的知识(网络相关的知识)</p> <p>4.最好在 Linux 系统上进行开发</p> <h2 id="相关资料和学习网站"><a href="#相关资料和学习网站" class="header-anchor">#</a> 相关资料和学习网站</h2> <p>1.<a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">官方网站<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>2.<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener noreferrer">中文网站<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="安装-nodejs"><a href="#安装-nodejs" class="header-anchor">#</a> 安装 NodeJS</h2> <p>在上面官网下载。不同的操作系统下载相应的版本，学习的话最好安装最新版(LTS:表示长期稳定版本)。Source Code 就是 NodeJS 的源代码，是用 C++编写的。</p> <p>切换 node 版本 可以参考该<a href="https://www.cnblogs.com/kongxianghai/p/5660101.html" target="_blank" rel="noopener noreferrer">网站<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="检查是否安装成功"><a href="#检查是否安装成功" class="header-anchor">#</a> 检查是否安装成功</h2> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>node -v
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>上面命令是检查 Node 是否安装成功，成功的话返回安装 Node 的版本。</p> <h2 id="包管理器-npm"><a href="#包管理器-npm" class="header-anchor">#</a> 包管理器 npm</h2> <p>npm 是依附于 node 的包管理器，在下载 node 的时候会相应把 npm 下载下来。检查 npm 是否下载使用以下命令,成功的话返回 npm 的版本号</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm -v
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="显示-npm-子命令列表"><a href="#显示-npm-子命令列表" class="header-anchor">#</a> 显示 npm 子命令列表</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm -help
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="升级-npm"><a href="#升级-npm" class="header-anchor">#</a> 升级 npm</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install npm -g
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="查找包"><a href="#查找包" class="header-anchor">#</a> 查找包</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm search xxx
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="npm-所能做的事"><a href="#npm-所能做的事" class="header-anchor">#</a> npm 所能做的事</h3> <p>允许用户从 npm 服务器下载别人编写的第三方包到本地使用。</p> <p>允许用户从 npm 服务器下载并安装别人编写的命令行程序到本地使用。</p> <p>允许用户将自己编写的包或命令行程序上传到 npm 服务器供别人使用</p> <h3 id="npm-的官网"><a href="#npm-的官网" class="header-anchor">#</a> npm 的官网</h3> <p><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">npm 的官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="搭建一个简单的服务"><a href="#搭建一个简单的服务" class="header-anchor">#</a> 搭建一个简单的服务</h2> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//从node原声API中引入http模块
+const http = require(&quot;http&quot;);
+//使用http的createServer创建一个服务
+http.createServer((req,res) =&gt; {
+    //req是服务器接收浏览器请求对象。
+    //res是服务器响应浏览器请求对象。
+
+    //定义HTTP响应头
+        //第一个值是响应的状态值。
+        //第二个值是以json格式返回的响应头的必要信息。
+    res.writeHead(200,{
+        'Content-Type' : 'text/plan'
+    });
+
+    //发送响应数据
+    res.end('Hello World! \n');
+
+//使用级联函数对监听端口的设定
+}).listen(8080)
+//服务运行后输出一行信息
+console.log('server is running...');
+
+//开启服务
+    //在终端中使用 node node2.js
+        //输出 server is running...
+//在浏览器访问
+    //如果node在本机上：127.0.0.1:8080
+    //如果在远程服务器上：服务器ip:8080
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="nodejs-的-repl-环境"><a href="#nodejs-的-repl-环境" class="header-anchor">#</a> NodeJS 的 REPL 环境</h2> <h3 id="什么是-repl"><a href="#什么是-repl" class="header-anchor">#</a> 什么是 REPL</h3> <p>REPL 是一种交互解释器，在终端中，直接敲 node 然后回车，就进入到了 nodeREPL 环境</p> <h3 id="repl-能干什么？"><a href="#repl-能干什么？" class="header-anchor">#</a> REPL 能干什么？</h3> <p>node 的 REPL 环境可以做一些简单的运算，和做一些简单的代码验证。在这个环境下可以正常的书写代码，相当于浏览器控制台的 console。</p> <h3 id="node-repl-中的命令"><a href="#node-repl-中的命令" class="header-anchor">#</a> Node REPL 中的命令</h3> <p><img src="https://wendaoshuai66.github.io/study/note/images/repl.png" alt="Node REPL中的命令"></p> <h2 id="node-js-回调机制及事件驱动模型"><a href="#node-js-回调机制及事件驱动模型" class="header-anchor">#</a> Node.js 回调机制及事件驱动模型</h2> <h3 id="什么是回调"><a href="#什么是回调" class="header-anchor">#</a> 什么是回调</h3> <p>函数的调用分为三种：同步调用、回调和异步调用。</p> <p>回调是一种双向调用</p> <h5 id="被调用的一个函数在被调用的使用会反过来调用它的主调函数，这种情况叫做双向调用"><a href="#被调用的一个函数在被调用的使用会反过来调用它的主调函数，这种情况叫做双向调用" class="header-anchor">#</a> 被调用的一个函数在被调用的使用会反过来调用它的主调函数，这种情况叫做双向调用</h5> <p>JavaScript 通过回调函数来实现回调。</p> <h2 id="阻塞与非阻塞"><a href="#阻塞与非阻塞" class="header-anchor">#</a> 阻塞与非阻塞</h2> <p>在 NodeJS 入门就说到 Node 是非阻塞是 IO，什么是阻塞什么是非阻塞呢？</p> <p>1.阻塞和非阻塞关注的是程序在等待调用结果(消息，返回值)时的状态</p> <p>2.阻塞就是做不完不准回来。</p> <p>3.非阻塞就是当函数执行的时候，把函数的执行权先交给外界环境，等待其中 IO 完成之后，再把执行权返回给该函数。(通俗的将：非阻塞就是你先做，我先看看有其他事没有，完了告诉我一声。)</p> <h2 id="nodejs-的回调函数"><a href="#nodejs-的回调函数" class="header-anchor">#</a> Nodejs 的回调函数</h2> <p>阻塞式的代码</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//引入node中的文件系统模块
+const fs = require('fs');
+//同步读取,读取的信息按照16进制保存的
+let data = fs.readFileSync('date.txt');      
+console.log(data.toString());
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>非阻塞的代码</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const fs = require('fs');
+//异步读取
+    //第一个参数是读取文件的文件路径
+    //第二个参数是异步读取文件的回调函数
+fs.readFile('test.js',function(err,data){
+    //回调函数的第一个参数是err
+    //第二个参数是读取的信息。
+    if(err){
+        return console.log(err);
+    }
+    console.log(data.toString());
+})
+console.log('程序执行完毕');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="nodejs-的事件驱动模型"><a href="#nodejs-的事件驱动模型" class="header-anchor">#</a> NodeJS 的事件驱动模型</h2> <p><img src="https://wendaoshuai66.github.io/study/note/images/eventloop.png" alt="NodeJS的事件驱动模型"></p> <p>nodejs 是一个单进程单线程的运行程序，并不能并发的去完成更多的事情，只能通过事件回调实现这种并发的效果。nodejs 中的每一个 API 都是异步执行的，而且都是作为一个独立的线程在运行，使用异步函数调用就可以使用这种机制来并发处理。</p> <h3 id="事件处理流程"><a href="#事件处理流程" class="header-anchor">#</a> 事件处理流程</h3> <p>每当一个事件注册了之后就会把这个事件放入事件队列中，然后通过事件轮询依次触发事件。</p> <h3 id="事件与事件绑定"><a href="#事件与事件绑定" class="header-anchor">#</a> 事件与事件绑定</h3> <p>NodeJS 通过引入 events 模块，来进行事件的绑定流程如下：</p> <p>1、引入 events 模块</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const events = require('events');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>2、创建 eventEmitter 对象</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const eventEmitter = new events.EventEmitter();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>3、绑定事件处理程序</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//事件处理函数
+const connectHandle = () =&gt; {
+    console.log('connectHandle');
+}   
+//事件绑定
+    //使用eventEmitter.on方法绑定事件
+        //第一个参数：事件名称
+        //第二个参数：事件处理函数
+eventEmitter.on('connection',connectHandle);   
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>4、触发事件</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>eventEmitter.emit('connection');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="eventemitter-类自身的方法"><a href="#eventemitter-类自身的方法" class="header-anchor">#</a> EventEmitter 类自身的方法</h3> <h4 id="eventemitter-listenercount-obj-event"><a href="#eventemitter-listenercount-obj-event" class="header-anchor">#</a> EventEmitter.listenerCount(obj,event)</h4> <p>可用来获取某个对象的指定事件的事件处理函数的数量。两个参数：</p> <p>1.第一个参数是用于指定目标是哪个对象</p> <p>2.二个参数是指定哪个事件</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>EventEmitter.listenerCount(http,'request');
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="eventemitter-类自身的事件"><a href="#eventemitter-类自身的事件" class="header-anchor">#</a> EventEmitter 类自身的事件</h3> <h4 id="newlistener-事件"><a href="#newlistener-事件" class="header-anchor">#</a> newListener 事件</h4> <p>当对继承了 EventEmitter 类的子类实例对象绑定事件处理函数 的时候，都会触发 EventListener 类的 newListener 事件。</p> <p>在事件处理函数中，可使用两个参数，其中第一个参数为被绑定的事件名，第二个参数为被绑定的事件处理函数。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>eventEmitter.on('newListener',(eventName,handler)=&gt;{
+	console.log(eventName);
+})
+eventEmitter.on('request',()=&gt;{
+	console.log('listener');
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="removelistener-事件"><a href="#removelistener-事件" class="header-anchor">#</a> removeListener 事件</h4> <p>当对继承了 EventEmitter 类的子类实例对象取消事件处理函数时，都将触发 EventEmitter 类的 removeListener 事件。</p> <p>在事件处理函数中，可使用两个参数，其中第一个参数为被取消事件处理函数的事件名，第二个参数为被取消的事件处理函数。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>eventEmitter.on('removeListener',(eventName,handler)=&gt;{
+		console.log(eventName);
+})
+eventEmitter.removeAllListeners('request');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="node-js-模块化"><a href="#node-js-模块化" class="header-anchor">#</a> Node.js 模块化</h2> <h3 id="模块化的概念与意义"><a href="#模块化的概念与意义" class="header-anchor">#</a> 模块化的概念与意义</h3> <p>1.为了让 Nodejs 的文件可以相互调用，Nodejs 提供了一个简单的模块系统</p> <p>2.模块是 Nodejs 应用程序的基本组成部分</p> <p>3.文件和模块是一一对应的。一个 Nodejs 文件就是一个模块</p> <p>4.这个文件可能是 JavaScript 代码、JSON 或者编译过的 C/C++扩展</p> <p>5.Nodejs 中存在 4 类模块(原生模块和 3 种文件模块：3 种文件模块是第三方提供的，原生模块是 node 原生支持的)</p> <h3 id="nodejs-中的模块"><a href="#nodejs-中的模块" class="header-anchor">#</a> Nodejs 中的模块</h3> <p>NodeJS 通过 require 方法加载模块，通过 exports 导出模块</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>module.exports导出单个模块
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-text"><code>exports.xxx=xxx 导出模块对象
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="node-js-的模块加载流程"><a href="#node-js-的模块加载流程" class="header-anchor">#</a> Node.js 的模块加载流程</h3> <p><img src="https://wendaoshuai66.github.io/study/note/images/require.png" alt="Node.js 的模块加载方式"></p> <h5 id="文件模块缓存区的作用：防止模块被反复的加载。节省内存，加快了模块的加载速度"><a href="#文件模块缓存区的作用：防止模块被反复的加载。节省内存，加快了模块的加载速度" class="header-anchor">#</a> 文件模块缓存区的作用：防止模块被反复的加载。节省内存，加快了模块的加载速度</h5> <p>1.开始 require 加载模块，首先判断是否在文件模块缓存区中，如果在就在缓存区中通过 exports 导出;</p> <p>2.如果不在文件模块缓存区就去查找是否是原生模块(原生模块和第三方模块是不在同一个内存缓存区的),
+跳转查看是否在原生模块缓存区中，如果在的话就在缓存区中通过 exports 导出;</p> <p>如果不在原生模块缓存区中，那么就去加载原生模块，加载原生模块的同时，把加载的原生模块放到原生模块缓冲区中，通过 exports 导出;</p> <p>3.如果不是原生模块，就是查找第三方的文件模块，根据扩展名载入响应的文件模块，把载入的文件模块放入文件模块缓存区中，通过 exports 导出。</p> <h3 id="require-方法接受一下几种参数的传递"><a href="#require-方法接受一下几种参数的传递" class="header-anchor">#</a> require 方法接受一下几种参数的传递</h3> <p>http、fs、path 等原生模块</p> <p>./mod 或者../mod 等相对路径的文件模块</p> <p>/pathtomodule/mod 绝对路径的文件模块</p> <p>mod 非原生模块的文件模块</p> <h3 id="模块的三种加载方式"><a href="#模块的三种加载方式" class="header-anchor">#</a> 模块的三种加载方式</h3> <p>1.从文件模块缓存区中加载</p> <p>2.从原生模块加载</p> <p>3.从文件中加载</p> <h3 id="模块加载代码示例"><a href="#模块加载代码示例" class="header-anchor">#</a> 模块加载代码示例</h3> <p>test.js 为子模块</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const Test = function(){
+    var name;
+    this.setName = function(newName){
+        name = newName;
+    }
+    this.sayName = function(){
+        console.log(name);
+    }
+}
+modules.exports = Test;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>main.js 为主模块</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const Test = require('./test');
+const test = new Test();
+test.setName('wang');
+test.sayName(); //wang
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="node-js-函数"><a href="#node-js-函数" class="header-anchor">#</a> Node.js 函数</h2> <p>在 js 中，函数可以当做另外一个函数参数</p> <p>废话不多说，直接上代码</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function say(word){
+    console.log(word)
+}
+function execute(somefuction,value){
+    somefuction(value)
+}
+execute(say,'hello ,word')
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="node-js-路由"><a href="#node-js-路由" class="header-anchor">#</a> Node.js 路由</h2> <h3 id="什么是路由"><a href="#什么是路由" class="header-anchor">#</a> 什么是路由</h3> <p>简单的说，把一个总路线分成多个方向，通过调用不同方向的标签，执行不同的程序。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>路由表示 controller/action
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>一个浏览器网址的 ur 可能是这样的</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>www.ctomorrow.top/about/phone
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这其中的/about/phone 就构成了一个路由，about 是相应的控制器，action 是对应的控制 ID。</p> <h3 id="路由"><a href="#路由" class="header-anchor">#</a> 路由</h3> <p>当我们在浏览器地址栏输入地址访问页面的时候，一个完整的地址可能是这样的：协议://域名:端口:路由?路由参数</p> <p>###我们先来实现一个路由</p> <p>创建一个 http 模块用于创建 http 服务</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const http = require(&quot;http&quot;);
+const url = require('url'); //引入url模块进行url解析
+
+function start(router){
+    const onRequest =(req,res) =&gt; {
+        //获取路由地址
+        let pathname = url.parse(req.url).pathname;
+        res.writeHead(200,{
+            'Content-Type' : 'text/plain;charset=utf8',
+        })
+    }
+    http.createServer(onRequest).listen(8080);
+}
+exports.start =start;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>创建主模块中调用 http 模块</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+const http = require('./http');
+http.start();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>创建 route 模块来进行不同路由的管理,不同的路由输出不同的信息。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function route(pathname,res){
+    console.log(pathname);
+    if(pathname == '/'){
+        res.write('欢迎来到首页');
+    }else if(pathname == '/a/g'){
+        res.write('欢迎来到/a/g');
+    }else {
+        res.write(`您访问的${pathname}不存在！`);
+    }
+    res.end();
+    
+}
+
+exports.route = route;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>在主模块中调用路由，并把路由传入 http 模块调用</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const http = require('./http');
+const router = require('./route');
+http.start(router.route);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在 http 模块中，把路由地址传入路由模块。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const http = require(&quot;http&quot;);
+const url = require('url');
+
+function start(router){
+    const onRequest =(req,res) =&gt; {
+        let pathname = url.parse(req.url).pathname;
+        res.writeHead(200,{
+            'Content-Type' : 'text/plain;charset=utf8',
+        })
+        //加上这一句
+        router(pathname,res)
+    }
+    http.createServer(onRequest).listen(8080);
+}
+exports.start =start;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="请求参数解析"><a href="#请求参数解析" class="header-anchor">#</a> 请求参数解析</h3> <h4 id="get-请求"><a href="#get-请求" class="header-anchor">#</a> GET 请求</h4> <p>由于 GET 请求直接被嵌入在路径中，URL 是完整的请求路径，包括了?后面的部分，因此可以手动解析后面的内容作为 GET 请求的参数。</p> <p>通过使用 ur 和 util 模块来输出</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const url = require('url');
+const util = require('util');
+const http = requier('http');
+
+http.createServer((req,res)=&gt;{
+    //util的inspec方法是格式化输出
+    //url.parse是对url进行解析
+    console.log(util.inspect(url.parse(req.url,true)));
+}).listen(8080);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-text"><code>Url {
+  protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: '',
+  query: {},
+  pathname: '/favicon.ico',
+  path: '/favicon.ico',
+  href: '/favicon.ico' }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="post-请求"><a href="#post-请求" class="header-anchor">#</a> POST 请求</h4> <p>POST 请求的内容全部的都在请求体中，http.ServerRequest 并没有一个属性内容为请求体，原因是等待请求体传输可能是一件耗时的工作。比如上传文件，而很多时候我们可能不需要理会请求体中的内容，恶意的 POST 请求会大大耗费服务器的资源，所有 nodejs 默认是不会解析请求体的。只有当需要的时候，手动来做。</p> <p>通过 querystring 模块来解析 POST 请求</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const http = require('http');
+const querystring = require('querystring');
+const util = require('util');
+http.createServer((req,res) =&gt; {
+    var post = '';      //用于暂存请求体的内容
+    req.on('data',(chunk) =&gt; {
+        //通过req的data事件监听函数，每当接受到请求体的数据，就累加到变量中
+        post += chunk;
+    })
+    req.on('end',() =&gt; {
+        //在end事件触发后，通过querystring.parse将post解析为真正的POST请求格式，然后向客户端返回。
+        post = querystring.parse(post);
+        res.end(util.inspect(post));
+    })
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="node-js-全局方法和工具函数"><a href="#node-js-全局方法和工具函数" class="header-anchor">#</a> Node.js 全局方法和工具函数</h2> <h3 id="全局对象-global"><a href="#全局对象-global" class="header-anchor">#</a> 全局对象 global</h3> <p>JavaScript 中有一个特殊的对象，称为全局对象（Global Object），它及其所有属性都可以在程序的任何地方访问，即全局变量。</p> <p>在浏览器 JavaScript 中，通常 window 是全局对象， 而 Node.js 中的全局对象是 global，所有全局变量（除了 global 本身以外）都是 global 对象的属性。</p> <h5 id="永远使用声明变量以避免引入全局变量，因为全局变量会污染-命令空间，提高代码的耦合风险。"><a href="#永远使用声明变量以避免引入全局变量，因为全局变量会污染-命令空间，提高代码的耦合风险。" class="header-anchor">#</a> 永远使用声明变量以避免引入全局变量，因为全局变量会污染 命令空间，提高代码的耦合风险。</h5> <h3 id="filename"><a href="#filename" class="header-anchor">#</a> __filename</h3> <p>__filename 表示当前正在执行的脚本的文件名，它将输出文件所在位置的绝对路径，且和命令行参数所指的文件名不一定相同.如果在模块中，返回的值是模块的路径。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>console.log(__filename)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="dirname"><a href="#dirname" class="header-anchor">#</a> __dirname</h3> <p>__dirname 表示当前执行脚本所在的目录。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>// 输出全局变量 __dirname 的值
+console.log( __dirname );
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="settimeout-cb-ms"><a href="#settimeout-cb-ms" class="header-anchor">#</a> setTimeout(cb,ms)</h3> <p>和浏览器中执行的 js 代码的 setTimeout 相同，在指定的毫秒后执行指定函数 cb，setTimeout()只执行一次指定函数。返回一个定时器对象。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const timer = setTimeout(()=&gt; {
+    console.log('time');
+},2000)
+console.log(timer);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="cleartimeout"><a href="#cleartimeout" class="header-anchor">#</a> clearTimeout()</h3> <p>clearTimeout(e) 全局函数用于停止一个之前通过 setTimeout 创建的定时器，参数 t 是通过 setTimeoit 函数创建的定时器对象。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const timer = setTimeout(()=&gt; {
+    console.log('timer');
+},2000)
+clearTimeout(timer);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="setinterval-cb-ms"><a href="#setinterval-cb-ms" class="header-anchor">#</a> setInterval(cb,ms)</h3> <p>setInterval(cb,ms)全局函数在指定的毫秒数后执行指定函数(cb),返回一个定时器对象，可以使用 clearInterval 函数清楚定时器，setInterval 方法会不停的调用函数，直到 clearInterval 被调用或窗口被关闭。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>setInterval(()=&gt;{
+    console.log('hello');
+},1000);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="console-方法"><a href="#console-方法" class="header-anchor">#</a> console 方法</h3> <p><img src="https://wendaoshuai66.github.io/study/note/images/console.png" alt="console方法"></p> <h3 id="process"><a href="#process" class="header-anchor">#</a> process</h3> <p>process 是一个全局变量，即 global 对象的属性。</p> <p>它用于描述当前 Node.js 进程状态的对象，提供了一个与操作系统的简单接口。通常在你写本地命令行程序的时候，少不了要 和它打交道。</p> <h3 id="常用工具"><a href="#常用工具" class="header-anchor">#</a> 常用工具</h3> <p>util 是一个 Nodejs 核心模块，提供常用函数的集合，用于弥补核心 JavaScript 的功能，过于精简的不足。</p> <h4 id="引入-util"><a href="#引入-util" class="header-anchor">#</a> 引入 util</h4> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const util = require('util');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="util-inherits"><a href="#util-inherits" class="header-anchor">#</a> util.inherits</h4> <p>util.inherits(constructor,superContructor)是一个实现对象间原型继承的函数。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function Car(){
+    this.name = 'wang';
+}
+function Curze(){
+    this.type = 'curze';
+}
+util.inherits(Curze,Car);
+const curze = new Curze();
+console.log(curze.__proto__.__proto__);     //Car
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h4 id="util-inspect"><a href="#util-inspect" class="header-anchor">#</a> util.inspect</h4> <p>util.inspect(object,[showHidden],[depth],[colors])是一个将任意对象转化程字符串的方法，通常用于调试和错误输出。它至少接收一个参数 object，即要转换的对象。</p> <p>showHidden 是一个可选参数，如果值为 true，将会输出更多的隐藏信息。</p> <p>depth 表示最大递归层数，如果对象很复杂，你可以指定层数以控制输出信息的多少。如果不指定 depth，   默认会递归两层，指定为 null 表示不限递归赠书完整遍历对象。</p> <p>如果 color 值为 true，输出格式将会一 ANSI 颜色编码，通常用于在终端显示更漂亮的效果。</p> <h5 id="特别要指出的是，util-inspect-并不会简单的直接把对象转换为字符串，即使对象定义了-tostring-方法也不会调用。"><a href="#特别要指出的是，util-inspect-并不会简单的直接把对象转换为字符串，即使对象定义了-tostring-方法也不会调用。" class="header-anchor">#</a> 特别要指出的是，util.inspect 并不会简单的直接把对象转换为字符串，即使对象定义了 toString 方法也不会调用。</h5> <h4 id="util-isarray-object"><a href="#util-isarray-object" class="header-anchor">#</a> util.isArray(object)</h4> <p>如果给定的参数 object 是一个数组返回 true，否则返回 false</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>console.log(util.isArray([]));      //true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="util-isregexp-object"><a href="#util-isregexp-object" class="header-anchor">#</a> util.isRegExp(object)</h4> <p>如果给定的参数 object 是一个正则表达式返回 true，否则返回 false</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>console.log(util.isRegExp(/[]/g));  //true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="util-isdate-object"><a href="#util-isdate-object" class="header-anchor">#</a> util.isDate(object)</h4> <p>如果给定的参数 object 是一个日期返回 true，否则返回 false</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>console.log(util.isDate(new Date()));   //true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="util-iserror-object"><a href="#util-iserror-object" class="header-anchor">#</a> util.isError(object)</h4> <p>如果给定的参数 object 是一个错误对象返回 true，否则返回 false</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>console.log(util.isError(new Error()));
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="一个更强大的功能库–underscore-js"><a href="#一个更强大的功能库–underscore-js" class="header-anchor">#</a> 一个更强大的功能库–underscore.js</h4> <h2 id="node-js-文件系统"><a href="#node-js-文件系统" class="header-anchor">#</a> Node.js 文件系统</h2> <h3 id="文件模块"><a href="#文件模块" class="header-anchor">#</a> 文件模块</h3> <p>引入文件模块</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const fs = require(‘fs’);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="异步与同步文件操作的区别"><a href="#异步与同步文件操作的区别" class="header-anchor">#</a> 异步与同步文件操作的区别</h3> <p>异步方法性能更高、速度更快、而且没有阻塞</p> <h3 id="打开文件–异步"><a href="#打开文件–异步" class="header-anchor">#</a> 打开文件–异步</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.open(path,flags,mode,callback);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>1.path：文件的路径</p> <p>2.flags：文件打开的行为。</p> <p>3.model：设置文件模式(权限),文件创建默认权限为 0666(可读可写);</p> <p>r：以读取模式打开文件。如果文件不存在抛出异常</p> <p>r+：以读写模式打开文件，如果文件不存在抛出异常</p> <p>rs：以同步的方式读取文件</p> <p>rs+：以同步的方式读取和写入文件</p> <p>w：以写入模式打开文件，如果文件不存在则创建</p> <p>wx：类似于 w，但是如果文件路径存在，则文件写入失败</p> <p>w+：以读写模式打开文件，如果文件不存在则创建</p> <p>wx+：类似 w+，但是如果文件路径存在，则文件读写失败</p> <p>a：以追加模式打开文件，如果文件不存在则创建</p> <p>ax：类似于 a，但是如果文件路径存在，则文件追加失败</p> <p>a+：以读取追加模式打开文件，如果文件不存在则创建</p> <p>ax+：类似 a+，但是如果文件路径存在，则文件读取追加失败</p> <p>4.callback：回调函数，带有两个参数：callback(err,fd)</p> <p>err 是错误对象</p> <p>fd：表示所打开的文件有多少行</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.open('test.js','r+',(err,fd) =&gt; {
+    if(err){
+        return console.log(err);
+    }
+    console.log(fd);
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="获取文件信息"><a href="#获取文件信息" class="header-anchor">#</a> 获取文件信息</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.stat(path,callback)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>path：文件路径
+callback：回调函数，带有两个参数：err，states，states 是 fs.States 对象</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.stat('test.js',(err,stats)=&gt; {
+    if(err){
+        return console.error(err);
+    }
+    console.log(stats);
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>stats 类中的方法</p> <p><img src="https://wendaoshuai66.github.io/study/note/images/fsstate.png" alt="stats类中的方法"></p> <h3 id="写入文件"><a href="#写入文件" class="header-anchor">#</a> 写入文件</h3> <h4 id="同步写入文件"><a href="#同步写入文件" class="header-anchor">#</a> 同步写入文件</h4> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.writeFileSync('test1.js','fdsafdaf');
+console.log('写入成功');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="异步写入文件"><a href="#异步写入文件" class="header-anchor">#</a> 异步写入文件</h4> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.writeFile(file,data,{options},callback)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>writeFile 直接打开文件默认是 w 模式，所以如果文件存在，该方法写入的内容会覆盖旧的文件内容</p> <p>file：文件名或文件描述符</p> <p>data：要写入文件的数据，可能是 String(字符串)或 Buffer(缓冲)对象;</p> <p>options：该参数是一个对象，包含{encoding、mode、flag}。默认编码 utf8，模式为 0666，flag 为‘w’</p> <p>callback：回调函数，回调函数只包含出错信息参数(err),在写入失败时返回。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>console.log('准备写入文件!');
+fs.writeFile('test1.js','写入成功!!!!!',(err)=&gt; {
+    if(err){
+        return console.error(err);
+    }
+    console.log('数据写入成功!');
+    console.log('-------我是分割线--------');
+    console.log('读取写入的数据');
+    fs.readFile('test1.js',(err,data) =&gt; {
+        if(err){
+            return console.error(err);
+        }
+        console.log('异步读取文件数据:' + data.toString());
+    })
+})
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="读取文件"><a href="#读取文件" class="header-anchor">#</a> 读取文件</h3> <h4 id="同步读取文件"><a href="#同步读取文件" class="header-anchor">#</a> 同步读取文件</h4> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const data = fs.readFileSync('test1.js');
+console.log(data.toString());
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="异步读取文件"><a href="#异步读取文件" class="header-anchor">#</a> 异步读取文件</h4> <p>使用 fs.readFile(path,{options},callback)</p> <p>path:读取文件的路径</p> <p>options:{encoding,flag},encoding:null,flag:r</p> <p>callback:err,data;第一个参数是 err,第二个参数是读取出的信息。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+fs.readFile('test1.js',{encoding:'utf8'},(err,data) =&gt; {
+    if(err){
+        return console.error(err);
+    }
+    console.log(data);
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>使用 fs.read(fd,buffer,offset,length,position,callback);</p> <p>fd：通过 fs.open()方法返回的文件描述符</p> <p>buffer：数据写入的缓冲区</p> <p>offset：缓冲区写入的写入偏移量</p> <p>length：要从文件中读取的字节数</p> <p>position：文件读取的起始位置，如果 position 的值为 null，则会从当前文件指针的位置读取</p> <p>callback：回调函数，有三个参数 err、byteRead、buffer。err 为错误信息，byteRead 表示读取的字节数，buffer 为缓冲区对象</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var buffer = new Buffer.alloc(1024);
+fs.open('test1.js','r+',(err,fd) =&gt; {
+    if(err){
+        return console.error(err);
+    }
+    console.log('打开文件成功！');
+    console.log('准备打开文件！');
+    fs.read(fd,buffer,'0',buffer.length,0,(err,byteRead,buffer) =&gt; {
+        if(err){
+            return console.error(err);
+        }
+        console.log(byteRead + '字符被读取');
+        console.log(buffer.toString());
+    })
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="关闭文件"><a href="#关闭文件" class="header-anchor">#</a> 关闭文件</h3> <p>fs.close(fd,callback) 异步关闭文件</p> <p>fd：通过 fs.open()方法返回的文件描述符</p> <p>callback：回调函数</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.open('test1.js','r+',(err,fd) =&gt; {
+    if(err){
+        return console.error(err);
+    }
+    console.log('文件打开成功！');
+    fs.close(fd,()=&gt;{
+        console.log('文件关闭成功！');
+    })
+}) 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>fs.closeSync(fd) 同步关闭文件</p> <p>fd：通过 fs.open()方法返回的文件描述符</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.open('test1.js','r+' ,(err,fd) =&gt; {
+    if(err){
+        return console.error(err);
+    }
+    console.log('文件打开成功！');
+    fs.closeSync(fd);
+    console.log('文件关闭成功！');
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="截取文件"><a href="#截取文件" class="header-anchor">#</a> 截取文件</h3> <p>fs.ftruncate(fd,len,callback) 异步截取</p> <p>fd：通过 fs.open()方法返回的文件描述符</p> <p>len：文件内容截取的长度</p> <p>callback：回调函数</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.open('test1.js','r+',(err,fd) =&gt; {
+    if(err){
+        return console.error(err);
+    }
+    console.log('打开文件成功！');
+    console.log('开始截取文件');
+    fs.ftruncate(fd,10,() =&gt; {
+        console.log('截取文件成功！');
+        fs.close(fd,() =&gt;{
+            console.log('文件关闭成功！');
+        })
+    });
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="删除文件"><a href="#删除文件" class="header-anchor">#</a> 删除文件</h3> <p>fs.unlink(path,callback);</p> <h3 id="创建目录"><a href="#创建目录" class="header-anchor">#</a> 创建目录</h3> <p>fs.mkdir(path,[options],callback)</p> <h3 id="读取目录"><a href="#读取目录" class="header-anchor">#</a> 读取目录</h3> <p>fs.readdir(path,callback)</p> <h3 id="删除目录"><a href="#删除目录" class="header-anchor">#</a> 删除目录</h3> <p>fs.rmdir(path,callback)</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/NodeJS入门.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/TypeScript使用手册.html" class="prev">
+        TypeScript 使用手册
+      </a></span> <span class="next"><a href="/blog/NodeJS框架入门.html">
+        NodeJs 框架入门
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/18.18dc98f6.js" defer></script>
+  </body>
+</html>

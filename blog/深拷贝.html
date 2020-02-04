@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>对深拷贝的研究 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/55.62119911.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="active sidebar-link">对深拷贝的研究</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/深拷贝.html#深拷贝和浅拷贝的定义" class="sidebar-link">深拷贝和浅拷贝的定义</a></li><li class="sidebar-sub-header"><a href="/blog/深拷贝.html#乞丐版" class="sidebar-link">乞丐版</a></li><li class="sidebar-sub-header"><a href="/blog/深拷贝.html#基础版本-2" class="sidebar-link">基础版本 2</a></li><li class="sidebar-sub-header"><a href="/blog/深拷贝.html#基础版本-3" class="sidebar-link">基础版本 3</a></li><li class="sidebar-sub-header"><a href="/blog/深拷贝.html#基础版本-4" class="sidebar-link">基础版本 4</a></li><li class="sidebar-sub-header"><a href="/blog/深拷贝.html#对-for-in-循环的优化" class="sidebar-link">对 for in 循环的优化</a></li><li class="sidebar-sub-header"><a href="/blog/深拷贝.html#其他数据类型" class="sidebar-link">其他数据类型</a></li></ul></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="对深拷贝的研究"><a href="#对深拷贝的研究" class="header-anchor">#</a> 对深拷贝的研究</h1> <h2 id="深拷贝和浅拷贝的定义"><a href="#深拷贝和浅拷贝的定义" class="header-anchor">#</a> 深拷贝和浅拷贝的定义</h2> <p>深拷贝：拷贝实例；浅拷贝：拷贝引用（原对象）。</p> <h4 id="说深拷贝和浅拷贝之前，我先去了解了下高程书上的-javascript-的变量类型"><a href="#说深拷贝和浅拷贝之前，我先去了解了下高程书上的-javascript-的变量类型" class="header-anchor">#</a> 说深拷贝和浅拷贝之前，我先去了解了下高程书上的 JavaScript 的变量类型</h4> <p>基本类型：undefined、null、Boolean、number、string。变量直接按指存放在栈区内，可以直接访问，所以我们平时把字符串、数字的值赋值给新变量，相当于把值完全复制过去，新变量的改变不会影响旧变量。</p> <p>引用类型：存放在堆区的对象，变量在栈区中保存的是一个指针地址。</p> <p>例子</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>   let a = 123;
+   let b = a;
+   b = 456;
+   console.log(a);//123
+   console.log(b);//456
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>深拷贝和浅拷贝图解</p> <p><img src="https://wendaoshuai66.github.io/study/note/images/%E6%8B%B7%E8%B4%9D%E5%9B%BE%E8%A7%A3.png" alt=""></p> <p>将一个对象从内存中完整的拷贝一份出来,从堆内存中开辟一个新的区域存放新对象,且修改新对象不会影响原对象</p> <p>话不多说，浅拷贝就不再多说，下面我们直入正题：</p> <h2 id="乞丐版"><a href="#乞丐版" class="header-anchor">#</a> 乞丐版</h2> <p>在不使用第三方库的情况下，我们想要深拷贝一个对象，用的最多的就是下面这个方法。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>JSON.parse(JSON.stringify());
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这种写法非常简单，而且可以应对大部分的应用场景，但是它还是有很大缺陷的，比如拷贝其他引用类型、拷贝函数、拷贝正则、拷贝 Date 类型、循环引用等情况不行。</p> <p>##基础版本 1</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//基础版本
+
+function clone(target) {
+    let cloneTarget = {};
+    for (let i in target) {
+        cloneTarget[i] = target[i]
+    }
+    return cloneTarget;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="基础版本-2"><a href="#基础版本-2" class="header-anchor">#</a> 基础版本 2</h2> <p>创建一个新的对象，遍历需要克隆的对象，将需要克隆对象的属性依次添加到新对象上，返回。</p> <p>如果是深拷贝的话，考虑到我们要拷贝的对象是不知道有多少层深度的，我们可以用递归来解决问题，稍微改写上面的代码：</p> <p>如果是原始类型，无需继续拷贝，直接返回</p> <p>如果是引用类型，创建一个新的对象，遍历需要克隆的对象，将需要克隆对象的属性执行深拷贝后依次添加到新对象上。</p> <p>很容易理解，如果有更深层次的对象可以继续递归直到属性为原始类型，这样我们就完成了一个最简单的深拷贝</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+function clone(target) {
+    if (typeof target === &quot;object&quot;) {
+        let cloneTarget = {};
+        for (let i in target) {
+            cloneTarget[i] = clone(target[i])
+        }
+        return cloneTarget;
+    } else {
+        return target;
+    }
+}
+let obj = {
+    a: 1,
+    b: {
+        c: {
+            d: function() {
+                console.log(1)
+            }
+        }
+    }
+}
+let obj1 = clone(obj)
+obj1['b']['c']['d'] = 'ee'
+console.log(obj1)
+console.log(obj)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="基础版本-3"><a href="#基础版本-3" class="header-anchor">#</a> 基础版本 3</h2> <p>在上面的版本中，我们的初始化结果只考虑了普通的 object，下面我们只需要把初始化代码稍微一变，就可以兼容数组了：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function clone(target) {
+            if (typeof target === &quot;object&quot;) {
+                let cloneTarget = Array.isArray(target) ? [] : {}
+                for (let i in target) {
+                    cloneTarget[i] = clone(target[i])
+                }
+                return cloneTarget;
+            } else {
+                return target
+            }
+        }
+    let obj = {
+        a: 1,
+        b: {
+            c: [1]
+        }
+    }
+    let obj1 = clone(obj);
+    obj1['b']['c'].push(2)
+    console.log(obj)
+    console.log(obj1)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="基础版本-4"><a href="#基础版本-4" class="header-anchor">#</a> 基础版本 4</h2> <p>循环引用,一般我们很少会遇到这种情况，首先我们执行一个测试用例</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function clone(target) {
+    if (typeof target === &quot;object&quot;) {
+        let cloneTarget = Array.isArray(target) ? [] : {};
+        for (let i in target) {
+            cloneTarget[i] = clone(target[i])
+        }
+        return cloneTarget
+    } else {
+        return target;
+    }
+}
+
+let obj = {
+    a: 1,
+    b: {
+        c: [1]
+    }
+}
+obj.obj = obj;
+let obj1 = clone(obj);
+obj1['b']['c'].push(2)
+console.log(obj)
+console.log(obj1)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>可以看到下面的结果：</p> <p><img src="https://wendaoshuai66.github.io/study/note/images/%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8.png" alt=""></p> <p>很明显，因为递归进入死循环导致栈内存溢出了。</p> <p>原因就是上面的对象存在循环引用的情况，即对象的属性间接或直接的引用了自身的情况：</p> <p>循环引用是一个不常见的现象，但是像 react 的 dome 节点的话很可能会出现循环引用，例如一个 span 节点中会出现一个 span 节点，这个很可能会相互引用。</p> <p>那么怎么解决呢？来看看这段代码</p> <p>解决循环引用问题，我们可以额外开辟一个存储空间，来存储当前对象和拷贝对象的对应关系，当需要拷贝当前对象时，先去存储空间中找，有没有拷贝过这个对象，如果有的话直接返回，如果没有的话继续拷贝，这样就巧妙化解的循环引用的问题。</p> <p>1.检查 map 中有无克隆过的对象</p> <p>2.有 - 直接返回</p> <p>3.没有 - 将当前对象作为 key，克隆对象作为 value 进行存储</p> <p>4.继续克隆</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function clone(target, map = new Map()) {
+    if (typeof target === &quot;object&quot;) {
+        let cloneTarget = Array.isArray(target) ? [] : {};
+        if (map.get(target)) {
+            return map.get(target)
+        }
+        map.set(target, cloneTarget)
+        for (let i in target) {
+            cloneTarget[i] = clone(target[i], map)
+        }
+        return cloneTarget
+    } else {
+        return target;
+    }
+}
+
+let obj = {
+    a: 1,
+    b: {
+        c: [1]
+    }
+}
+obj.obj = obj;
+let obj1 = clone(obj);
+obj1['b']['c'].push(2)
+console.log(obj)
+console.log(obj1)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>再来执行上面的测试用例：</p> <p><img src="https://wendaoshuai66.github.io/study/note/images/%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A81.png" alt=""></p> <p>可以看到，执行没有报错，且 target 属性，变为了一个 Circular 类型，即循环应用的意思。</p> <p>循环引用有时候会遇到这种情况，所以我们应该考虑到这种情况。</p> <p>接下来，我们可以使用， WeakMap 提代 Map 来使代码达到画龙点睛的作用</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+function clone(target, map = new WeakMap()) {
+    if (typeof target === &quot;object&quot;) {
+         let cloneTarget = Array.isArray(target) ? [] : {};
+        if (map.get(target)) {
+            return map.get(target)
+        }
+        map.set(target, cloneTarget);
+        for (let i in target) {
+            cloneTarget[i] = clone(target[i], map)
+        }
+        return cloneTarget;
+    } else {
+        return target;
+    }
+}
+
+let obj = {
+    a: 1,
+    b: {
+        c: []
+    }
+}
+obj.obj = obj;
+let obj1 = clone(obj);
+
+obj1['b']['c'] = function() {
+    console.log(1)
+}
+
+console.log(obj)
+
+console.log(obj1)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><h4 id="为什么要这样做呢？，先来看看-weakmap-的作用"><a href="#为什么要这样做呢？，先来看看-weakmap-的作用" class="header-anchor">#</a> 为什么要这样做呢？，先来看看 WeakMap 的作用</h4> <h4 id="weakmap-对象是一组键-值对的集合，其中的键是弱引用的。其键必须是对象，而值可以是任意的"><a href="#weakmap-对象是一组键-值对的集合，其中的键是弱引用的。其键必须是对象，而值可以是任意的" class="header-anchor">#</a> WeakMap 对象是一组键/值对的集合，其中的键是弱引用的。其键必须是对象，而值可以是任意的</h4> <p>WeakMap 是 map 的变体，二者的多数外部行为特性都是一样的，区别在于内部内存分配
+(特别是其 GC)的工作方式。</p> <p>WeakMap 没有 size 属性或 clear() 方法，也不会暴露任何键、值或项目上的迭代器。所以即使你解除了对 x 的引用，它将会因 GC 时这个条目被从 m 中移除，也没有办法确定这 一事实。所以你就相信 JavaScript 所声明的吧!
+和 Map 一样，通过 WeakMap 可以把信息与一个对象软关联起来。而在对这个对象没有完 全控制权的时候，这个功能特别有用，比如 DOM 元素。如果作为映射键的对象可以被删除，并支持垃圾回收，那么 WeakMap 就更是合适的选择了。</p> <p>来看下面的一个实例</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var m = new WeakMap();
+var x = {
+        id: 1
+    },
+    y = {
+        id: 2
+    },
+    z = {
+        id: 3
+    },
+    w = {
+        id: 4
+    };
+m.set(x, y);
+x = null; // { id: 1 } 可GC
+y = null; // { id: 2 } 可GC 只因 { id: 1 } 可GC
+m.set(z, w);
+
+w = null // { id: 4 } 不可GC
+
+console.log(m)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="对-for-in-循环的优化"><a href="#对-for-in-循环的优化" class="header-anchor">#</a> 对 for in 循环的优化</h2> <p>在上面的代码中，我们遍历数组和对象都使用了 forin 这种方式，实际上 forin 在遍历时效率是非常低的，</p> <p>通过测试三种循环 for、while、forin 的执行效率，while 的效率是最好的，所以，我们可以想办法把 forin 遍历改变为 while 遍历。</p> <p>我们先使用 while 来实现一个通用的 forEach 遍历， iteratee 是遍历的回掉函数，他可以接收每次遍历的 value 和 index 两个参数：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function forEach(target, iteratee) {
+    let index = -1;
+    const len = target.length;
+    while (++index &lt; len) {
+        iteratee(target[index], index)
+    }
+    return target;
+}
+
+function clone(target, map = new WeakMap()) {
+    if (typeof target === &quot;object&quot;) {
+        let cloneTarget = Array.isArray(target) ? [] : {}
+        if (map.get(target)) {
+            return map.get(target)
+        }
+        map.set(target, cloneTarget);
+        // for (let i in target) {
+        //     cloneTarget[i] = clone(target[i], map)
+        // }
+        let keys = Array.isArray(target) ? undefined : Object.keys(target)
+        forEach(keys || target, (v, i) =&gt; {
+            if (keys) {
+                i = v;
+            }
+            cloneTarget[i] = clone(target[i], map)
+        })
+        return cloneTarget;
+    } else {
+        return target;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h2 id="其他数据类型"><a href="#其他数据类型" class="header-anchor">#</a> 其他数据类型</h2> <h3 id="合理判断是否为引用类型"><a href="#合理判断是否为引用类型" class="header-anchor">#</a> 合理判断是否为引用类型</h3> <p>首先先判段是否为引用类型，在这判断时注意⚠️ null 与 function 两种特殊类型</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function isProtoType(target) {
+    let type = typeof target;
+    return target !== null &amp;&amp; (type === &quot;object&quot; || type === &quot;function&quot;);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="获取数据类型"><a href="#获取数据类型" class="header-anchor">#</a> 获取数据类型</h3> <p>我们可以使用 toString 来获取准确的引用类型：</p> <p>每一个引用类型都有 toString 方法，默认情况下， toString()方法被每个 Object 对象继承。如果此方法在自定义对象中未被覆盖，toString()返回 &quot;[object type]&quot;，其中 type 是对象的类型。</p> <p>注意⚠️，上面提到了如果此方法在自定义对象中未被覆盖， toString 才会达到预想的效果，事实上，大部分引用类型比如 Array、Date、RegExp 等都重写了 toString 方法</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function getType(target) {
+    return Object.prototype.toString.call(target).slice(8, -1);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>下面我们抽离出一些常用的数据类型以便后面使用：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const mapTag = 'Map';
+
+const setTag = 'Set';
+
+const arrayTag = 'Array';
+
+const objectTag = 'Object';
+
+
+
+const boolTag = 'Boolean';
+
+const dateTag = 'Date';
+
+const errorTag = 'Error';
+
+const numberTag = 'Number';
+
+const regexpTag = 'RegExp';
+
+const stringTag = 'String';
+
+const symbolTag = 'Symbol';
+
+
+
+const bufferTag = 'Uint8Array';
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>在上面的集中类型中，我们简单将他们分为两类：</p> <p>可以继续遍历的类型</p> <p>不可以继续遍历的类型</p> <p>我们分别为它们做不同的拷贝。</p> <h3 id="可继续遍历的类型"><a href="#可继续遍历的类型" class="header-anchor">#</a> 可继续遍历的类型</h3> <p>上面我们已经考虑的 object、 array 都属于可以继续遍历的类型，因为它们内存都还可以存储其他数据类型的数据，另外还有 Map， Set 等都是可以继续遍历的类型，这里我们只考虑这四种;</p> <p>有序这几种类型还需要继续进行递归，我们首先需要获取它们的初始化数据，例如上面的 []和 {}，我们可以通过拿到 constructor 的方式来通用的获取。</p> <p>例如 let consttarget={}就是 let consttarget=new Object()的语法糖。另外这种方法还有一个好处：因为我们还使用了原对象的构造方法，类似于装箱,所以它可以保留对象原型上的数据，如果直接使用普通的 {}，那么原型必然是丢失了的。</p> <p>下面，我们改写 clone 函数，对可继续遍历的数据类型进行处理：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function foreach(target, callback) {
+    let index = -1,
+        len = target.length;
+    while (++index &lt; len) {
+        callback(target[index], index)
+    }
+    return target;
+}
+
+function isProtoType(target) {
+    let type = typeof target;
+    return target !== null &amp;&amp; (type === &quot;object&quot; || type === &quot;function&quot;);
+}
+
+function getType(target) {
+    return Object.prototype.toString.call(target).slice(8, -1);
+}
+
+const mapTag = 'Map';
+
+const setTag = 'Set';
+
+const arrayTag = 'Array';
+
+const objectTag = 'Object';
+
+
+
+const boolTag = 'Boolean';
+
+const dateTag = 'Date';
+
+const errorTag = 'Error';
+
+const numberTag = 'Number';
+
+const regexpTag = 'RegExp';
+
+const stringTag = 'String';
+
+const symbolTag = 'Symbol';
+
+
+
+const bufferTag = 'Uint8Array';
+
+function getInit(target) {
+    let ClassNames = target.constructor;
+
+    return new ClassNames();
+}
+//好了一切准备别就绪，可继续遍历的类型 考虑类型 Object Array Map Set
+
+const deepTag = [mapTag, setTag, objectTag, arrayTag];
+
+function clone(target, map = new WeakMap()) {
+    //克隆原始类型
+    if (!isProtoType(target)) {
+        return target;
+    }
+    //初始化类型
+    const type = getType(target);
+    let cloneTarget;
+
+    if (deepTag.includes(type)) {
+
+        cloneTarget = getInit(target);
+    }
+
+    //防止循环引用
+    if (map.get(target)) {
+        return map.get(target);
+    }
+    map.set(target, cloneTarget);
+    //如果是map拷贝
+
+    if (type === mapTag) {
+        target.forEach((v, key) =&gt; {
+            cloneTarget.set(key, clone(v, map))
+        })
+        return cloneTarget;
+    }
+
+    //拷贝set
+
+    if (type === setTag) {
+        target.forEach(v =&gt; {
+            cloneTarget.add(clone(v, map))
+        })
+        return cloneTarget;
+    }
+
+    //拷贝数组与对象
+
+    const keys = type === arrayTag ? undefined : Object.keys(target);
+    foreach(keys || target, (v, index) =&gt; {
+        if (keys) {
+            index = v;
+        }
+        cloneTarget[index] = clone(target[index], map)
+    })
+    return cloneTarget;
+}
+const map = new Map();
+
+map.set('key', 'value');
+
+map.set('name', 'wendaoshuai')
+
+
+
+const set = new Set();
+
+set.add('11').add('liushuai')
+
+const target = {
+
+    field1: 1,
+
+    field2: undefined,
+
+    field3: {
+
+        child: 'child'
+
+    },
+
+    field4: [
+        2,
+        4,
+        8
+    ],
+    empty: null,
+    map,
+    set
+};
+target.target = target;
+const target1 = clone(target)
+target1.a = &quot;a&quot;
+console.log('🍎', target)
+console.log('🍌', target1)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/深拷贝.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/前端中经常出现的错误及捕获.html" class="prev">
+        前端中经常出现的错误及捕获
+      </a></span> <span class="next"><a href="/blog/Promise.html">
+        Promise
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/55.62119911.js" defer></script>
+  </body>
+</html>

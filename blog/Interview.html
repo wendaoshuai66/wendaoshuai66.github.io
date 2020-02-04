@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>面试题积累 1 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/11.8e798407.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="active sidebar-link">面试题积累 1</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Interview.html#promsie-all-实现" class="sidebar-link">Promsie.all 实现</a></li><li class="sidebar-sub-header"><a href="/blog/Interview.html#promsie-race-实现" class="sidebar-link">Promsie.race 实现</a></li><li class="sidebar-sub-header"><a href="/blog/Interview.html#为啥-await-在-foreach-中不生效" class="sidebar-link">为啥 await 在 forEach 中不生效</a></li><li class="sidebar-sub-header"><a href="/blog/Interview.html#new-的实现原理是什么" class="sidebar-link">new 的实现原理是什么</a></li><li class="sidebar-sub-header"><a href="/blog/Interview.html#手动实现-instanceof" class="sidebar-link">手动实现 instanceof</a></li><li class="sidebar-sub-header"><a href="/blog/Interview.html#手动实现-call、apply" class="sidebar-link">手动实现 call、apply</a></li></ul></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="面试题积累-1"><a href="#面试题积累-1" class="header-anchor">#</a> 面试题积累 1</h1> <h2 id="promsie-all-实现"><a href="#promsie-all-实现" class="header-anchor">#</a> Promsie.all 实现</h2> <p>记住一下几点</p> <p>1.Promise.all 的返回值是一个 promise 实例</p> <p>如果传入的参数为空的可迭代对象，Promise.all 会 同步 返回一个已完成状态的 promise</p> <p>如果传入的参数中不包含任何 promise,Promise.all 会 异步 返回一个已完成状态的 promise (不包含 promise，意味着不会一直 pending 和 rejected )</p> <p>其它情况下，Promise.all 返回一个 处理中（pending） 状态的 promise.</p> <p>2.Promise.all 返回的 promise 的状态</p> <p>如果传入的参数中的 promise 都变成完成状态，Promise.all 返回的 promise 异步地变为完成。</p> <p>如果传入的参数中，有一个 promise 失败，Promise.all 异步地将失败的那个结果给失败状态的回调函数，而不管其它 promise 是否完成</p> <p>在任何情况下，Promise.all 返回的 promise 的完成状态的结果都是一个数组</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Promise.all = function(prosmises) {
+                if (!Array.isArray(prosmises)) {
+                    throw new TypeError('You must pass to an array')
+                }
+                return new Promise(function(resolve, reject) {
+                    var len = prosmises.length,
+                        results = [],
+                        count = len;
+                    if (len == 0) {
+                        resolve()
+                    }
+
+                    function resolves(inxdex) {
+                        return function(value) {
+                            resolveAll(inxdex, value)
+                        }
+                    }
+
+                    function resolveAll(index, value) {
+                        results[index] = value;
+                        --count;
+                        if (count == 0) {
+                            resolve(results)
+                        }
+                    }
+
+                    function rejects(value) {
+                        reject(value)
+                        return
+                    }
+                    for (let i = 0; i &lt; len; i++) {
+                        Promise.resolve(prosmises[i]).then(resolves(i), rejects)
+                    }
+                })
+            }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><h2 id="promsie-race-实现"><a href="#promsie-race-实现" class="header-anchor">#</a> Promsie.race 实现</h2> <p>Promise.race 功能</p> <p>Promise.race(iterable) 返回一个 promise，一旦 iterable 中的一个 promise 状态是 fulfilled / rejected ，那么 Promise.race 返回的 promise 状态是 fulfilled / rejected</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>let p = Promise.race([p1, p2, p3]);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>只要 p1、p2、p3 之中有一个实例率先改变状态，p 的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给 p 的回调函数。</p> <p>Promise.race 的特点</p> <p>Promise.race 的返回值是一个 promise 实例</p> <p>1.如果传入的参数为空的可迭代对象，那么 Promise.race 返回的 promise 永远是 pending 态
+如果传入的参数中不包含任何 promise，Promise.race 会返回一个处理中（pending）的 promise
+如果 iterable 包含一个或多个非 promise 值或已经解决的 promise，则 Promise.race 将解析为 iterable 中找到的第一个值。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Promise.race = function(promsies) {
+            if (!Array.isArray(promsies)) {
+                throw new TypeError('You must pass to an array')
+            }
+            return new Promise(function(resolve, reject) {
+                var len = promsies.length,
+                    result = [],
+                    count = len;
+
+                if (len === 0) {plainplainplainplain
+                    //空的可迭代对象;
+                    //用于在pending态
+                } else {
+                    function resolver(value) {
+                        resolve(value)
+                    }
+
+                    function rejects(value) {
+                        reject(value)
+                        return
+                    }
+                    for (var i = 0; i &lt; len; i++) {
+                        Promise.resolve(promsies[i]).then(resolver, rejects)
+                    }
+                }
+            })
+        }
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h2 id="为啥-await-在-foreach-中不生效"><a href="#为啥-await-在-foreach-中不生效" class="header-anchor">#</a> 为啥 await 在 forEach 中不生效</h2> <h3 id="不知道你有没有写过类似的代码，反正以前我是写过"><a href="#不知道你有没有写过类似的代码，反正以前我是写过" class="header-anchor">#</a> 不知道你有没有写过类似的代码，反正以前我是写过</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function test() {
+	let arr = [3, 2, 1]
+	arr.forEach(async item =&gt; {
+		const res = await fetch(item)
+		console.log(res)
+	})
+	console.log('end')
+}
+function fetch(x) {
+	return new Promise((resolve, reject) =&gt; {
+		setTimeout(() =&gt; {
+			resolve(x)
+		}, 500 * x)
+	})
+}
+
+test()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>我当时期望的打印顺序是</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>3
+2
+1
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>结果现实与我开了个玩笑，打印顺序居然是</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>end
+1
+2
+3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="为什么"><a href="#为什么" class="header-anchor">#</a> 为什么</h3> <p>其实原因很简单，那就是 forEach 只支持同步代码。</p> <p>我们可以参考下 Polyfill 版本的 forEach，简化以后类似就是这样的伪代码</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>while (index &lt; arr.length) {
+		// 也就是我们传入的回调函数
+		callback(item, index)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>从上述代码中我们可以发现，forEach 只是简单的执行了下回调函数而已，并不会去处理异步的情况。并且你在 callback 中即使使用 break 也并不能结束遍历</p> <h3 id="怎么解决"><a href="#怎么解决" class="header-anchor">#</a> 怎么解决</h3> <p>一般来说解决的办法有两种。</p> <p>第一种是使用 Promise.all 的方式</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+async function test() {
+	let arr = [3, 2, 1]
+	await Promise.all(
+		arr.map(async item =&gt; {
+			const res = await fetch(item)
+			console.log(res)
+		})
+	)
+	console.log('end')
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>这样可以生效的原因是 async 函数肯定会返回一个 Promise 对象，调用 map 以后返回值就是一个存放了 Promise 的数组了，这样我们把数组传入 Promise.all 中就可以解决问题了。但是这种方式其实并不能达成我们要的效果，如果你希望内部的 fetch 是顺序完成的，可以选择第二种方式</p> <p>另一种方法是使用 for...of</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>async function test() {
+	let arr = [3, 2, 1]
+	for (const item of arr) {
+		const res = await fetch(item)
+		console.log(res)
+	}
+	console.log('end')
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>因为 for...of 内部处理的机制和 forEach 不同，forEach 是直接调用回调函数，for...of 是通过迭代器的方式去遍历</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>async function test() {
+	let arr = [3, 2, 1]
+	const iterator = arr[Symbol.iterator](.)
+	let res = iterator.next()
+	while (!res.done) {
+		const value = res.value
+		const res1 = await fetch(value)
+		console.log(res1)
+		res = iterator.next()
+	}
+	console.log('end')
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>以上代码等价于 for...of，可以看成 for...of 是以上代码的语法糖。</p> <h3 id="延伸"><a href="#延伸" class="header-anchor">#</a> 延伸</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>let a = 0;
+        let test = async() =&gt; {
+            a = a + await 10;
+            console.log(a)
+        }
+        test()
+        console.log(++a)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>一般会认为输出</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>1
+11
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>实际输出</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>1
+10
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>这里 await 会对 a 冻结</p> <h2 id="new-的实现原理是什么"><a href="#new-的实现原理是什么" class="header-anchor">#</a> new 的实现原理是什么</h2> <p>首先引用小黄书中话</p> <p>使用 new 来调用函数，或者说发生构造函数调用时，会自动执行下面的操作：</p> <ol><li><p>创建(或者说构造)一个全新的对象。</p></li> <li><p>这个新对象会被执行[[原型]]连接。</p></li> <li><p>这个新对象会绑定到函数调用的 this。</p></li> <li><p>如果函数没有返回其他对象，那么 new 表达式中的函数调用会自动返回这个新对象。</p></li></ol> <p>版本 1</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function _new(func) {
+            return function() {
+                let target = {
+                    __proto__: func.prototype
+                }
+                func.call(target, ...arguments);
+                return target;
+            }
+        }
+
+        function Perpson(name, age) {plainplainplainplainplainplain
+            this.name = name;
+            this.age = age;
+        }
+        let person = _new(Perpson)('liushuai', 18)
+        console.log(person)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>版本 2</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function _new() {
+    let target = {}; //创建的新对象
+    //第一个参数是构造函数
+    let [constructor, ...args] = [...arguments];
+    //执行[[原型]]连接;target 是 constructor 的实例
+    target.__proto__ = constructor.prototype;
+    //执行构造函数，将属性或方法添加到创建的空对象上
+    let result = constructor.apply(target, args);
+    if (result &amp;&amp; (typeof(result) == &quot;object&quot; || typeof(result) == &quot;function&quot;)) {
+        //如果构造函数执行的结构返回的是一个对象，那么返回这个对象
+        return result;
+    }
+    //如果构造函数返回的不是一个对象，返回创建的新对象
+    return target;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="手动实现-instanceof"><a href="#手动实现-instanceof" class="header-anchor">#</a> 手动实现 instanceof</h2> <h3 id="原理"><a href="#原理" class="header-anchor">#</a> 原理</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>a instanceof Object
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>判断 Object 的 prototype 是否在 a 的原型链上。</p> <h3 id="实现"><a href="#实现" class="header-anchor">#</a> 实现</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function myInstance(target, org) {
+            var proto = target.__proto__;
+            if (proto) {
+                if (proto === org.prototype) {
+                    return true;
+                } else {
+                    return myInstance(proto, org)
+                }
+            } else {
+                return false;
+            }
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="验证"><a href="#验证" class="header-anchor">#</a> 验证</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var A = function() {};
+    A.prototype = {};
+    var a = new A();
+    A.prototype = {};
+    var b = new A();
+    console.log(a instanceof A); //false
+    console.log(b instanceof A); //true
+    console.log(myInstance(a, A)) //false
+    console.log(myInstance(b, A)) // true
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="手动实现-call、apply"><a href="#手动实现-call、apply" class="header-anchor">#</a> 手动实现 call、apply</h2> <p>谈起 call 和 apply 这两个 Function.prototype 上的方法可能很熟悉了，它在继承，改变 this 指针上有很多的应用场景。接下来我们简单的来重新回忆一下 call 和 apply 这两个函数的功能</p> <h3 id="例子一"><a href="#例子一" class="header-anchor">#</a> 例子一</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>let obj = {
+            a: 20
+        }
+
+        function func() {plainplainplainplainplainplain
+            console.log(this.a)
+        }
+        func.call(obj) //20
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="例子-2"><a href="#例子-2" class="header-anchor">#</a> 例子 2</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> document.getElementById('app').onclick = function() {
+            let appBtn = function() {
+                console.log(this)
+            }
+            appBtn.call(this)
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="例子-3"><a href="#例子-3" class="header-anchor">#</a> 例子 3</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function FuncA(value) {
+            this.value = value;
+        }
+
+        function FuncB() {plainplainplainplainplainplainplain
+            FuncA.apply(this, arguments)
+        }
+        FuncB.prototype.getValue = function() {
+            return this.value;
+        }
+        var funcB = new FuncB('hello')
+        console.log(funcB.getValue())
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>经过上面的例子我们可以直观的知道 call apply 的作用大部分都是用作改变 this 的指针。那么接下来我们来模拟 call apply 实现简单的一下这两个函数</p> <p>###模拟实现 call</p> <p>1.判断当前 this 是否为函数，防止 Function.prototype.myCall() 直接调用</p> <p>2.context 为可选参数，如果不传的话默认上下文为 window</p> <p>3.为 context 创建一个 Symbol（保证不会重名）属性，将当前函数赋值给这个属性</p> <p>4.处理参数，传入第一个参数后的其余参数</p> <p>5.调用函数后即删除该 Symbol 属性</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Function.prototype.myCall = function(context = window, ...args) {
+                if (this === Function.prototype) {
+                    return undefined; //用于防止 Function.prototype.myCall() 直接调用
+                }
+                context = context || window;
+                //防止方法冲突覆盖
+                let fn = Symbol();
+                // 改变 this
+                context[fn] = this;
+                // 将参数放入函数内
+                let result = context[fn](args)
+                    // 删除对象中的函数
+                delete context[fn]
+                return result;
+            }
+            //测试
+        document.getElementById('app').onclick = function() {
+            let appBtn = function() {
+                console.log(this)
+            }
+            appBtn.myCall(this)
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="模拟实现-apply"><a href="#模拟实现-apply" class="header-anchor">#</a> 模拟实现 apply</h3> <p>apply 实现类似 call，参数为数组</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>Function.prototype.myApply = function(context, args) {
+            if (this === Function.prototype) {
+                return undefined;
+            }
+            context = context || window;
+            let fn = Symbol()
+            context[fn] = this;
+            let result;
+            if (Array.isArray(args)) {
+                result = context[fn](...args)
+            } else {
+                result = context[fn](.)
+            }
+            return result;
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="settimeout-模拟实现-setinterval"><a href="#settimeout-模拟实现-setinterval" class="header-anchor">#</a> setTimeout 模拟实现 setInterval</h3> <p>可避免 setInterval 因执行时间导致的间隔执行时间不一致</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>setTimeout(function() {
+            //dosomething
+            console.log(11)
+            setTimeout(arguments.callee, 1000)
+        }, 1000)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="手写拖拽"><a href="#手写拖拽" class="header-anchor">#</a> 手写拖拽</h3> <h4 id="html-5-拖放"><a href="#html-5-拖放" class="header-anchor">#</a> HTML 5 拖放</h4> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> &lt;style&gt;
+        #div1 {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    &lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData(&quot;Text&quot;, ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData(&quot;Text&quot;);
+            ev.target.appendChild(document.getElementById(data));
+        }
+    &lt;/script&gt;
+
+ &lt;div id=&quot;div1&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;drag1&quot; draggable=&quot;true&quot; ondragstart=&quot;drag(event)&quot; style=&quot;width: 300px;height:69px;&quot;&gt;
+        被拖拽
+    &lt;/div&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h4 id="原生-js"><a href="#原生-js" class="header-anchor">#</a> 原生 js</h4> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>#box {
+        width: 300px;
+        height: 300px;
+        background: yellowgreen;
+        position: absolute
+    }
+&lt;div id=&quot;box&quot;&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+
+&lt;/script&gt;
+let drag = document.getElementById('box');
+        drag.onmousedown = function(e) {
+            let event = e || window.event;
+            let outX = event.clientX - drag.offsetLeft;
+            let outY = event.clientY - drag.offsetTop;
+            drag.onmousemove = function(e) {
+                let event = e || window.event;
+                let left = event.clientX - outX,
+                    top = event.clientY - outY;
+                if (left &lt; 0) {
+                    left = 0;
+                } else if (left &gt; (window.innerWidth - drag.offsetWidth)) {
+
+                    left = window.innerWidth - drag.offsetWidth
+                }
+                if (top &lt; 0) {
+                    top = 0;
+                } else if (top &gt; (window.innerHeight - drag.offsetHeight)) {
+                    top = window.innerHeight - drag.offsetHeight;
+                }
+                drag.style.left = CSS.px(left);
+                drag.style.top = CSS.px(top);
+            }
+            drag.onmouseup = function() {
+                drag.onmousemove = null;
+                drag.onmouseup = null;
+            }
+        }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/Interview.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/JavaScript执行堆栈探索.html" class="prev">
+        JavaScript 执行堆栈探索
+      </a></span> <span class="next"><a href="/blog/面向切面.html">
+        面向切面初探
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/11.8e798407.js" defer></script>
+  </body>
+</html>

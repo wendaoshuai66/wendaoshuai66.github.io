@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React 入门必学【上】 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/23.f75937fb.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="active sidebar-link">React 入门必学【上】</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/React入门必学[上].html#什么是-react" class="sidebar-link">什么是 React</a></li><li class="sidebar-sub-header"><a href="/blog/React入门必学[上].html#react-特性" class="sidebar-link">React 特性</a></li><li class="sidebar-sub-header"><a href="/blog/React入门必学[上].html#组件-props-元素渲染" class="sidebar-link">组件 &amp; Props &amp; 元素渲染</a></li><li class="sidebar-sub-header"><a href="/blog/React入门必学[上].html#react-jsx-语法学习" class="sidebar-link">React JSX 语法学习</a></li><li class="sidebar-sub-header"><a href="/blog/React入门必学[上].html#dom-diff" class="sidebar-link">DOM diff</a></li><li class="sidebar-sub-header"><a href="/blog/React入门必学[上].html#非-dom-属性的介绍" class="sidebar-link">非 DOM 属性的介绍</a></li><li class="sidebar-sub-header"><a href="/blog/React入门必学[上].html#react-props-and-state" class="sidebar-link">React props and state</a></li></ul></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="react-入门必学【上】"><a href="#react-入门必学【上】" class="header-anchor">#</a> React 入门必学【上】</h1> <h2 id="什么是-react"><a href="#什么是-react" class="header-anchor">#</a> 什么是 React</h2> <p>React 是 Facebook 开发的一款用来构建用户界面的 js 库，对于 react 来讲还可以应用到 nodejs，做同构化应用。 对于 React 自己来说，React 只做的是非常纯粹的 View 层。React 结合自己庞大的组件库，形成了 MVVM 框架。</p> <p>React Native 版本，可以用一套程序写 IOS、安卓各种客户端。</p> <h2 id="react-特性"><a href="#react-特性" class="header-anchor">#</a> React 特性</h2> <h3 id="virtual-dom"><a href="#virtual-dom" class="header-anchor">#</a> Virtual DOM</h3> <p>Virtual DOM 是一个模拟 DOM 树的 JavaScript 对象。React 使用 Virtual DOM 来渲染 UI，同时监听 Virtual DOM 上数据的变化，并自动迁移到 UI 上。</p> <h3 id="state"><a href="#state" class="header-anchor">#</a> state</h3> <p>React 有一个叫做 state 的概念。state 是状态，整个 React 都是通过状态来驱动的，只要状态变换，React 就会驱动 View 变化，View 变化就会启动 VirtualDOM 的 diff 算法，通过 diff 算法找到 DOM 元素最小的变化，从而实现最小的操作 DOM 元素。</p> <h3 id="props"><a href="#props" class="header-anchor">#</a> props</h3> <p>props 是 React 中的属性，通过属性可以做到父子组件间的通信。</p> <h3 id="jsx-语法"><a href="#jsx-语法" class="header-anchor">#</a> JSX 语法</h3> <p>JSX 语法是 React 定义的一种 JavaScript 语法扩展，类似于 XML。jSX 是可选的，在开发过程中也可以不使用 JSX，使用 JavaScript 来编写 React 应用(建议使用)。</p> <h3 id="components"><a href="#components" class="header-anchor">#</a> components</h3> <p>React 是专注于 View 层开发的，View 是基于组件的，每一个 JSX 是一个组件。组件化开发可以创建可复用的 UI 组件，提高开发效率。</p> <h2 id="组件-props-元素渲染"><a href="#组件-props-元素渲染" class="header-anchor">#</a> 组件 &amp; Props &amp; 元素渲染</h2> <p>组件可以将 UI 切分成一些独立的、可复用的部件，这样你就只需专注于构建每一个单独的部件。</p> <p>组件从概念上看就像是函数，它可以接收任意的输入值（称之为“props”），并返回一个需要在页面上展示的 React 元素。</p> <h2 id="react-jsx-语法学习"><a href="#react-jsx-语法学习" class="header-anchor">#</a> React JSX 语法学习</h2> <h3 id="jsx-语法的介绍"><a href="#jsx-语法的介绍" class="header-anchor">#</a> JSX 语法的介绍</h3> <p>JSX(JavaScript XML) 是基于 ECMAScript 的一种新特性一种定义带属性树结构的语法。它不是 XML 或者 HTML 的一种限制，可以说是对它们的一种。</p> <p><a href="https://zh-hans.reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener noreferrer">官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="jsx-语法的书写方式"><a href="#jsx-语法的书写方式" class="header-anchor">#</a> JSX 语法的书写方式</h3> <p>JSX 语法有两种书写方式：一种是 ES5 的书写方式(现在不适用,还是要记一下吧，以免以后忘了)，一种是 ES6 的书写方式。</p> <h4 id="es5-的方式"><a href="#es5-的方式" class="header-anchor">#</a> ES5 的方式</h4> <p>ES5 使用 React.crateClass 的方式来构建组件。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var Hello = React.createClass({
+    render : function(){
+        return &lt;h1&gt; {this.props.name}&lt;/h1&gt;
+    }
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="es6-的方式"><a href="#es6-的方式" class="header-anchor">#</a> ES6 的方式</h3> <p>ES6 采用新版本的 Class 来构建组件</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&quot;use strict&quot;;
+class Hello extends React.Component{
+    render(){
+        return &lt;h1&gt;Hello&lt;/h1&gt;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>上面了两种方式生成出来的叫组件，对应的 Hello 叫做组件名，简单理解就是 HTML 标签。但是要怎么注册这两个组件呢？上面两种方式的注册组件的方式相同。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>ReactDOM.render(
+    &lt;Hello name=&quot;ESMA&quot; /&gt;,
+    document.getElementById('app')
+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>使用 ReactDOM.render 把我们的组件传进去，然后再传一个 DOM 节点，相当于把组件里面的东西渲染到 id 为 app 的 DOM 元素里面。</p> <p>这里传进去了 name 属性，在组件里面通过使用 this.props.name 获取。this.props 相当于 attribute。用于获取书写在组件标签中的属性。</p> <h3 id="jsx-注意事项"><a href="#jsx-注意事项" class="header-anchor">#</a> JSX 注意事项</h3> <p>1.React 的 JSX 里约定分别使用首字母大、小写来区分本地组件的类和 HTML 标签。并使用驼峰命令。</p> <p>自定义组件：List，HTML 标签：html、htmlMessage</p> <p>2.要使用 JavaScript 表达式作为属性值，只需要把这个表达式用一对大括号（{}）包起来，如果直接写值是需要用包起来。不需要用引号（“”）</p> <p>如果需要写多行就需要写在()里面，多行书写 JSX 语法，只能有一个跟标签。 例如：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>return(&lt;div&gt;
+          &lt;span&gt;&lt;/span&gt;  
+        &lt;/div&gt;)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>3.htmlFor 和 className</p> <p>在 html 中 label 使用 for 属性、JSX 中使用 htmlFor，html 中 css 类使用 class，JSX 中使用 className</p> <p>4.CSS in JS （React style)</p> <p>JSX 允许在 js 中书写 css，相当于 js 中的一个对象</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const style = {
+     color:'red',
+     fontSize : 38,
+ }
+ &lt;div style={style}&gt; &lt;div/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>5.JSX 里需要加注释很容易，他们只是 js 表达式而已。只需要在一个标签的子节点内(非最外层)小心的用{}包围要注释的范围，在 JSX 中写注释和平常是有一些区别。</p> <p>{/* 注释内容*/}</p> <p>6.事件绑定</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>handleChange(e){
+         console.log(e.target)
+     }
+     render(){
+         return (&lt;input onClick = {this.handleChange.bind(this)}/&gt;)  //需要改变this    
+     }
+        
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="dom-diff"><a href="#dom-diff" class="header-anchor">#</a> DOM diff</h2> <p>DOM diff 是 DOM 比较算法。用于找到最小变化的 DOM 元素进行渲染，平行化比较，把重绘和重排做到最小化。</p> <p>react 中 View 层的变化是基于 state 的，如果状态发生变化，组件中 render 函数就会重新执行。</p> <h3 id="流程图"><a href="#流程图" class="header-anchor">#</a> 流程图</h3> <p><img src="https://wendaoshuai66.github.io/study/note/images/domedif%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt=""></p> <h3 id="dom-diff-算法流程"><a href="#dom-diff-算法流程" class="header-anchor">#</a> DOM diff 算法流程</h3> <p>1.开始判断节点是否相同，如果节点不相同，就相当于修改了节点，React 重新创建一个节点；</p> <p>2.如果节点相同，判断是否是自定义节点；</p> <p>3.如果不是自定义节点(ReactDOM.render 也可以渲染 html 标签)，比较属性是否发生变化，如果属性变更新属性然后结束；</p> <p>4.如果是自定义节点，或者说是我们自己写的组件，然后重新渲染，会渲染出一段 VirtualDOM（虚拟 DOM）,然后和以存在的 Virtual DOM 进行比较区别，最终渲染到页面。</p> <h2 id="非-dom-属性的介绍"><a href="#非-dom-属性的介绍" class="header-anchor">#</a> 非 DOM 属性的介绍</h2> <h3 id="dangerouslysetinnerhtml-警告"><a href="#dangerouslysetinnerhtml-警告" class="header-anchor">#</a> dangerouslySetInnerHTML 警告</h3> <p>dangerouslySetInnerHTML 用于净化数据，预防 XSS 的攻击</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>let rawHTML = {
+    //通过__html来构造出来，
+    __html: &quot;&lt;h2&gt;非dom属性：dangerouslySetInnerHTML标签&lt;/h2&gt;&quot;
+}
+
+ &lt;div dangerouslySetInnerHTML={rawHTML}&gt;
+
+ &lt;/div&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="ref"><a href="#ref" class="header-anchor">#</a> ref</h3> <p>如果在 JSX 中获取真正的 DOM 元素，可以使用 ref 这个属性。</p> <p>在 html 元素中添加 ref 属性</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&lt;input type=&quot;text&quot; ref= 'input'/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>如果想要取得这个 DOM 元素可以通过 ReactDOM.findDOMNode()来获取,并且需要在 React 生命周期的 componentDidMount 阶段</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>ReactDOM.findDOMNode(this.refs.input)   //获取到input元素
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="key-提高渲染的性能"><a href="#key-提高渲染的性能" class="header-anchor">#</a> key 提高渲染的性能</h3> <p>key 帮助 React 识别哪些项目已更改，已添加或已删除。应该为数组内部的元素赋予键，以使元素具有稳定的标识：key 必须在唯一的</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&gt;
+  &lt;li key={number.toString()}&gt;
+    {number}
+  &lt;/li&gt;
+);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><a href="https://reactjs.org/docs/lists-and-keys.html#keys" target="_blank" rel="noopener noreferrer">参考官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/1" target="_blank" rel="noopener noreferrer">关于 key 讨论<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>注意：另外有个方式：推荐使用<a href="https://github.com/dylang/shortid" target="_blank" rel="noopener noreferrer">shortid<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>生成唯一 key 的数组，和数据数组一起使用，省去提交数据时再重组数组。</p> <p>案例：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>import React from 'react';
+import shortid from 'shortid';
+
+class Demo extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+      data: ['a', 'b', 'c']
+    }
+    this.dataKeys = this.state.data.map(v =&gt; shortid.generate());
+  }
+  
+    deleteOne = index =&gt; { // 删除操作
+        const { data } = this.state;
+        this.setState({ data: data.filter((v, i) =&gt; i !== index) });
+        this.dataKyes.splice(index, 1);
+    }
+    
+    render() {
+      return (
+          &lt;ul&gt;
+               {
+                   data.map((v, i) =&gt; 
+                    &lt;li 
+                        onClick={i =&gt; this.deleteOne(i)}  
+                        key={this.dataKeys[i]}
+                    &gt;
+                        {v}
+                    &lt;/li&gt;
+                    )
+               } 
+            &lt;/ul&gt;
+      )
+  }
+}
+// 稍微抽取，可以封装一个通用的组件复制代码
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h2 id="react-props-and-state"><a href="#react-props-and-state" class="header-anchor">#</a> React props and state</h2> <h3 id="props-2"><a href="#props-2" class="header-anchor">#</a> Props</h3> <p>Props(properties)：属性，一个事物性质与关系，可以说组件是 React 的核心了，如果把组件比喻成一个管道，那么 props 就相当于输入。</p> <p>props 可以定义在注册
+件的地方，也可以在组件内部定义默认属性，无论在哪里定义，props 都是只读的。</p> <p>props 可以应用于 JSX 中 html 的元素上，自定义组件的元素上(相当于给子组件传值)，也可以应用于值。</p> <h3 id="定义默认-props"><a href="#定义默认-props" class="header-anchor">#</a> 定义默认 props</h3> <p>ES5 和 ES6 定义默认的 props 是不相同的。</p> <p>ES5</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var Hello = React.createClass({
+    getDefaultProps : function(){   //设置默认属性
+         return { title : '133'};
+    }
+    propTypes : { //属性校验器，表示必须是string
+        title : React.PropTypes.string,
+    }  
+}) 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>上面使用 getDefauktProps 定义属性，propTypes 用于属性的类型检查。</p> <p>ES6</p> <p>ES6 同样有两种方法，由于 ES6 是使用 class 类来定义组件的，因此，这两种方法必须是静态。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+export default class Hello extends React.Component{
+    static defaultProps ={
+        title : &quot;Hello React&quot;,
+    }
+    static propTypes = {
+        title : React.PropTypes.string,
+    }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>运行上面代码会发现报错。报错原因在 React.PropTypes.string，这是因为在 React15.5 之前类型检查是集成在 React 里面的，React15.5 之后被抽离了出来。所以需要下载 prop-types 包来解决这个问题。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install prop-types –save
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>再修改一下代码。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>import propTypes from &quot;prop-types&quot;;
+export default class Hello extends React.Component{
+    static defaultProps ={
+        title : &quot;Hello React&quot;,
+    }
+    static propTypes = {
+        title :propTypes.string,
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>这时候运行就不会报错了。</p> <h3 id="state-2"><a href="#state-2" class="header-anchor">#</a> state</h3> <p>state 在 React 中是状态，是组件自身所拥有的东西，并且可以自己设置和改变。</p> <p>在开发过程中的状态都是我们自己来维护的，比如说发一个请求，请求发送成功会怎么样、失败会怎么样等等。</p> <p>React 是基于状态的，就是在代码中定义了状态，只要在任何地方改变了状态，最初定义状态的地方就会发生改变。</p> <h3 id="setstate"><a href="#setstate" class="header-anchor">#</a> setState</h3> <p>React 如果想改变一个状态，那么必须通过 setState 切换撞他，每一次 setState 之后，Reader 就会重新渲染执行一次 render，就会触发 diff 算法进行计算，通过计算生出新的 Virtual Dom 和现在的 Virtual DOM 进行比较，发生变化之后执行一次更新。</p> <h3 id="使用-state"><a href="#使用-state" class="header-anchor">#</a> 使用 state</h3> <p>state 在 ES5 和 ES6 上都是不同的。</p> <p>ES5</p> <p>通过 getInitialState 方法来初始化状态。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var Hello = React.crateClass({
+    getInitialState : function(){
+        return {
+            isloading : false,
+        }
+    }
+})
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>ES6</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>export default class Hello extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            isloading : false,
+        }
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>上面两种方式同样是通过 this.setState()改变状态。</p> <p>以 ES6 为例</p> <h3 id="props-和-state-的比较"><a href="#props-和-state-的比较" class="header-anchor">#</a> Props 和 State 的比较</h3> <p>相同点</p> <p>1.都是纯的 JS 对象，都包含这一些信息。</p> <p>2.都会触发 render 更新；属性是开始渲染一次性触发 render，状态是每次状态改变都会触发 render</p> <p>3.都具有确定性，渲染前初始化完成</p> <p>区别</p> <p>属性只传递一次，状态是不停的在更新。组件在运行时需要修改的就是状态，属性在组件内运行时是修改不了的。</p> <p>比较</p> <table><th><td> Props	</td> <td> State </td></th> <tr><td>能否从父组件获取初始值？</td> <td> 能 </td> <td> 不能</td></tr> <tr><td>能否由父组件修改？</td> <td> 能 </td> <td> 不能</td></tr> <tr><td>能否在组件内部设置默认值？</td> <td> 能 </td> <td> 能</td></tr> <tr><td>能否在组件内部修改？</td> <td> 不能 </td> <td> 能</td></tr> <tr><td>能否设置子组件的初始值？</td> <td> 能 </td> <td> 不能</td></tr> <tr><td>能否修改子组件的值？ ？</td> <td> 能 </td> <td> 不能</td></tr></table></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/React入门必学[上].md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/Webpack系列手写模块打包代码.html" class="prev">
+        Webpack 系列手写模块打包代码
+      </a></span> <span class="next"><a href="/blog/React入门必学[下].html">
+        React 入门必学【下】
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/23.f75937fb.js" defer></script>
+  </body>
+</html>

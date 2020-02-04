@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Webpack 系列手写模块打包代码 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/29.6d8f45f9.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="active sidebar-link">Webpack 系列手写模块打包代码</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Webpack系列手写模块打包代码.html#loader" class="sidebar-link">loader</a></li><li class="sidebar-sub-header"><a href="/blog/Webpack系列手写模块打包代码.html#webpack-打包后文件分析" class="sidebar-link">Webpack 打包后文件分析</a></li><li class="sidebar-sub-header"><a href="/blog/Webpack系列手写模块打包代码.html#手写一个模块打包器" class="sidebar-link">手写一个模块打包器</a></li></ul></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack-系列手写模块打包代码"><a href="#webpack-系列手写模块打包代码" class="header-anchor">#</a> Webpack 系列手写模块打包代码</h1> <h2 id="loader"><a href="#loader" class="header-anchor">#</a> loader</h2> <p>在手写模块打包代码之前，先学一学如何写一个 loader</p> <p>Loader 就像一个翻译员，能将源文件经过转化后输出新的结果，并且一个文件还可以
+链式 地经过多个翻译员翻译。 以处理 scss 文件为例:</p> <p>• 先将 scss 源代码提交给 sass-loader，将 scss 转换成 CSS;</p> <p>• 将 sass-loader 输出的 css 提交给 css-loader 处理，找出 css 中依赖的资源、压缩
+css 等；</p> <p>• 将 css-loader 输出的 css 提交给 style-loader 处理，转换成通过脚本加载的 JavaScript 代码。</p> <h3 id="分析一下-markdown-loader"><a href="#分析一下-markdown-loader" class="header-anchor">#</a> 分析一下 markdown-loader</h3> <p>https://github.com/peerigon/markdown-loader/blob/master/index.js</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>&quot;use strict&quot;;
+
+//分析mark源码工具
+const marked = require(&quot;marked&quot;);
+//webpack提供的工具集 收集用户options等 也就是webpack.**.js里module.export的配置等
+const loaderUtils = require(&quot;loader-utils&quot;);
+
+//提供一个对外的函数
+module.exports = function (markdown) {
+    // merge params and default config
+    const options = loaderUtils.getOptions(this);
+    // 当前loader开启缓存
+    this.cacheable();
+    // 用户option---&gt;mark
+    marked.setOptions(options);
+    //string
+    return marked(markdown);
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="实现一个-loader"><a href="#实现一个-loader" class="header-anchor">#</a> 实现一个 loader</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const loaderUtils = require(&quot;loader-utils&quot;);
+//this 代表当前loader类
+module.exports = function(contant) {
+    // merge params and default config
+    
+    const options = loaderUtils.getOptions(this);
+    //拿到options
+    console.log('前置的钩子函数' + this.data.value)
+    console.log('🌶️配置文件' + options.data)
+    //为了避免使用正则过于复杂 ----&gt;ast🌲
+    //content.replace('const','var')
+    //关 闭该 Loader 的缓存功能,默认缓存是开的
+    this.cacheable(false);
+    return contant + &quot;console.log(1111)&quot;;
+};
+
+//挂载前置的钩子
+
+module.exports.pitch = function(r, prerequest, data) {
+    data.value = &quot;刘帅🏮&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><div class="language-plain line-numbers-mode"><pre class="language-text"><code>const path = require('path');
+module.exports = {
+    module: {
+        rules: [{
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+                loader: path.resolve('./loader/index.js'),
+                options: {
+                    data: &quot;🍌自定义配置项&quot;
+                }
+            }
+        }]
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="补充"><a href="#补充" class="header-anchor">#</a> 补充</h3> <p>Loader 有同步和异步之分，上面介绍的 Loader 都是同步的 Loader，因为它们的转换流 程都是同步 的，转换完成后再返回结果。但在某些场景下转换的步骤只能是异步完成的，例 如我们需要 通过网络请求才能得出结果，如果采用同步的方式，则网络请求会阻塞整个构建， 导致 构建非常缓慢。
+如果是异步转换，则我们可以这样做:</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>module . exports = function (source) {
+//告诉 Webpack 本次转换是异步 的， Loader 会在 callback 中回调结果
+var callback= this.async() ;
+someAsyncOperation(source, function(err, result , sourceMaps, ast) {
+//通过 callback 返回异步执行后的结果
+callback (err, result, sourceMaps, ast); } ) 
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>处理二进制数据</p> <p>在默 认情况下， Webpack 传给 Loader 的原内容都是 UTF-8 格式编码的字符串。但在某 些场景下 Loader 不会处理文本文件，而会处理二进制文件如 file-loader，这时就需要 Webpack 为 Loader 传入二进制格式的数据。为此，我们需要这样编写 Loader:</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>module. exports = function (source) {
+//在 exports.raw=== true 时， 
+//Webpack 传给 Loader 的 source 是 Buffer 类型的 
+
+source instanceof Buffer === true;
+//Loader 返回的类型也可以是 Buffer 类型的
+//在 exports .raw !== true 时， Loader 也可以返回 Buffer 类型的结果
+return source;
+// 通过 exports.raw 属性告诉 Webpack 该 Loader 是否需要二进制数据 module .exports . raw = true;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="webpack-打包后文件分析"><a href="#webpack-打包后文件分析" class="header-anchor">#</a> Webpack 打包后文件分析</h2> <p>为了更好的理解 webpack 模块打包机制，我们先来看一下 webpack 打包后的文件。</p> <p>对刚才打包后的文件分析</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+(function(modules) { // webpackBootstrap
+    // The module cache
+    //模块的缓存
+    var installedModules = {};
+
+    // The require function
+
+    function __webpack_require__(moduleId) {
+
+        // Check if module is in cache
+        //检查存模块，是否以缓存住模块
+        if (installedModules[moduleId]) {
+
+            return installedModules[moduleId].exports;
+
+        }
+        // Create a new module (and put it into the cache)
+        //创建新的缓存对象
+        var module = installedModules[moduleId] = {
+
+            i: moduleId,
+
+            l: false,
+
+            exports: {}
+
+        };
+
+        // Execute the module function
+        //执行入口函数
+        modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+        // Flag the module as loaded
+
+        // Return the exports of the module
+
+        return module.exports;
+
+    }
+    // Load entry module and return exports
+    //加载入口
+    return __webpack_require__(__webpack_require__.s = &quot;./src/index.js&quot;);
+
+})
+({
+
+    &quot;./src/index.js&quot;: (function(module, exports) {
+
+        console.log(&quot;我是入口文件&quot;);
+        console.log(1111)
+    })
+
+
+});
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><p>上述代码主要由以下几个部分组成：</p> <p>最外层是一个自执行函数</p> <p>自执行函数会传递一个 modules 参数，这个参数是一个对象，{key: 文件路径,value: 函数}，value 中的函数内部是打包前模块的 js 代码。</p> <p>内部自定义一个 <strong>webpack_require</strong> 执行器，用来执行导入的文件，并导出 exports。</p> <p>实现了 common.js 规范，不发网络请求，把包打包到了自己身上
+eval 编译快执行快</p> <p>新建 src/async1.js</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+//async1.js
+const async1 = 'webpack源码分析async1';
+export default async1;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>//抽离出的 main.js</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>  (function(modules) {
+
+      var installedModules = {};
+
+      function __webpack_require__(moduleId) {
+
+          if (installedModules[moduleId]) {
+              return installedModules[moduleId].exports;
+          }
+          var module = installedModules[moduleId] = {
+              exports: {}
+          };
+          modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+
+          return module.exports;
+      }
+
+      return __webpack_require__(&quot;./src/index.js&quot;);
+  })
+  ({
+
+      &quot;./src/async1.js&quot;:
+
+          (function(module, __webpack_exports__, __webpack_require__) {
+          const async = `hello nihao`;
+          __webpack_exports__[&quot;default&quot;] = (async)
+
+      }),
+
+      &quot;./src/index.js&quot;:
+
+          (function(module, __webpack_exports__, __webpack_require__) {
+          var _async1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(&quot;./src/async1.js&quot;);
+          //import 就相当于 var async1 = __webpack_require__(&quot;./src/async1.js&quot;);
+          console.log(_async1__WEBPACK_IMPORTED_MODULE_0__[&quot;default&quot;])
+
+      })
+
+  });
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><h2 id="手写一个模块打包器"><a href="#手写一个模块打包器" class="header-anchor">#</a> 手写一个模块打包器</h2> <h3 id="整体流程分析"><a href="#整体流程分析" class="header-anchor">#</a> 整体流程分析</h3> <p>1.读取入口文件</p> <p>2.将内容转换为 ast 树</p> <p>3.深度遍历语法树，找到所有的依赖，并加入到一个数组中。</p> <p>4.将 ast 树转换为可执行 js 的代码</p> <p>5 编写__webpack_require__函数，根据入口文件自动执行完所有的依赖。</p> <p>根据上述步骤开始写代码😊</p> <p>代码层分为四层</p> <p>一层读取入口文件，将内容转化为 ast（抽象语法树）树，遍历语法树并将 import xxx from './xxx.js' 转化为 var xxx = <strong>webpack_require</strong>(&quot;xxx&quot;); 将 export default xxx 转化为 <strong>webpack_exports</strong>[&quot;default&quot;] = xxx</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function parse(filename) {
+    const contant = fs.readFileSync(filename, 'utf-8');
+    //将字符串转换为ast抽象语法树
+    const ast = parser.parse(contant, {
+            sourceType: 'module'
+        })
+        // console.log(ast)
+    const code = new MagicString(contant);
+    //遍历抽象语法树
+    traverse(ast, {
+        ExportDeclaration({
+            node
+        }) {
+            const {
+                start,
+                end,
+                declaration,
+            } = node;
+            code.overwrite(start, end,
+                `__webpack_exports__[&quot;default&quot;]=${declaration.name}`
+            )
+        },
+        ImportDeclaration({
+            node
+        }) {
+            // console.log('🌟🌟', node)
+            const {
+                start,
+                end,
+                specifiers,
+                source
+            } = node;
+            const newFile = &quot;./src/&quot; + path.join(source.value) + '.js';
+            code.overwrite(start, end,
+                `var ${specifiers[0].local.name}=__webpack_require__(&quot;${newFile}&quot;).default`
+            )
+        }
+    })
+    const _code = code.toString()
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><p>二层 深度遍历语法树，找到所有依赖并放入数组中，生成所有资源对象数组。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>    //  全局的依赖项
+const dependencies = [];
+
+function parse(filename) {
+    const contant = fs.readFileSync(filename, 'utf-8');
+    //获取当前的依赖
+    const garphArray = [];
+    //将字符串转换为ast抽象语法树
+    const ast = parser.parse(contant, {
+            sourceType: 'module'
+        })
+        // console.log(ast)
+    const code = new MagicString(contant);
+    //遍历抽象语法树
+    traverse(ast, {
+        ExportDeclaration({
+            node
+        }) {
+            const {
+                start,
+                end,
+                declaration,
+            } = node;
+            code.overwrite(start, end,
+                `__webpack_exports__[&quot;default&quot;]=${declaration.name}`
+            )
+        },
+        ImportDeclaration({
+            node
+        }) {
+            // console.log('🌟🌟', node)
+            const {
+                start,
+                end,
+                specifiers,
+                source
+            } = node;
+            const newFile = &quot;./src/&quot; + path.join(source.value) + '.js';
+            code.overwrite(start, end,
+                `var ${specifiers[0].local.name}=__webpack_require__(&quot;${newFile}&quot;).default`
+            )
+            garphArray.push(newFile);
+        }
+    })
+    const _code = code.toString()
+    dependencies.push({
+        filename,
+        _code
+    });
+    return garphArray;
+}
+let garphArray = parse(entryPonint);
+//对其进行递归
+for (let item of garphArray) {
+    parse(item)
+}
+console.log(dependencies)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><p>三层 封装自执行函数，创建 <strong>webpack_require</strong> 方法，处理文件相互依赖，该处引入 ejs 对模版处理</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const template = `
+  (function (modules) {
+
+      var installedModules = {};
+
+      function __webpack_require__(moduleId) {
+          if (installedModules[moduleId]) {
+              return installedModules[moduleId].exports;
+          }
+          var module = installedModules[moduleId] = {
+              exports: {}
+          };
+          modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+          return module.exports;
+      }
+      return __webpack_require__(&quot;${entryPonint}&quot;);
+  })
+  ({
+
+    &lt;% for(var i = 0; i &lt; dependencies.length; i++){ %&gt;
+        &quot;&lt;%-dependencies[i][&quot;filename&quot;]%&gt;&quot;:
+        (function (module, __webpack_exports__, __webpack_require__) {
+               &lt;%-dependencies[i][&quot;_code&quot;]%&gt;
+            }),
+    &lt;% } %&gt;
+  });
+`;
+
+let result = ejs.render(template, {
+    dependencies
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p>四层 将其 result 模版 写出</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>fs.writeFileSync(&quot;./dist/main.js&quot;, result)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="相关链接"><a href="#相关链接" class="header-anchor">#</a> 相关链接</h3> <p><a href="https://github.com/wendaoshuai66/diy-webpack" target="_blank" rel="noopener noreferrer">git 仓库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/Webpack系列手写模块打包代码.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/Webpack使用总结.html" class="prev">
+        Webpack 使用总结
+      </a></span> <span class="next"><a href="/blog/React入门必学[上].html">
+        React 入门必学【上】
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/29.6d8f45f9.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript 函数式编程--上 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/32.853bead4.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="active sidebar-link">JavaScript 函数式编程--上</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/jsFunctionalProgramming.html#函数式编程思维" class="sidebar-link">函数式编程思维</a></li><li class="sidebar-sub-header"><a href="/blog/jsFunctionalProgramming.html#函数式编程常用的核心概念" class="sidebar-link">函数式编程常用的核心概念</a></li><li class="sidebar-sub-header"><a href="/blog/jsFunctionalProgramming.html#高阶函数" class="sidebar-link">高阶函数</a></li><li class="sidebar-sub-header"><a href="/blog/jsFunctionalProgramming.html#尾调用优化" class="sidebar-link">尾调用优化</a></li></ul></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="javascript-函数式编程-上"><a href="#javascript-函数式编程-上" class="header-anchor">#</a> JavaScript 函数式编程--上</h1> <h2 id="函数式编程思维"><a href="#函数式编程思维" class="header-anchor">#</a> 函数式编程思维</h2> <h3 id="范畴论-category-theory"><a href="#范畴论-category-theory" class="header-anchor">#</a> 范畴论 Category Theory</h3> <p>函数编程是范畴论的数学分支，是一门很复杂的数学学，认为世界上所有概念体系都可以抽象出一个个范畴
+彼此之间存在某种关系概念、事物、对象等等，都构成范畴。</p> <p>任何事物只要找出他们之间的关系，就能定义</p> <p>&quot;范畴就是使用箭头连接的物体。&quot;（In mathematics, a category is an algebraic structure that comprises &quot;objects&quot; that are linked by &quot;arrows&quot;. ）</p> <p><img src="https://wendaoshuai66.github.io/study/note/images/funtion.png" alt="category"></p> <p>箭头表示范畴成员之间的关系，正式的名称叫做&quot;态射&quot; (morphism)。范畴论认为，同一个范畴的所有成员， 就是不同状态的&quot;变形&quot;(transformation)。通过&quot;态射&quot;， 一个成员可以变形成另一个成员。</p> <h3 id="数学模型"><a href="#数学模型" class="header-anchor">#</a> 数学模型</h3> <p>既然&quot;范畴&quot;是满足某种变形关系的所有对象，就可以总结出它的数学模型。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>所有成员是一个集合
+
+变形关系是函数
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>也就是说，范畴论是集合论更上层的抽象，简单的理解就是&quot;集合 + 函数&quot;。</p> <p>理论上通过函数，就可以从范畴的一个成员，算出其他所有成员</p> <h3 id="范畴与容器"><a href="#范畴与容器" class="header-anchor">#</a> 范畴与容器</h3> <p>我们可以把&quot;范畴&quot;想象成是一个容器，里面包含两样东西。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>值（value）
+值的变形关系，也就是函数。
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>下面我们使用代码，定义一个简单的范畴。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+class Category {
+  constructor(val) {
+    this.val = val; 
+  }
+
+  addOne(x) {
+    return x + 1;
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>上面代码中，Category 是一个类，也是一个容器，里面包含一个值（this.val）和一种变形关系（addOne）。你可能已经看出来了，这里的范畴，就是所有彼此之间相差 1 的数字。</p> <h3 id="范畴论与函数式编程的关系"><a href="#范畴论与函数式编程的关系" class="header-anchor">#</a> 范畴论与函数式编程的关系</h3> <p>范畴论使用函数，表达范畴之间的关系。</p> <p>伴随着范畴论的发展，就发展出一整套函数的运算方法。这套方法起初只用于数学运算，后来有人将它在计算机上实现了，就变成了今天的&quot;函数式编程&quot;。</p> <h5 id="本质上，函数式编程只是范畴论的运算方法，跟数理逻辑、微积分、行列式是同一类东西，都是数学方法，只是碰巧它能用来写程序"><a href="#本质上，函数式编程只是范畴论的运算方法，跟数理逻辑、微积分、行列式是同一类东西，都是数学方法，只是碰巧它能用来写程序" class="header-anchor">#</a> 本质上，函数式编程只是范畴论的运算方法，跟数理逻辑、微积分、行列式是同一类东西，都是数学方法，只是碰巧它能用来写程序</h5> <p>所以，你明白了吗，为什么函数式编程要求函数必须是纯的，不能有副作用？因为它是一种数学运算，原始目的就是求值，不做其他事情，否则就无法满足函数运算法则了。</p> <p>总之，在函数式编程中，函数就是一个管道（pipe）。这头进去一个值，那头就会出来一个新的值，没有其他作用。</p> <h3 id="函数式编程基础理论"><a href="#函数式编程基础理论" class="header-anchor">#</a> 函数式编程基础理论</h3> <p>1.函数式编程(Functional Programming)其实相对于计算机的历史而 言是一个非常古老的概念，甚至早于第一台计算机的诞生。函数式 编程的基础模型来源于 λ (Lambda x=&gt;x*2)演算，而 λ 演算并非设计 于在计算机上执行，它是在 20 世纪三十年代引入的一套用于研究 函数定义、函数应用和递归的形式系统。</p> <p>2.函数式编程不是用函数来编程，也不是传统的面向过程编程。主 旨在于将复杂的函数符合成简单的函数(计算理论，或者递归论， 或者拉姆达演算)。运算过程尽量写成一系列嵌套的函数调用</p> <p>3.JavaScript 是披着 C 外衣的 Lisp。</p> <p>4.真正的火热是随着 React 的高阶函数而逐步升温</p> <h3 id="函数式编程特点"><a href="#函数式编程特点" class="header-anchor">#</a> 函数式编程特点</h3> <ol><li>函数是”第一等公民”</li> <li>只用”表达式&quot;，不用&quot;语句&quot;</li> <li>没有”副作用&quot;</li> <li>不修改状态</li> <li>引用透明(函数运行只靠参数)</li></ol> <h2 id="函数式编程常用的核心概念"><a href="#函数式编程常用的核心概念" class="header-anchor">#</a> 函数式编程常用的核心概念</h2> <h3 id="纯函数"><a href="#纯函数" class="header-anchor">#</a> 纯函数</h3> <h4 id="再次强调-纯"><a href="#再次强调-纯" class="header-anchor">#</a> 再次强调“纯”</h4> <p>首先，我们要厘清纯函数的概念。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>纯函数是这样一种函数，即相同的输入，永远会得到相同的输出，而且没有任何可观察的副作用。
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>比如 slice 和 splice，这两个函数的作用并无二致——但是注意，它们各自的方式却大不同，但不管怎么说作用还是一样的。我们说 slice 符合纯函数的定义是因为对相同的输入它保证能返回相同的输出。而 splice 却会嚼烂调用它的那个数组，然后再吐出来；这就会产生可观察到的副作用，即这个数组永久地改变了</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+var xs = [1,2,3,4,5];
+
+// 纯的
+xs.slice(0,3);
+//=&gt; [1,2,3]
+
+xs.slice(0,3);
+//=&gt; [1,2,3]
+
+xs.slice(0,3);
+//=&gt; [1,2,3]
+
+
+// 不纯的
+xs.splice(0,3);
+//=&gt; [1,2,3]
+
+xs.splice(0,3);
+//=&gt; [4,5]
+
+xs.splice(0,3);
+//=&gt; []
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>在函数式编程中，我们讨厌这种会改变数据的笨函数。我们追求的是那种可靠的，每次都能返回同样结果的函数，而不是像 splice 这样每次调用后都把数据弄得一团糟的函数，这不是我们想要的。</p> <p>来看看另一个例子。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+// 不纯的
+var minimum = 21;
+
+var checkAge = function(age) {
+  return age &gt;= minimum;
+};
+
+
+// 纯的
+var checkAge = function(age) {
+  var minimum = 21;
+  return age &gt;= minimum;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>在不纯的版本中，checkAge 的结果将取决于 minimum 这个可变变量的值。换句话说，它取决于系统状态（system state）；这一点令人沮丧，因为它引入了外部的环境，从而增加了认知负荷（cognitive load）。</p> <p>这个例子可能还不是那么明显，但这种依赖状态是影响系统复杂度的罪魁祸首<a href="http://www.curtclifton.net/storage/papers/MoseleyMarks06a.pdf" target="_blank" rel="noopener noreferrer">（http://www.curtclifton.net/storage/papers/MoseleyMarks06a.pdf ）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。输入值之外的因素能够左右 checkAge 的返回值，不仅让它变得不纯，而且导致每次我们思考整个软件的时候都痛苦不堪。</p> <p>另一方面，使用纯函数的形式，函数就能做到自给自足。我们也可以让 minimum 成为一个不可变（immutable）对象，这样就能保留纯粹性，因为状态不会有变化。要实现这个效果，必须得创建一个对象，然后调用 Object.freeze 方法：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var immutableState = Object.freeze({
+  minimum: 21
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="副作用可能包括"><a href="#副作用可能包括" class="header-anchor">#</a> 副作用可能包括</h4> <p>让我们来仔细研究一下“副作用”以便加深理解。那么，我们在纯函数定义中提到的万分邪恶的副作用到底是什么？“作用”我们可以理解为一切除结果计算之外发生的事情。</p> <p>“作用”本身并没什么坏处。“副作用”的关键部分在于“副”。就像一潭死水中的“水”本身并不是幼虫的培养器，“死”才是生成虫群的原因。同理，副作用中的“副”是滋生 bug 的温床。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>副作用是在计算结果的过程中，系统状态的一种变化，或者与外部世界进行的可观察的交互。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>副作用可能包含，但不限于：</p> <p>更改文件系统</p> <p>往数据库插入记录</p> <p>发送一个 http 请求</p> <p>可变数据</p> <p>打印/log</p> <p>获取用户输入</p> <p>DOM 查询</p> <p>访问系统状态</p> <p>这个列表还可以继续写下去。概括来讲，只要是跟函数外部环境发生的交互就都是副作用——这一点可能会让你怀疑无副作用编程的可行性。函数式编程的哲学就是假定副作用是造成不正当行为的主要原因。
+这并不是说，要禁止使用一切副作用，而是说，要让它们在可控的范围内发生。后面讲到 functor 和 monad 的时候我们会学习如何控制它们，目前还是尽量远离这些阴险的函数为好。
+副作用让一个函数变得不纯是有道理的：从定义上来说，纯函数必须要能够根据相同的输入返回相同的输出；如果函数需要跟外部事物打交道，那么就无法保证这一点了。
+我们来仔细了解下为何要坚持这种「相同输入得到相同输出」原则。注意，我们要复习一些八年级数学知识了。</p> <h4 id="八年级数学"><a href="#八年级数学" class="header-anchor">#</a> 八年级数学</h4> <p>根据 mathisfun.com：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>函数是不同数值之间的特殊关系：每一个输入值返回且只返回一个输出值。
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>换句话说，函数只是两种数值之间的关系：输入和输出。尽管每个输入都只会有一个输出，但不同的输入却可以有相同的输出。下图展示了一个合法的从 x 到 y 的函数关系；</p> <p><img src="https://wendaoshuai66.github.io/study/note/images/function-sets.gif" alt="function-sets"></p> <p><a href="https://www.shuxuele.com/sets/function.html" target="_blank" rel="noopener noreferrer">https://www.shuxuele.com/sets/function.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>相反，下面这张图表展示的就不是一种函数关系，因为输入值 5 指向了多个输出：</p> <p><img src="https://wendaoshuai66.github.io/study/note/images/function-sets.gif" alt="relation-not-function.gif"></p> <p><a href="https://www.shuxuele.com/sets/function.html" target="_blank" rel="noopener noreferrer">https://www.shuxuele.com/sets/function.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>函数可以描述为一个集合，这个集合里的内容是 (输入, 输出) 对：[(1,2), (3,6), (5,10)]（看起来这个函数是把输入值加倍）。</p> <p>如果输入直接指明了输出，那么就没有必要再实现具体的细节了。因为函数仅仅只是输入到输出的映射而已，所以简单地写一个对象就能“运行”它，使用 [] 代替 () 即可。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var toLowerCase = {&quot;A&quot;:&quot;a&quot;, &quot;B&quot;: &quot;b&quot;, &quot;C&quot;: &quot;c&quot;, &quot;D&quot;: &quot;d&quot;, &quot;E&quot;: &quot;e&quot;, &quot;D&quot;: &quot;d&quot;};
+
+toLowerCase[&quot;C&quot;];
+//=&gt; &quot;c&quot;
+
+var isPrime = {1:false, 2: true, 3: true, 4: false, 5: true, 6:false};
+
+isPrime[3];
+//=&gt; true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>当然了，实际情况中你可能需要进行一些计算而不是手动指定各项值；不过上例倒是表明了另外一种思考函数的方式。（你可能会想“要是函数有多个参数呢？”。的确，这种情况表明了以数学方式思考问题的一点点不便。暂时我们可以把它们打包放到数组里，或者把 arguments 对象看成是输入。等学习 curry 的概念之后，你就知道如何直接为函数在数学上的定义建模了。）</p> <p>戏剧性的是：纯函数就是数学上的函数，而且是函数式编程的全部。使用这些纯函数编程能够带来大量的好处，让我们来看一下为何要不遗余力地保留函数的纯粹性的原因。</p> <h4 id="追求-纯-的理由"><a href="#追求-纯-的理由" class="header-anchor">#</a> 追求“纯”的理由</h4> <p>纯函数不仅可以有效降低系统的复 杂度，还有很多很棒的特性，比如 可缓存性</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> import _ from 'lodash';
+var sin = _.memorize(x =&gt; Math.sin(x));
+//第一次计算的时候会稍慢一点 var a = sin(1);
+//第二次有了缓存，速度极快
+var b = sin(1); 
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="函数式编程-幂等性"><a href="#函数式编程-幂等性" class="header-anchor">#</a> 函数式编程-幂等性</h4> <p>执行多次所产生的影响均与一次执行的影响相同，也就是说执行一次和执行多次对系统内部的状态影响是一样的</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+class Person {
+  constructor () {
+    this.name = name;
+  },
+  sayName () {
+    console.log(my name is + this.name);
+  } 
+}
+var person = new Person(zhangsan)
+person.sayName();
+person.sayName();
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="纯函数和幂等性的区别"><a href="#纯函数和幂等性的区别" class="header-anchor">#</a> 纯函数和幂等性的区别</h4> <p>1.法调用多次对内部的状态影响是一样的，则这么方法就具有幂等性，在函数式编程中，纯函数也具有幂等性，但具有幂等性的函数却不一定是纯函数。</p> <p>2.纯函数主要强调相同的输入，多次调用，输出也相同且无副作用，而幂等主要强调多次调用，对内部的状态的影响是一样的，调用返回值可能不同。</p> <h4 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h4> <p>我们已经了解什么是纯函数了，也看到作为函数式程序员的我们，为何深信纯函数是不同凡响的。从这开始，我们将尽力以纯函数式的方式书写所有的函数。为此我们将需要一些额外的工具来达成目标，同时也尽量把非纯函数从纯函数代码中分离。</p> <p>如果手头没有一些工具，那么纯函数程序写起来就有点费力。我们不得不玩杂耍似的通过到处传递参数来操作数据，而且还被禁止使用状态，更别说“作用”了。没有人愿意这样自虐。所以让我们来学习一个叫 curry 的新工具。</p> <h3 id="函数的柯里化"><a href="#函数的柯里化" class="header-anchor">#</a> 函数的柯里化</h3> <h4 id="偏应用函数"><a href="#偏应用函数" class="header-anchor">#</a> 偏应用函数</h4> <p>在讲函数柯里化之前先讲偏应用函数（偏函数），函数柯里化主要是通过偏应用函数的实现，把接受多个参数的函数变换成接受一个单一参数的函数，并且返回接受余下的参数而且返回结果的新函数</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const partial = (f, ...args) =&gt;
+(...moreArgs) =&gt; f(...args, ...moreArgs)
+const add3 = (a, b, c) =&gt; a + b + c
+// 偏应用 `2` 和 `3` 到 `add3` 给你一个单参数的函数 const fivePlus = partial(add3, 2, 3)
+fivePlus(4)
+
+//bind实现
+const add1More = add3.bind(null,2,3) // (c) =&gt; 2 + 3 + c
+      
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>总结</p> <p>通过上面程序了解到柯里化函数的特点是总是返回一个一元的函数：一个带有一个参数的新函数，不同的是普通函数可以根据需要一次获取尽可能多的参数</p> <h4 id="函数的柯里化-2"><a href="#函数的柯里化-2" class="header-anchor">#</a> 函数的柯里化</h4> <h5 id="为什么要柯里化"><a href="#为什么要柯里化" class="header-anchor">#</a> 为什么要柯里化</h5> <p>1.柯里化在函数组合的上下文中起到关键的作用,能够让你重新组合你的应用，将复杂的功能拆分成一个个简单的部分，这样容易更改，理解</p> <p>2.柯里化也是一种函数预加载的方法，通过传递较少的参数得到一个在相同词法作用域当中缓存了这些参数的新函数，其实这也是一种对参数的缓存</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>import { curry } from 'lodash';
+
+var match = curry((reg, str) =&gt; str.match(reg)); 
+
+var filter = curry((f, arr) =&gt; arr.filter(f));
+
+var haveSpace = match(/\s+/g); //haveSpace(“ffffffff”);
+
+//haveSpace(“a b&quot;);
+//filter(haveSpace, [&quot;abcdefg&quot;, &quot;Hello World&quot;]); filter(haveSpace)([&quot;abcdefg&quot;, &quot;Hello World&quot;])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h5 id="柯里化函数的应用场景"><a href="#柯里化函数的应用场景" class="header-anchor">#</a> 柯里化函数的应用场景</h5> <p>1.延迟计算</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+// 普通实现
+var sum = function(args){
+  return args.reduce(function(a,b){
+      return a+b
+  });
+};
+var result = sum([1,2,3,4,5]); // 15
+
+// 柯里化实现
+function add() {
+  var _args = [].slice.call(arguments);
+  var adder = function () {
+
+      // 利用闭包特性保存_args的值
+      var _adder = function() {
+          [].push.apply(_args, [].slice.call(arguments));
+          return _adder;
+      };
+
+      // 利用隐式转换的特性，计算最终的值返回
+      _adder.toString = function () {
+          return _args.reduce(function (a, b) {
+              return a + b;
+          });
+      }
+
+      return _adder;
+  }
+  return adder.apply(null, [].slice.call(arguments));
+}
+
+var sum = add();
+sum(1,2,3)(4);
+sum(5);
+sum() // 15
+
+优点：调用灵活，参数定义随意
+
+充分利用了柯里化提延迟执行的特点
+
+延迟执行 – 返回新函数可以进行任意调用
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><p>2.DOM 操作中的事件绑定(动态创建函数)
+当在多次调用同一个函数，并且传递的参数绝大多数是相同的。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>// 普通版本
+var addEvent = function(el, type, fn, capture) {
+    if (window.addEventListener) {
+      el.addEventListener(type, function(e) {
+        fn.call(el, e);
+      }, capture);
+    } else if (window.attachEvent) {
+      el.attachEvent(&quot;on&quot; + type, function(e) {
+        fn.call(el, e);
+      });
+    } 
+ };
+
+ // 柯里化版本
+ var addEvent = (function(){
+    if (window.addEventListener) {
+      return function(el, type, fn, capture) {
+        el.addEventListener(type, function(e) {
+          fn.call(el, e);
+        }, (capture));
+      };
+    } else if (window.attachEvent) {
+      return function(el, type, fn, capture) {
+        el.attachEvent(&quot;on&quot; + type, function(e) {
+            fn.call(el, e);
+        });
+      };
+    }
+})();
+
+优点：不用每次调用进行 if () {}else {} 判断兼容性问题
+
+充分利用了柯里化提前返回和延迟执行的特点
+提前返回 – 使用函数立即调用进行了一次兼容判断（部分求值），返回兼容的事件绑定方法
+延迟执行 – 返回新函数，在新函数调用兼容的事件方法。等待addEvent新函数调用，延迟执行
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><p>当然应用场景还有很多，比如我们经常提到的防抖和节流问题，充分的利用了函数式编程的延迟执行特性，将多个间隔接近的函数执行合并成一次函数执行来提高性能问题。
+关于事件节流和防抖动将会在后续的专题中单独指出</p> <h5 id="总结-2"><a href="#总结-2" class="header-anchor">#</a> 总结</h5> <p>curry 函数用起来非常得心应手，每天使用它对我来说简直就是一种享受。它堪称手头必备工具，能够让函数式编程不那么繁琐和沉闷。
+通过简单地传递几个参数，就能动态创建实用的新函数；而且还能带来一个额外好处，那就是保留了数学的函数定义，尽管参数不止一个。 下一章我们将学习另一个重要的工具：组合（compose）。</p> <h3 id="函数的组合"><a href="#函数的组合" class="header-anchor">#</a> 函数的组合</h3> <p>纯函数以及如何把它柯里化写出的洋葱代码 h(g(f(x)))，为了解决函数嵌套问题，我们需要用到函数的组合</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const compose = (f, g) =&gt; (x =&gt; f(g(x)));
+var first = arr =&gt; arr[0];
+var reverse = arr =&gt; arr.reverse();
+var last = compose(first, reverse);
+last([1,2,3,4,5]);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="point-free"><a href="#point-free" class="header-anchor">#</a> Point Free</h3> <p>把对象自带的方法转化成纯函数，不要命名转瞬即逝的中间变量。</p> <p>这个函数中，我们使用了 str 作为我们的中间变量，但 这个中间变量除了让代码变得长了一点以外是毫无意义 的。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const f = str =&gt; str.toUpperCase().split(' ')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>优缺点</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const compose = (f, g) =&gt; (x =&gt; f(g(x)));
+
+var toUpperCase = word =&gt; word.toUpperCase();
+var split = x =&gt; (str =&gt; str.split(x));
+var f = compose(split(' '), toUpperCase); 
+f(&quot;abcd efgh&quot;);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这种风格能够帮助我们减少不必要的命名，让代码保持简洁和通用。</p> <h3 id="声明式与命令式代码"><a href="#声明式与命令式代码" class="header-anchor">#</a> 声明式与命令式代码</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>let CEOs = [];
+  for(var i = 0; i &lt; companies.length; i++){
+     CEOs.push(companies[i].CEO)
+      }
+//声明式
+let CEOs = companies.map(c =&gt; c.CEO);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="惰性求值、惰性函数、惰性链"><a href="#惰性求值、惰性函数、惰性链" class="header-anchor">#</a> 惰性求值、惰性函数、惰性链</h3> <p>在指令式语言中以下代码会按顺序执行，由于每个函数都有可能改动或者依赖于其外部的状态，因此必须顺序执行。(大白话利用重写函数)</p> <h2 id="高阶函数"><a href="#高阶函数" class="header-anchor">#</a> 高阶函数</h2> <p>函数当参数，把传入的函数做一个封装，然后返回这个封装函数，达到更高程度的抽象</p> <p>举个简单的例子：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+function math(fn,array){
+            return fn(array[0],array[1])
+        }
+
+var add = function(a,b){
+    return a+b
+}
+console.log(math(add,[1,2]))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="特点"><a href="#特点" class="header-anchor">#</a> 特点</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> function math(fn,array){
+            return fn(array[0],array[1])
+        }
+
+var add = function(a,b){
+    return a+b
+}
+console.log(math(add,[1,2]))    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="尾调用优化"><a href="#尾调用优化" class="header-anchor">#</a> 尾调用优化</h2> <p>指函数内部的最后一个动作是函数调用。该调用的返回值，直接返回给函数。函数调用自身，称为递归。</p> <p>如果尾调用自身，就称为尾递归。递归需要保存大量的调用记录，很容易发生栈溢出错误，如果使用尾递归优化，将递归变为循环，那么只需要保存一个调用记录，这样就不会发生栈溢出错误了。</p> <p>例如：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> //斐波那契数列
+function factorial(n){
+    if(n===1) return 1
+    return n*factorial(n-1)
+}
+//执行过程如下
+
+// 5*factorial(4)
+//  4*factorial(3)
+//   3*factorial(2)
+//    2*factorial(1)
+//    2*1
+//   3*2
+//  4*6
+// 5**24
+factorial(5)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>如果 console.log(factorial(1000000))会出现，浏览器超过了最大调用堆栈大小，如图：</p> <p><img src="https://wendaoshuai66.github.io/study/note/images/zhan.png" alt="爆栈"></p> <p>普通递归时，内存需要记录调用的堆栈所出的深度和位置信息。在最底层计算返回值，再根据记录的信息，跳回上一层级计算，然后再跳回更高一层，依次运行，直到最外层的调用函数。在 cpu 计算和内存会消耗多，而且当深度过大时，会出现堆栈溢出。</p> <p>ES6 强制使用尾递归</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> function factorial(n,total){
+     if(n===1) return total
+     return n*factorial(n-1,total)
+ }
+ factorial(5,1)
+ //执行过程如下
+ //factorial(4,5)
+ //  factorial(3,20)
+ //  factorial(2,60)
+ //  factorial(1,120)
+ //  120
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>###进一步加深理解</p> <p>再举一个简单的例子</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function sum(n){
+    if(n===1) return 1
+    return n+sum(n-1)
+}
+console.log(sum(5))
+(5 + sum(4))
+(5 + (4 + sum(3)))
+(5 + (4 + (3 + sum(2))))
+(5 + (4 + (3 + (2 + sum(1))))) (5 + (4 + (3 + (2 + 1))))
+(5 + (4 + (3 + 3)))
+(5 + (4 + 6))
+(5 + 10)
+15
+     }
+ 
+//    sum(5)
+//     (5 + sum(4))
+//     (5 + (4 + sum(3)))
+//     (5 + (4 + (3 + sum(2))))
+//     (5 + (4 + (3 + (2 + sum(1))))) (5 + (4 + (3 + (2 + 1))))
+//     (5 + (4 + (3 + 3)))
+//     (5 + (4 + 6))
+//     (5 + 10)
+//     15
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>#####死循环与爆栈不是一个意思：栈的递归是内存用完了，死循环是 ui 的主线程没有能力执行其他的代码了。爆栈是内存被用光了，死循环也会被内存用光，但是 js 是单线程的，死循环不能执行其他代码</p> <p>细数尾递归</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function sum(x, total) {
+   if (x === 1) {
+       return x + total; 
+   }
+   return sum(x - 1, x + total);
+}，
+   // sum(5, 0) 
+   //  sum(4, 5)
+   //  sum(3, 9) 
+   //  sum(2, 12) 
+   //  sum(1, 14) 
+   //  15
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>正个计算过程是线性的，调用一次 sum(x, total)后，会进入下一个栈，相关的数据信息和 跟随进入，不再放在堆栈上保存。当计算完最后的值之后，直接返回到最上层的 sum(5,0)。这能有效的防止堆栈溢出。在 ECMAScript 6，我们将迎来尾递归优化，通过尾递归优化，javascript 代码在解释成机器 码的时候，将会向 while 看起，也就是说，同时拥有数学表达能力和 while 的效能。</p> <p>###接下了来先搞清一个概念
+1.浏览器并没有实现尾递归，开启须强制</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function foo(n) { 
+   return bar(n*2);
+   }
+function bar() {
+//查看调用帧
+console.trace(); 
+}
+foo(1);
+ 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><img src="https://wendaoshuai66.github.io/study/note/images/chankanbaozhan.png" alt="爆栈">
+上述代码的目标只有一个执行栈</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//强制指定，只留下bar
+return continue
+!return
+#function()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>2.【最后一步】是否调用自身，而不是是否在【最后一行】调用自身</p> <p>3.最后一行调用其他函数，并返回叫尾调用</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function init(){
+  test(i)
+}
+function test(i){
+init(i-1)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>4.尾递归有两种一种浏览器实现的，一种自己写的</p> <p>5.能用 while 解决的都用 while，因为 while 是线性的</p> <p>##闭包</p> <p>大白话理解：拿到你不应该拿到的东西，为什么这么说，本来这个东西不是你的但是在函数的私有的内部，但想取到，就用到了闭包。</p> <p>小黄书的说法：保留了当前的函数执行的词法作用域，把词法作用域拿出去</p> <p>红皮书的书法：有权访问其他函数内部变量的的函数</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/jsFunctionalProgramming.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/jsFunctionalProgramming_bottom.html" class="prev">
+        JavaScript 函数式编程--下
+      </a></span> <span class="next"><a href="/blog/前端中经常出现的错误及捕获.html">
+        前端中经常出现的错误及捕获
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/32.853bead4.js" defer></script>
+  </body>
+</html>

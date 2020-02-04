@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NodeJs 框架入门 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/19.2dee6f08.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/25.5e54128d.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="sidebar-link">探索 Redux 原理</a></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="active sidebar-link">NodeJs 框架入门</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/NodeJS框架入门.html#什么是-express" class="sidebar-link">什么是 Express</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS框架入门.html#express-框架的特性" class="sidebar-link">Express 框架的特性</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS框架入门.html#什么是中间件" class="sidebar-link">什么是中间件</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS框架入门.html#使用-express" class="sidebar-link">使用 Express</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS框架入门.html#express-路由的使用" class="sidebar-link">express 路由的使用</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS框架入门.html#express-错误处理及-log4js-日志" class="sidebar-link">express 错误处理及 log4js 日志</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS框架入门.html#express-模板引擎的使用" class="sidebar-link">express 模板引擎的使用</a></li><li class="sidebar-sub-header"><a href="/blog/NodeJS框架入门.html#koa" class="sidebar-link">KOA</a></li></ul></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nodejs-框架入门"><a href="#nodejs-框架入门" class="header-anchor">#</a> NodeJs 框架入门</h1> <h2 id="什么是-express"><a href="#什么是-express" class="header-anchor">#</a> 什么是 Express</h2> <p>Express 是一个简洁而灵活的 nodejs Web 应用框架，提供了一系列强大特性帮助你创建各种 Web 应用。</p> <h2 id="express-框架的特性"><a href="#express-框架的特性" class="header-anchor">#</a> Express 框架的特性</h2> <p>可以设置中间件来响应 http 请求</p> <p>定义了路由表用于执行不同的 http 请求动作</p> <p>可以通过向模板传递参数来动态渲染 HTML 页面</p> <h2 id="什么是中间件"><a href="#什么是中间件" class="header-anchor">#</a> 什么是中间件</h2> <p>上面 Exress 框架的特性第一条就提到了中间件，中间件是贯穿 Expres 全程的一个东西，到底什么是中间件。</p> <h5 id="所谓中间件就是：从客户端请求的一端到服务器响应客户端的一端中间所使用到的插件就叫做中间件。"><a href="#所谓中间件就是：从客户端请求的一端到服务器响应客户端的一端中间所使用到的插件就叫做中间件。" class="header-anchor">#</a> 所谓中间件就是：从客户端请求的一端到服务器响应客户端的一端中间所使用到的插件就叫做中间件。</h5> <h3 id="中间件的功能"><a href="#中间件的功能" class="header-anchor">#</a> 中间件的功能</h3> <p>1.执行任何代码</p> <p>2.修改请求和响应对象</p> <p>3.终结请求-响应循环。</p> <p>4.调用堆栈的下一个中间件 如果当前中间件没有终结请求响应循环(res.render,res.send,res.json 等)，则必须调用 next()方法把控制权交给下一个中间件。如果终止了的话，下一个中间件渲染会报错，但是 node 代码正常执行。</p> <h3 id="express-应用中间件的类型"><a href="#express-应用中间件的类型" class="header-anchor">#</a> Express 应用中间件的类型</h3> <p>应用级中间件</p> <p>路由级中间件</p> <p>错误处理中间件</p> <p>内置中间件</p> <p>第三方中间件</p> <h3 id="应用级中间件"><a href="#应用级中间件" class="header-anchor">#</a> 应用级中间件</h3> <p>应用级中间件绑定到 app 对象使用 app.use()和 app.METHOD 方法(HTTP 方法)</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const app = express();
+    //没有挂在路径的中间件，应用的所有请求都会执行该中间件
+    app.use((req,res,next) =&gt; {
+        console.log('必经路由')
+        next();
+    })
+    //挂在路径的中间件，任何指向此路径的中间件都会执行它
+    app.use('/user/:id',(req,res.next) =&gt; {
+        console.log('/user/中间件')
+        next();
+    })
+    //使用http方法的中间件
+    app.get('/user/:id',(req,res,next) =&gt; {
+        res.send('http方法中间件')
+    })
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="装载组中间件"><a href="#装载组中间件" class="header-anchor">#</a> 装载组中间件</h3> <p>装载组中间件就是对一个挂载点挂载一组中间件。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.use(/user/:id,(req,res,next) =&gt; {
+    console.log('one');
+    next();
+},(req,res,next) =&gt; {
+    console.log('two');
+    next();
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>如果在中间件栈中跳过剩余的中间件，可以使用 next(‘route’)方法将控制权交给下一个路由。</p> <h5 id="注意：next-route-只对使用-app-声明的和-router-声明的中间件有效。"><a href="#注意：next-route-只对使用-app-声明的和-router-声明的中间件有效。" class="header-anchor">#</a> 注意：next(‘route’)只对使用 app 声明的和 router 声明的中间件有效。</h5> <h3 id="路由级中间件"><a href="#路由级中间件" class="header-anchor">#</a> 路由级中间件</h3> <p>路由级中间件和应用级中间件一样，只是它绑定的对象为 express.Router();</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const router = express.Router()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>router 中间件和 app 中间件处理的情况一样，只是 router 中没有 app 中特别复杂的 api，只有路由。参照应用级中间件的使用方法。</p> <h3 id="错误处理中间件"><a href="#错误处理中间件" class="header-anchor">#</a> 错误处理中间件</h3> <p>错误处理中间件有 4 个参数，定义错误处理中间件时必须使用这 4 个参数，即使不需要 next 对象，也必须在方法签名中声明它，否则把会错误处理中间件当做常规中间件处理。错误中间件容错要放在所有中间件后面。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.use((err,req,res,next) =&gt; {
+    console.log(err.stack);
+    res.status(500).send('服务端出错');
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="内置中间件"><a href="#内置中间件" class="header-anchor">#</a> 内置中间件</h3> <p>express.static 是 Express 唯一内置的中间件，它基于 server-static,负责在 Express 中托管静态资源.</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> app.use(express.static('public'));
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="第三方中间件"><a href="#第三方中间件" class="header-anchor">#</a> 第三方中间件</h3> <p>安装第三方中间件，通过使用 app.use 的方式把第三方中间件加载到应用里面，可以在应用级加载，也可以在路由级加载。</p> <p>比如 cookie-parse：用于解析 cookie,如果不使用这个，就拿不到 cookie</p> <p>body-parser nodejs 中间件，用于处理 JSON、Raw、Text 和 URL 编码的数据</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install body-parse –save
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>cookie-parser 这就是一个解析 Cookie 的工具，通过 req.cookies 可以取到传过来的 cookie，并把他们转成对象</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install cookie-parser –save
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>multer nodejs 中间件，用于处理 enctype=‘multipart/form-data’(设置表单的 MIME 编码)的表单数据</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install multer –save
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="如何开发一个第三方中间件"><a href="#如何开发一个第三方中间件" class="header-anchor">#</a> 如何开发一个第三方中间件</h3> <p>由上面总结可得知，一个中间件就是一个函数，而第三方中间件同样也是一个全局的应用级中间件。通过这些信息就可以写出一个中间件。</p> <p>例如：开发一个事件中间件，在 req 上绑定使用事件</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const timeMiddleware() =&gt; (req,res,next) =&gt; {
+    req.requestTime = Date.now();
+    //更复杂的处理逻辑
+    next();
+}
+module.exports = timeMiddleware;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>引入和使用</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const timeMiddle = require('timeMiddleware');
+app.use(timeMiddle());
+app.get('/',(req,res) =&gt; {
+    console.log(req.requestTime);
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>这样一个简单的中间件就完成了。</p> <h2 id="使用-express"><a href="#使用-express" class="header-anchor">#</a> 使用 Express</h2> <h3 id="安装-experss"><a href="#安装-experss" class="header-anchor">#</a> 安装 experss</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install express –save
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h5 id="注意：项目名不要和包名相同，否则无法安装依赖包"><a href="#注意：项目名不要和包名相同，否则无法安装依赖包" class="header-anchor">#</a> 注意：项目名不要和包名相同，否则无法安装依赖包</h5> <h3 id="创建-app-js"><a href="#创建-app-js" class="header-anchor">#</a> 创建 app.js</h3> <p>在项目根目录创建 app.js ，app.js 是 express 框架的启动文件。</p> <h3 id="在-app-js-中引入-express-模块"><a href="#在-app-js-中引入-express-模块" class="header-anchor">#</a> 在 app.js 中引入 express 模块</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const express = require('express');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="通过-express-实例化-express-对象"><a href="#通过-express-实例化-express-对象" class="header-anchor">#</a> 通过 express 实例化 express 对象</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const app = express();
+//相当于
+const app = new express();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="app-对象的一些常用方法"><a href="#app-对象的一些常用方法" class="header-anchor">#</a> app 对象的一些常用方法</h3> <p>app.use 通过 app.use 引入中间件</p> <p>app.route 注册路由</p> <p>app.listen 创建 web 服务</p> <p>app.METHOD(METHOD 为 http 方法)拿到当前用户的路由,渲染结果。</p> <p>app.set 设置所需要的模板</p> <p>app.engine 设置模板用什么模板引擎编译</p> <h3 id="创建一个-express-web-服务"><a href="#创建一个-express-web-服务" class="header-anchor">#</a> 创建一个 express Web 服务</h3> <p>在 app.js 中书写一下代码。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const express = require('express');
+const app = express();
+
+app.get('/',(req,res)=&gt;{
+    res.send('hello express')
+})
+
+app.listen('3000',()=&gt;{
+    console.log('启动成功')
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="启动服务"><a href="#启动服务" class="header-anchor">#</a> 启动服务</h3> <p>在项目根目录终端使用下面命令</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>node app.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>至此一个 web 服务就启动了，但是问题来了，当我们修改代码的时候，页面并不会修改，只能手动停掉服务，然后再启动才会生效。所以要开启热启动</p> <h3 id="开启热启动"><a href="#开启热启动" class="header-anchor">#</a> 开启热启动</h3> <p>热启动的方法有两种：一种是 supervisor,一种是 nodemon</p> <p>1.supervisor</p> <p>安装</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install supervisor -g
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>启动</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>supervisor app.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>2.nodemon</p> <p>安装</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install nodemon -g
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>启动</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>nodemon app.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="用户的请求与响应对象"><a href="#用户的请求与响应对象" class="header-anchor">#</a> 用户的请求与响应对象</h3> <p>在开启服务的使用，每一个对应的请求里面都会有请求对象和响应对象。</p> <h4 id="request：用户发出的请求"><a href="#request：用户发出的请求" class="header-anchor">#</a> request：用户发出的请求</h4> <p>req.query 拿到所有的用户请求参数(get 请求)</p> <p>req.body 当使用 post 请求的使用，使用中间件获得参数，参数会在 req.body 里面。</p> <p>req.params 拿到对应的路由参数</p> <p>req.app 当 callback 为外部文件时，用 req.app 访问 express 的实例</p> <p>req.baseUrl 获取路由当前安装的 URL 路径</p> <p>req.hostname 获取主机名</p> <p>req.ip 获取 IP 地址</p> <p>req.route 获取当前匹配的路由</p> <p>req.path 获取请求路径</p> <p>req.subdomains 获取子域名</p> <p>req.get() 获取指定的 HTTP 请求头</p> <p>req.is() 判断请求头 Content-Type 的 MIME 类型</p> <p>req.protocol 获取协议类型</p> <p>req.cookies 获得 Cookies</p> <h4 id="response：服务端向用户输出的东西"><a href="#response：服务端向用户输出的东西" class="header-anchor">#</a> response：服务端向用户输出的东西</h4> <p>res.download() 提示下载文件</p> <p>res.end() 终结响应处理流程</p> <p>res.json() 发送一个 JSON 格式的响应</p> <p>res.jsonp() 发送和一个支持 JSONP 格式的响应</p> <p>res.redirect() 重定向请求</p> <p>res.render() 渲染视图模板</p> <p>res.send() 发送各种类型的数据</p> <p>res.sendFile() 以八字节流的形式发送文件</p> <p>res.sendStatus() 设置响应状态码，并将其以字符串的形式作为响应体一部分发出去</p> <p>res.cookie(name，value [，option]) 设置 Cookie</p> <p>res.set() 设置请求头</p> <p>res.append() 追加指定 HTTP 头</p> <p>res.clearCookie() 清除 Cookie</p> <p>res.type() 设置 Content-Type 的 MIME 类型</p> <h3 id="路由"><a href="#路由" class="header-anchor">#</a> 路由</h3> <p>所谓路由就是通过访问不同的 url 路径的得到不同的信息。</p> <h4 id="早期的伪静态路由"><a href="#早期的伪静态路由" class="header-anchor">#</a> 早期的伪静态路由</h4> <p>在路由上写/index.html，并不会访问到这个页面，代码中还是动态路由</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.get('/index.html',(req,res) =&gt; {
+    console.log(req.query);
+    res.send('Hello ' +  req.query.username);
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="路由参数"><a href="#路由参数" class="header-anchor">#</a> 路由参数</h4> <p>在路由后加:id,这个 id 就是路由参数,通过 req.params.id 拿到这个参数</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.get('/index/:id',(req,res) =&gt; {
+    console.log(req.params.id);
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="restful-路由"><a href="#restful-路由" class="header-anchor">#</a> RESTful 路由</h4> <p>RESTful 的核心思想就是，客户端发出的数据操作指令都是”动词 + 宾语”的结构。比如，GET /articles 这个命令，GET 是动词，/articles 是宾语。<a href="http://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html" target="_blank" rel="noopener noreferrer">阮一峰的 RESTful 实战<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="引入静态文件"><a href="#引入静态文件" class="header-anchor">#</a> 引入静态文件</h3> <p>通过静态资源的方式引入一个静态资源文件夹 public</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.use(express.static('public'))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>访问静态文件 public 目录就是根目录</p> <h5 id="例如："><a href="#例如：" class="header-anchor">#</a> 例如：</h5> <p>在 public 目录下创建 index.css 文件，启动服务访问http://127.0.0.1:8080/index.css 就可以访问到。</p> <h3 id="渲染-html"><a href="#渲染-html" class="header-anchor">#</a> 渲染 html</h3> <p>通过 sendFile 的方式渲染出 html，在项目根目录下创建 views 文件夹用来存放渲染视图，在 views 中常见 index.html。在 app.js 中书写一下代码。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.get('/index',(req,res) =&gt; {
+    res.sendFile(__dirname + '/views'+ req.url + '.html');
+})
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>通过访问http://127.0.0.1:8080/index 就可以得到</p> <h3 id="通过-body-parser-取到-post-方式请求的数据"><a href="#通过-body-parser-取到-post-方式请求的数据" class="header-anchor">#</a> 通过 body-parser 取到 post 方式请求的数据</h3> <p>安装 body-parser 包</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install body-parser –save
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>引入 body-parser 包</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const bodyParser = require(‘body-parser’);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>使用中间件</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.use(bodyParser.urlencoded({extended:false}))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>取到参数</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>请求中使用req.body取得请求参数列表
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="express-路由的使用"><a href="#express-路由的使用" class="header-anchor">#</a> express 路由的使用</h2> <h3 id="什么是路由"><a href="#什么是路由" class="header-anchor">#</a> 什么是路由</h3> <p>路由是指如何定义应用的端点以及如何响应客户端的请求</p> <p>我们所谓的 Controller 就是路由控制器</p> <h3 id="路由的组成部分"><a href="#路由的组成部分" class="header-anchor">#</a> 路由的组成部分</h3> <p>路由是由 url、http 请求(GET，post)和若干句柄组成。</p> <p>路由结构如下：app.METHOD(path,{callback..},callback)</p> <p>1.app 是 express 对象的一个实例</p> <p>2.METHOD 是一个 HTTP 请求方法</p> <p>3.path 是服务器上的路径</p> <p>4.callback 是当路由匹配时要执行的函数。</p> <h3 id="路由方法"><a href="#路由方法" class="header-anchor">#</a> 路由方法</h3> <p>get、post、put、delete 代表 CRUD 的增删该查</p> <p>get 方法</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.get('/',(req,res) =&gt; {
+    res.send('GET 请求')
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>post 方法</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.post('/',(req,res) =&gt; {
+    res.send('POST 请求')
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>put 方法</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.put('/',(req,res) =&gt; {
+    res.send('PUT 请求')
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>delete 方法</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.delete('/',(req,res) =&gt; {
+    res.send('DELETE 请求')
+});
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="标准的路由格式"><a href="#标准的路由格式" class="header-anchor">#</a> 标准的路由格式</h3> <p>标准的路由控制格式为：controller/action 这样的形式，一个控制器对应多个操作 ID。</p> <h3 id="app-all-方法"><a href="#app-all-方法" class="header-anchor">#</a> app.all 方法</h3> <p>app.all 是一个特殊的路由方法，没有任何 HTTP 方法与其对象，无论是什么 HTTP 请求都会命中这个路由方法。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.all((req,res,next) =&gt; {
+    res.send('hello')       //无论是什么HTTP请求都会命中
+    next(); 把当前的这个请求交给下一个请求处理函数
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="路由路径"><a href="#路由路径" class="header-anchor">#</a> 路由路径</h3> <p>路由路径与请求方法结合，定义可以进行请求的端点。路由路径可以是字符串、字符串模式和正则表达。</p> <h3 id="多个路由处理函数"><a href="#多个路由处理函数" class="header-anchor">#</a> 多个路由处理函数</h3> <p>请求处理多个回调函数，使用 next()方法传递请求,如果应用已经响应了用户，后面的响应就不会进行了，node 代码可以继续执行。</p> <p>方式如下：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.get('/index',(req,res,next) =&gt; {
+    console.log(1);
+    next();
+},(req,res,next) =&gt;{
+    console.log(console.log(req));
+})
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="使用回调函数数组处理路由"><a href="#使用回调函数数组处理路由" class="header-anchor">#</a> 使用回调函数数组处理路由</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+const cb0 = (req,res,next) =&gt; {
+    console.log('cb0');
+    next();
+}
+const cb1 = (req,res, next) =&gt; {
+    console.log('cb1');
+    next();
+}
+const cb2 = (req,res,next) =&gt; {
+    res.send('fdsaf');
+}
+app.get('/index',[cb0,cb1,cb2]);
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="使用混合函数和函数数组处理路由"><a href="#使用混合函数和函数数组处理路由" class="header-anchor">#</a> 使用混合函数和函数数组处理路由</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const cb0 = (req,res,next) =&gt; {
+    console.log('cb0');
+    next();
+}
+const cb1 = (req,res, next) =&gt; {
+    console.log('cb1');
+    next();
+}
+app.get('/index/b',[cb0,cb1],(req,res,next) =&gt; {
+    console.log('hello');
+    next();
+},(res,req,next) =&gt; {
+    res.send('wang');
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="使用-app-route-创建路由"><a href="#使用-app-route-创建路由" class="header-anchor">#</a> 使用 app.route()创建路由</h3> <p>app.route 方法可以为一个路由路径建立多种请求方法</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+app.route('/index')
+    .get((req,res) =&gt; {
+        console.log('get');
+    })
+    .post((req,res) =&gt; {
+        console.log('post');
+    })
+    .put((req,res)=&gt; {
+        console.log('put');
+    })
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="使用-express-router-类创建模块化，可挂在的路由句柄"><a href="#使用-express-router-类创建模块化，可挂在的路由句柄" class="header-anchor">#</a> 使用 express.Router 类创建模块化，可挂在的路由句柄</h3> <p>Router 实例是一个完整的中间件和路由系统</p> <p>使用</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const express =require('express');
+const router = express.Router();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>使用 router 定义全局路由(必经)</p> <p>定义在所有路由的最顶端</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>router.use((req,res,next) =&gt; {
+    console.log('必经路由');
+    next();
+})
+二者相同
+app.use((req,res,next) =&gt; {
+    console.log('必经路由')
+    next();
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>这相当于定义了一个过滤的路由，所以路由句柄都会经过这个路由进行过滤,和*相同。</p> <p>在应用中加载路由模块</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> const router = require('./router');
+app.use('/router',router);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="express-错误处理及-log4js-日志"><a href="#express-错误处理及-log4js-日志" class="header-anchor">#</a> express 错误处理及 log4js 日志</h2> <h3 id="express-的错误处理"><a href="#express-的错误处理" class="header-anchor">#</a> express 的错误处理</h3> <p>错误处理是 express 的全局一个中间件，错误处理中间件值定义在所有中间件的最下面的。它的工作流程是，只要有错误处理，有错误的中间件就会 next 到错误处理中间件，否则就不会执行到它。执行到错误处理中间件之后 web 实例又被重新唤醒继续执行 node 代码。</p> <h3 id="错误处理中间件-2"><a href="#错误处理中间件-2" class="header-anchor">#</a> 错误处理中间件</h3> <p>express 错误处理中间件有着严格的方法签名：必须要有 4 个参数，即便是用不到也要写上。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.use((err,req,res,next) =&gt; {
+    console.log(err);
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>err 是错误对象
+req 是请求对象
+res 是响应对象
+next 是进行下一个中间件的操作</p> <h3 id="两个常用的错误处理中间件"><a href="#两个常用的错误处理中间件" class="header-anchor">#</a> 两个常用的错误处理中间件</h3> <p>1.404 错误</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>'use strict';
+module.exports = function(template){
+    return function fileNotFound(req,res,next) {
+        var model = {url : req.url,statusCode : 404};
+        if(req.xhr){
+            res.send(404,model);
+        }else {
+            res.status(404);
+            渲染出错误处理的模板
+            res.render(template,req,data);
+        }
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>2.500 错误</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>var http = requier('http');
+module.exports = function(template){
+    return function serverError(err,req,res,next) {
+        if(!res.statusCode || res.status != 200){
+            res.statusCode = 500;
+        }
+        var desc = http.STATUS_CORES[res.statusCode];
+        res.end(desc + '\n' | err);
+    }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="日志系统-log4js"><a href="#日志系统-log4js" class="header-anchor">#</a> 日志系统 log4js</h3> <p>log4js 是第三方日志系统。</p> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install log4js –save
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const log4js = require('log4js');
+log4js.configure({
+    appenders : {
+        log : {     //日志名字   可以写多个
+            type : 'file',      //日志类型
+            filename : './logs/log.log'     //日志存放路径
+        }
+    },
+    categories : {
+        default : {
+            appenders : ['log']     //日志名字放在这
+            level : 'info'      //日志等级，只会打印相同等级或者比此等级低的日志
+        }
+    }
+})
+var logger = log4js.getLogger('log');   //获取到此日志
+app.use(log4js.connectLogger(logger));  //载入中间件
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="日志等级区分"><a href="#日志等级区分" class="header-anchor">#</a> 日志等级区分</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>[2019-01-25T13:45:58.890] [INFO] log - ::ffff:127.0.0.1 - - &quot;GET /err HTTP/1.1&quot; 404 142 &quot;&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;
+[2019-01-25T13:46:02.370] [INFO] log - ::ffff:127.0.0.1 - - &quot;GET / HTTP/1.1&quot; 304 - &quot;&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;
+[2019-01-25T13:47:16.910] [INFO] log - ::ffff:127.0.0.1 - - &quot;GET /test HTTP/1.1&quot; 500 1582 &quot;&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;
+[2019-01-25T13:48:39.321] [INFO] log - ::ffff:127.0.0.1 - - &quot;GET /test HTTP/1.1&quot; 500 1582 &quot;&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;
+[2019-01-25T13:48:40.037] [INFO] log - ::ffff:127.0.0.1 - - &quot;GET /test HTTP/1.1&quot; 500 1582 &quot;&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;
+[2019-01-25T13:48:40.220] [INFO] log - ::ffff:127.0.0.1 - - &quot;GET /test HTTP/1.1&quot; 500 1582 &quot;&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="封装日志中间件"><a href="#封装日志中间件" class="header-anchor">#</a> 封装日志中间件</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const log4js = require('log4js');
+module.exports = (type='file',path='./log.log',level='info')=&gt; {
+    log4js.configure({
+        appenders : {
+            log : {     //日志名字   可以写多个
+                type : type,      //日志类型
+                filename : path     //日志存放路径
+            }
+        },
+        categories : {
+            default : {
+                appenders : ['log']     //日志名字放在这
+                level : level     //日志等级，只会打印相同等级或者比此等级低的日志
+            }
+        }
+    })
+var logger = log4js.getLogger('log');   //获取到此日志
+    return log4js.connectLogger(logger);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h2 id="express-模板引擎的使用"><a href="#express-模板引擎的使用" class="header-anchor">#</a> express 模板引擎的使用</h2> <h3 id="什么是模板引擎"><a href="#什么是模板引擎" class="header-anchor">#</a> 什么是模板引擎</h3> <p>模板引擎就是使我们能够在应用程序中使用静态模板文件。在运行时，模板引擎用实际值替换模板文件中的变量，并将模板转换为发送到客户端的 HTML 文件。通俗的讲就是使用一个模板可以在里面写变量，写循环，然后通过服务端编译程 html 文件。</p> <h3 id="swig-js-模板引擎"><a href="#swig-js-模板引擎" class="header-anchor">#</a> swig.js 模板引擎</h3> <p>swig.js 是一个 html 模板引擎，它支持.html 后缀名。</p> <h3 id="安装-swig"><a href="#安装-swig" class="header-anchor">#</a> 安装 swig</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>npm install swig –save
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="引入-swig"><a href="#引入-swig" class="header-anchor">#</a> 引入 swig</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const swig = require('swig');
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="设置模板引擎为-html"><a href="#设置模板引擎为-html" class="header-anchor">#</a> 设置模板引擎为.html</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.set('view engine','html');
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="设置让-swig-来编译模板引擎"><a href="#设置让-swig-来编译模板引擎" class="header-anchor">#</a> 设置让 swig 来编译模板引擎</h3> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.engine('html',swig.renderFile);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="基础模板"><a href="#基础模板" class="header-anchor">#</a> 基础模板</h3> <p>在项目根目录创建 layout 文件夹存放基础模板，在其中创建基础的模板文件 layout.html,基础就是通用的模板，可以让模板继承自基础模板，省去重复的代码。内容如下。</p> <p>上面文件中{}包裹的地方叫做区块，这样的区块留给真正要实现的文件。这里只是作为一个基础模板来使用。</p> <h3 id="创建模板"><a href="#创建模板" class="header-anchor">#</a> 创建模板</h3> <p>在项目中创建 views 文件夹，所有的模板引擎都放到这里面。在 views 文件夹下建立 index.html 并继承自 loyout.html，内容如下：</p> <p>在 html 中的区块相当于往继承过来的模板中填充代码。title 这样的数据是从服务端传过来的数据。</p> <h3 id="服务端渲染"><a href="#服务端渲染" class="header-anchor">#</a> 服务端渲染</h3> <p>使用服务端渲染，渲染出模板，并且可以往模板中传递数据。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>app.get('/test',(req,res) =&gt; {
+    res.rendr('index',{
+        title : '测试首页',
+        data : 'Hello express'
+    })
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这时 index.html 就可以修改一下。</p> <p>这样就可以取到值了。</p> <h5 id="注意：模板不要滥用，所用的数据都往前台输出，会造成模板和后台的压力很大，而把一些有必要的东西输出。"><a href="#注意：模板不要滥用，所用的数据都往前台输出，会造成模板和后台的压力很大，而把一些有必要的东西输出。" class="header-anchor">#</a> 注意：模板不要滥用，所用的数据都往前台输出，会造成模板和后台的压力很大，而把一些有必要的东西输出。</h5> <h2 id="koa"><a href="#koa" class="header-anchor">#</a> KOA</h2> <p>Koa -- 基于 Node.js 平台的下一代 web 开发框架</p> <h3 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h3> <p>Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致力于成为 web 应用和 API 开发领域中的一个更小、更富有表现力、更健壮的基石。 通过利用 async 函数，Koa 帮你丢弃回调函数，并有力地增强错误处理。 Koa 并没有捆绑任何中间件， 而是提供了一套优雅的方法，帮助您快速而愉快地编写服务端应用程序。</p> <h3 id="官网"><a href="#官网" class="header-anchor">#</a> 官网</h3> <p>学习可以看<a href="https://koa.bootcss.com/#" target="_blank" rel="noopener noreferrer">官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/NodeJS框架入门.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/NodeJS入门.html" class="prev">
+        NodeJS 入门
+      </a></span> <span class="next"><a href="/blog/NodeJS使用的总结.html">
+        NodeJS 使用的总结
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/19.2dee6f08.js" defer></script>
+  </body>
+</html>

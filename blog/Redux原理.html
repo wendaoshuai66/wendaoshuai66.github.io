@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>探索 Redux 原理 | 前端日志</title>
+    <meta name="description" content="欢迎访问我的前端日志">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/hero.jpg">
+    
+    <link rel="preload" href="/assets/css/0.styles.f48a6bab.css" as="style"><link rel="preload" href="/assets/js/app.ae0effdb.js" as="script"><link rel="preload" href="/assets/js/2.1f0a0a54.js" as="script"><link rel="preload" href="/assets/js/25.5e54128d.js" as="script"><link rel="prefetch" href="/assets/js/10.0bedbff4.js"><link rel="prefetch" href="/assets/js/11.8e798407.js"><link rel="prefetch" href="/assets/js/12.05d3ad52.js"><link rel="prefetch" href="/assets/js/13.fef0d11f.js"><link rel="prefetch" href="/assets/js/14.8220dd22.js"><link rel="prefetch" href="/assets/js/15.b9ff6bb1.js"><link rel="prefetch" href="/assets/js/16.812d4a9f.js"><link rel="prefetch" href="/assets/js/17.b19cab9e.js"><link rel="prefetch" href="/assets/js/18.18dc98f6.js"><link rel="prefetch" href="/assets/js/19.2dee6f08.js"><link rel="prefetch" href="/assets/js/20.ca97fb4a.js"><link rel="prefetch" href="/assets/js/21.3321d072.js"><link rel="prefetch" href="/assets/js/22.148c9e36.js"><link rel="prefetch" href="/assets/js/23.f75937fb.js"><link rel="prefetch" href="/assets/js/24.b47166a8.js"><link rel="prefetch" href="/assets/js/26.4adf545a.js"><link rel="prefetch" href="/assets/js/27.5360046e.js"><link rel="prefetch" href="/assets/js/28.894ad0fb.js"><link rel="prefetch" href="/assets/js/29.6d8f45f9.js"><link rel="prefetch" href="/assets/js/3.ec2aba29.js"><link rel="prefetch" href="/assets/js/30.0414a72d.js"><link rel="prefetch" href="/assets/js/31.7b9217a6.js"><link rel="prefetch" href="/assets/js/32.853bead4.js"><link rel="prefetch" href="/assets/js/33.df4ca218.js"><link rel="prefetch" href="/assets/js/34.346f1006.js"><link rel="prefetch" href="/assets/js/35.b2370c56.js"><link rel="prefetch" href="/assets/js/36.c0070f49.js"><link rel="prefetch" href="/assets/js/37.7d8dcb7a.js"><link rel="prefetch" href="/assets/js/38.c8c739fe.js"><link rel="prefetch" href="/assets/js/39.ad05e1ef.js"><link rel="prefetch" href="/assets/js/4.4379ec61.js"><link rel="prefetch" href="/assets/js/40.7318cad1.js"><link rel="prefetch" href="/assets/js/41.4632bdb1.js"><link rel="prefetch" href="/assets/js/42.e9e383b6.js"><link rel="prefetch" href="/assets/js/43.abff58ec.js"><link rel="prefetch" href="/assets/js/44.e9f9176b.js"><link rel="prefetch" href="/assets/js/45.20b1abd2.js"><link rel="prefetch" href="/assets/js/46.ef2c8c7f.js"><link rel="prefetch" href="/assets/js/47.b7479d5c.js"><link rel="prefetch" href="/assets/js/48.624ddde4.js"><link rel="prefetch" href="/assets/js/49.a60ab866.js"><link rel="prefetch" href="/assets/js/5.c37a0a9f.js"><link rel="prefetch" href="/assets/js/50.6f312b15.js"><link rel="prefetch" href="/assets/js/51.2f38cf09.js"><link rel="prefetch" href="/assets/js/52.334a821c.js"><link rel="prefetch" href="/assets/js/53.3ba37eb0.js"><link rel="prefetch" href="/assets/js/54.b4205324.js"><link rel="prefetch" href="/assets/js/55.62119911.js"><link rel="prefetch" href="/assets/js/56.33f10cd7.js"><link rel="prefetch" href="/assets/js/57.fea490f5.js"><link rel="prefetch" href="/assets/js/58.862f519b.js"><link rel="prefetch" href="/assets/js/6.f05ab208.js"><link rel="prefetch" href="/assets/js/7.1e3b443b.js"><link rel="prefetch" href="/assets/js/8.ff536b22.js"><link rel="prefetch" href="/assets/js/9.9129683e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f48a6bab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端日志</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">
+  博客
+</a></div> <a href="https://github.com/wendaoshuai66/blogs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/unknowHtml1.html" class="sidebar-link">你不知道的 HTML</a></li><li><a href="/blog/cssnote.html" class="sidebar-link">CSS 简介及实用技巧</a></li><li><a href="/blog/3d.html" class="sidebar-link">CSS3 构造 3D 世界</a></li><li><a href="/blog/jsFunctionalProgramming_bottom.html" class="sidebar-link">JavaScript 函数式编程--下</a></li><li><a href="/blog/jsFunctionalProgramming.html" class="sidebar-link">JavaScript 函数式编程--上</a></li><li><a href="/blog/前端中经常出现的错误及捕获.html" class="sidebar-link">前端中经常出现的错误及捕获</a></li><li><a href="/blog/深拷贝.html" class="sidebar-link">对深拷贝的研究</a></li><li><a href="/blog/Promise.html" class="sidebar-link">Promise</a></li><li><a href="/blog/php_up.html" class="sidebar-link">PHP 与 MySQL 开发入门上</a></li><li><a href="/blog/php_middle.html" class="sidebar-link">Php 与 MySql 开发入门中</a></li><li><a href="/blog/php_down.html" class="sidebar-link">Php 与 MySql 开发入门下</a></li><li><a href="/blog/ES5_top.html" class="sidebar-link">ECMAScript5.1 新增语法上</a></li><li><a href="/blog/ES5_bottom.html" class="sidebar-link">ECMAScript5.1 新增语法下</a></li><li><a href="/blog/ES5_core.html" class="sidebar-link">ES5 的核心技术</a></li><li><a href="/blog/ES5_core1.html" class="sidebar-link">不知道的 JavaScript</a></li><li><a href="/blog/JavaScript执行堆栈探索.html" class="sidebar-link">JavaScript 执行堆栈探索</a></li><li><a href="/blog/Interview.html" class="sidebar-link">面试题积累 1</a></li><li><a href="/blog/面向切面.html" class="sidebar-link">面向切面初探</a></li><li><a href="/blog/system.html" class="sidebar-link">初探 System.js</a></li><li><a href="/blog/前端架构与性能优化那些事.html" class="sidebar-link">前端架构与性能优化那些事</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/vue原理解析之准备工作.html" class="sidebar-link">vue 原理解析之准备工作</a></li><li><a href="/blog/vue原理解析之数据驱动.html" class="sidebar-link">vue 原理解析之数据驱动</a></li><li><a href="/blog/vue原理解析之编译深入.html" class="sidebar-link">vue 原理解析之编译深入</a></li><li><a href="/blog/vue原理解析之响应式原理深入.html" class="sidebar-link">vue 原理解析之响应式原理深入</a></li><li><a href="/blog/简单的实现Vue之响应式.html" class="sidebar-link">简单的实现 Vue 之响应式</a></li><li><a href="/blog/vue原理解析之nextTick探索.html" class="sidebar-link">vue 原理解析之 nextTick 探索</a></li><li><a href="/blog/Webpack.html" class="sidebar-link">常用的前端构建工具-Webpack</a></li><li><a href="/blog/Webpack使用总结.html" class="sidebar-link">Webpack 使用总结</a></li><li><a href="/blog/Webpack系列手写模块打包代码.html" class="sidebar-link">Webpack 系列手写模块打包代码</a></li><li><a href="/blog/React入门必学[上].html" class="sidebar-link">React 入门必学【上】</a></li><li><a href="/blog/React入门必学[下].html" class="sidebar-link">React 入门必学【下】</a></li><li><a href="/blog/Redux原理.html" class="active sidebar-link">探索 Redux 原理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Redux原理.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/blog/Redux原理.html#手写一个-min-redux" class="sidebar-link">手写一个 min-Redux</a></li></ul></li><li><a href="/blog/TypeScript使用手册.html" class="sidebar-link">TypeScript 使用手册</a></li><li><a href="/blog/NodeJS入门.html" class="sidebar-link">NodeJS 入门</a></li><li><a href="/blog/NodeJS框架入门.html" class="sidebar-link">NodeJs 框架入门</a></li><li><a href="/blog/NodeJS使用的总结.html" class="sidebar-link">NodeJS 使用的总结</a></li><li><a href="/blog/pm2项目部署总结.html" class="sidebar-link">pm2 项目部署总结</a></li><li><a href="/blog/KOA源码的阅读.html" class="sidebar-link">KOA 源码的阅读</a></li><li><a href="/blog/深入Koa原理.html" class="sidebar-link">深入 Koa 原理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端测试</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/js_and_qa.html" class="sidebar-link">JavaScript 与 QA 测试工程师</a></li><li><a href="/blog/tegratedTesting.html" class="sidebar-link">JavaScript 集成化测试</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/为什么要使用package-lock.json.html" class="sidebar-link">为什么要使用 package-lock.json</a></li><li><a href="/blog/Package.json依赖管理.html" class="sidebar-link">Package.json 依赖管理</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>计算机网络</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/http协议.html" class="sidebar-link">HTPP 协议那些事</a></li><li><a href="/blog/server-po.html" class="sidebar-link">前端性能优化必备服务器知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>操作系统</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux.html" class="sidebar-link">Linux 基础入门</a></li><li><a href="/blog/Linux_supplement.html" class="sidebar-link">Linux 补充</a></li><li><a href="/blog/Linux_web.html" class="sidebar-link">Linux 中配置静态网络连接</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>数据结构与算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/前端中的数据结构-排序.html" class="sidebar-link">前端中的数据结构-排序</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="探索-redux-原理"><a href="#探索-redux-原理" class="header-anchor">#</a> 探索 Redux 原理</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>react 和状态管理 redux 是紧密结合的，而本身又没有任何联系。react 可以不使用 redux 管理状态，redux 也可以脱离 react 独立存在。随着 react 的项目越来越复杂，state 变的繁重，各种 prop 和 state 的转变让我们在开发过程中变得头晕眼花，react 本来就是一个专注于 UI 层的库，本不应该让繁杂的 prop 和 state 的逻辑掺杂进来。于是 Flux 的架构出现了，Flux 架构模式用于抽离 react 的 state 能更好的去构建项目，Flux 架构模式的实践有好多中，显然 redux 是成功的。</p> <h3 id="redux-的设计原则"><a href="#redux-的设计原则" class="header-anchor">#</a> redux 的设计原则</h3> <p>redux 有三大设计原则</p> <p>1.单一数据源</p> <p>2.状态是只读的</p> <p>3.使用纯函数编写 reducer</p> <h4 id="单一数据源"><a href="#单一数据源" class="header-anchor">#</a> 单一数据源</h4> <p>整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。</p> <p>这让同构应用开发变得非常容易。来自服务端的 state 可以在无需编写更多代码的情况下被序列化并注入到客户端中。由于是单一的 state tree ，调试也变得非常容易。在开发中，你可以把应用的 state 保存在本地，从而加快开发速度。此外，受益于单一的 state tree ，以前难以实现的如“撤销/重做”这类功能也变得轻而易举。</p> <h4 id="state-是只读的"><a href="#state-是只读的" class="header-anchor">#</a> State 是只读的</h4> <p>唯一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象。</p> <p>这样确保了视图和网络请求都不能直接修改 state，相反它们只能表达想要修改的意图。因为所有的修改都被集中化处理，且严格按照一个接一个的顺序执行，因此不用担心竞态条件（race condition）的出现。 Action 就是普通对象而已，因此它们可以被日志打印、序列化、储存、后期调试或测试时回放出来。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>store.dispatch({
+  type: 'COMPLETE_TODO',
+  index: 1
+})
+
+store.dispatch({
+  type: 'SET_VISIBILITY_FILTER',
+  filter: 'SHOW_COMPLETED'
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h4 id="使用纯函数来执行修改"><a href="#使用纯函数来执行修改" class="header-anchor">#</a> 使用纯函数来执行修改</h4> <p>为了描述 action 如何改变 state tree ，你需要编写 reducers。</p> <p>Reducer 只是一些纯函数，它接收先前的 state 和 action，并返回新的 state。刚开始你可以只有一个 reducer，随着应用变大，你可以把它拆成多个小的 reducers，分别独立地操作 state tree 的不同部分，因为 reducer 只是函数，你可以控制它们被调用的顺序，传入附加数据，甚至编写可复用的 reducer 来处理一些通用任务，如分页器。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function visibilityFilter(state = 'SHOW_ALL', action) {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter
+    default:
+      return state
+  }
+}
+
+function todos(state = [], action) {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    case 'COMPLETE_TODO':
+      return state.map((todo, index) =&gt; {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
+        }
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+import { combineReducers, createStore } from 'redux'
+let reducer = combineReducers({ visibilityFilter, todos })
+let store = createStore(reducer)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h3 id="redux-的四个角色"><a href="#redux-的四个角色" class="header-anchor">#</a> redux 的四个角色</h3> <p>redux 提供了一系列规则来规定我们来写代码。可以大致分为四个角色：</p> <h4 id="_1-action"><a href="#_1-action" class="header-anchor">#</a> 1.action</h4> <p>action 是承载状态的载体，一般 action 将视图所产出的数据，发送到 reducer 进行处理。action 的书写格式一般是这样：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const addAction = {
+    type:&quot;ADD&quot;,
+    value:.....
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>action 其实就是一个 JavaScript 对象，它必须要有一个 type 属性用来标识这个 action 是干嘛的(也可以认为家的地址，去 reducer 中找家)，value 属性是 action 携带来自视图的数据。</p> <p>action 的表示方式也可以是一个函数，这样可以更方面的构建 action,但这个函数必须返回一个对象。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const addAction = (val) =&gt; ({
+    type:&quot;ADD&quot;,
+    value: val
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>这样拿到的数据就灵活多了。</p> <p>对于 action 的 type 属性，一般如果 action 变的庞大的话会把所有的 type 抽离出来到一个 constants 中，例如：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const ADDTODO = 'ADDTODO',
+const DELETETODO = 'DELETEDOTO'
+
+export {
+    ADDTODO,
+    DELETETODO,
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>这样可以让 type 更清晰一些。</p> <h4 id="_2-reducer"><a href="#_2-reducer" class="header-anchor">#</a> 2.reducer</h4> <p>reducer 指定了应用状态的变化如何响应 actions 并发送到 store。 在 redux 的设计原则中提到使用纯函数来编写 reducer，目的是为了让 state 变的可预测。reducer 的书写方式一般是这样：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code> const reducer = (state ={},action){
+     switch(action.type){
+         case :
+            ......
+         case :
+            ......
+         case :
+            ......
+         default :
+            return state;
+     }
+ }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>使用 switch 判断出什么样的 action 应该使用什么样的逻辑去处理。</p> <p>拆分 reducer</p> <p>当随着业务的增多，那么 reducer 也随着增大，显然一个 reducer 是不可能的，于是必须要拆分 reducer，拆分 reducer 也是有一定的套路的：比如拆分一个 TodoList，就可以把 todos 操作放在一起，把对 todo 无关的放在一起，最终形成一个根 reducer。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>function visibilityFilter(state,action){
+    switch(action.type){
+        case :
+            ......
+        case :
+            ......
+        default :
+            return state;
+    }
+}
+function todos(state,action){
+    switch(action.type){
+        case :
+            ......
+        case :
+            ......
+        default :
+            return state;
+    }
+}
+//根reducer
+function rootReducer(state = {}, action) {
+  return {
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action), 
+    todos: todos(state.todos, action)
+  }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>这样做的好处在于业务逻辑的分离，让根 reducer 不再那么繁重。好在 redux 提供了 combineReducers 方法用于构建 rootReducer</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const rootReducer = combineReducers({
+    visibilityFilter,
+    todos,
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>这部分代码和上面 rootReducer 的作用完全相同。它的原理是通过传入对象的 key-value 把所有的 state 进行一个糅合</p> <h4 id="_3-dispatch"><a href="#_3-dispatch" class="header-anchor">#</a> 3.dispatch</h4> <p>dispatch 的作用是派发一个 action 去执行 reducer。我觉得 dispatch 就是一个发布者，和 subscribe 一起组合成订阅发布者模式。使 dispatch 派发：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+const action = {
+    type: &quot;ADD&quot;,
+    value: &quot;Hello Redux&quot;,
+}
+dispatch(action);
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="_4-store"><a href="#_4-store" class="header-anchor">#</a> 4.store</h4> <p>store 可以说是 redux 的核心了。开头也提到 store 是 redux 状态管理的唯一数据源，除此之外，store 还是将 dispatch、reducer 等联系起来的命脉。</p> <p>store 通过 redux 提供的 createStore 创建，它是一个对象，有如下属性：</p> <p>store.getState() 获取状态的唯一途径
+store.dispatch(action) 派发 action 响应 reducer
+store.subscribe(handler) 监听状态的变化</p> <p>创建 store：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const store = Redux.createStore(reducer,initialState,enhancer);
+//1. reducer就是我们书写的reducer
+//2. initialState是初始化状态
+//3. enhancer是中间件
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="middleware"><a href="#middleware" class="header-anchor">#</a> Middleware</h3> <p>在创建 store 的时候 createStore 是可以传入三个参数的，第三个参数就是中间件，使用 redux 提供的 applyMiddleware 来调用，applyMiddleware 相当于是对 dispatch 的一种增强，通过中间件可以在 dispatch 过程中做一些事情，比如打 logger、thunk(异步 action)等等。</p> <p>使用方式如下：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//异步action中间件
+import thunk from &quot;redux-thunk&quot;;
+const store = Redux.createStore(reducer,initialState,applMiddleware(thunk));
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>学习先告一段落，既然懂得了 redux 的思想（参考：https://redux.js.org/basics/usage-with-react，https://redux.js.org/basics/usage-with-react），那么接下来探索并手写一个简易版的 redux。</p> <h2 id="手写一个-min-redux"><a href="#手写一个-min-redux" class="header-anchor">#</a> 手写一个 min-Redux</h2> <h3 id="createstore"><a href="#createstore" class="header-anchor">#</a> createStore</h3> <p>要想了解 redux，必然要先了解它的核心，它的核心就是 createStore 这个函数，store、getState,dispatch 都在这里产出。我个人觉得 createStore 是一个提供一系列方法的订阅发布者模式：通过 subscribe 订阅 store 的变化，通过 dispatch 派发。那么下面就来实现一下这个 createStore。</p> <p>从上面 store 中可以看出。创建一个 store 需要三个参数；</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>/1.接受的rootReducer
+//2.初始化的状态
+//3.dispatch的增强器(中间件)
+const createStore = (reducer,initialState,enhancer) =&gt; {
+    
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>createStore 还返回一些列函数接口提供调用</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const crateStore = (reducer, initialState, enhancer) =&gt; {
+    
+    return {
+        getState,
+        dispatch,
+        subscribe,
+        replaceReducer,
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h4 id="getstate-的实现"><a href="#getstate-的实现" class="header-anchor">#</a> getState 的实现</h4> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>let state = initialState;
+const getState = () =&gt; {
+    return state;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="subscribe-的实现"><a href="#subscribe-的实现" class="header-anchor">#</a> subscribe 的实现</h4> <p>subscribe 是 createStore 的订阅者，开发者通过这个方法订阅，当 store 改变的时候执行监听函数。subscribe 是典型的高阶函数，它的返回值是一个函数，执行该函数移除当前监听函数。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//创建一个监听时间队列
+let subQueue = [];
+
+const subscribe = (listener) =&gt; {
+    //把监听函数放入到监听队列里面
+    subQueue.push(listener);
+    return () =&gt; {
+        //找到当前监听函数的索引
+        let idx = subQueue.indexOf(listener);
+        if(idx &gt; -1){
+            //通过监听函数的索引把监听函数移除掉。
+            subQueue.splice(idx,1);
+        }
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h4 id="dispatch-的实现"><a href="#dispatch-的实现" class="header-anchor">#</a> dispatch 的实现</h4> <p>dispatch 是 createStore 的发布者，dispatch 接受一个 action，来执行 reducer。dispatch 在执行 reducer 的同时会执行所有的监听函数(也就是发布)。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>let currentReducer = reducer;
+let isDispatch = false;
+const dispatch = (action) =&gt; {
+    //这里使用isDispatch做标示，就是说只有当上一个派发完成之后才能派发下一个
+    if(isDispatch){
+        throw new Error(&quot;dispatch error&quot;);
+    }
+    try{
+        state = currentReducer(state,action);
+        isDispatch = true;
+    }finally{
+        isDispatch = false;
+    }
+    
+    //执行所有的监听函数
+    subQueue.forEach(sub =&gt; sub.apply(null));
+    return action;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h4 id="replacereducer"><a href="#replacereducer" class="header-anchor">#</a> replaceReducer</h4> <p>replaceReducer 顾名思义就是替换 reducer 的意思。再执行 createState 方法的时候 reducer 就作为第一个参数传进去，如果后面想要重新换一个 reducer，来代码写一下。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const replaceReducer = (reducer) =&gt; {
+    //传入一个reduce作为参数，把它赋予currentReducer就可以了。
+    currentReducer = reducer;
+    //更该之后会派发一次dispatch，为什么会派发等下再说。
+    dispatch({type:&quot;REPLACE&quot;});
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="dispatch-type-init"><a href="#dispatch-type-init" class="header-anchor">#</a> dispatch({type:”INIT”});</h4> <p>上面已经实现了 createStore 的四个方法，剩下的就是 replaceReducer 中莫名的派发了一个 type 为 REPLACE 的 action，而且翻到源码的最后，也派发一个 type 为 INIT 的 action，为什么呢？</p> <p>其实当使用 createStore 创建 Store 的时候，我们都知道，第一个参数为 reducer，第二个参数为初始化的 state。当如果不写第二个参数的时候，我们再来看一下 reducer 的写法</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const reducer = (state = {}, action){
+    switch(action.type){
+        default:
+            return state;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>一般在写 reducer 的时候都会给 state 写一个默认值，并且 default 出默认的 state。当 createStore 不存在，这个默认值如何存储在 Store 中呢？就是这个最后派发的 type:INIT 的作用。在 replaceReducer 中派发也是这个原因，更换 reducer 后派发。</p> <h4 id="完整的-createstore"><a href="#完整的-createstore" class="header-anchor">#</a> 完整的 createStore</h4> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>/**
+ * 
+ * @param {*} reducer   //reducer
+ * @param {*} initState    //初始状态
+ * @param {*} middleware   //中间件
+ */
+const createStore = (reducer, initState,enhancer) =&gt; {
+
+    let initialState;       //用于保存状态
+    let currentReducer = reducer;        //reducer
+    let listenerQueue = []; //存放所有的监听函数
+    let isDispatch = false;
+
+    if(initState){
+        initialState = initState;
+    }
+
+    if(enhancer){
+        return enhancer(createStore)(reducer,initState);
+    }
+    /**
+     * 获取Store
+     */
+    const getState = () =&gt; {
+        //判断是否正在派发
+        if(isDispatch){
+            throw new Error('dispatching...')
+        }
+        return initialState;
+    }
+
+    /**
+     * 派发action 并触发所有的listeners
+     * @param {*} action 
+     */
+    const dispatch = (action) =&gt; {
+        //判断是否正在派发
+        if(isDispatch){
+            throw new Error('dispatching...')
+        }
+        try{
+           isDispatch = true;
+           initialState = currentReducer(initialState,action);
+        }finally{
+            isDispatch = false;
+        }
+        //执行所有的监听函数
+        for(let listener of listenerQueue){
+            listener.apply(null);
+        }
+    }
+    /**
+     * 订阅监听
+     * @param {*} listener 
+     */
+    const subscribe = (listener) =&gt; {
+        listenerQueue.push(listener);
+        //移除监听
+        return function unscribe(){
+            let index = listenerQueue.indexOf(listener);
+            let unListener = listenerQueue.splice(index,1);
+            return unListener;
+        }
+    }
+
+    /**
+     * 替换reducer
+     * @param {*} reducer 
+     */
+    const replaceReducer = (reducer) =&gt; {
+        if(reducer){
+            currentReducer = reducer;
+        }
+        dispatch({type:'REPLACE'});
+
+    }
+    dispatch({type:'INIT'});
+    return {
+        getState,
+        dispatch,
+        subscribe,
+        replaceReducer
+    }
+}
+
+export default createStore;`
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br></div></div><h3 id="compose"><a href="#compose" class="header-anchor">#</a> compose</h3> <p>在 redux 中提供了一个组合函数，如果你知道函数式编程的话，那么对 compose 一定不陌生。如果不了解的话，那我说一个场景肯定就懂了。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>//有fn1，fn2，fn3这三个函数，写出一个compose函数实现一下功能
+//1.  compose(fn1,fn2,fn3) 从右到左执行。
+//2.  上一个执行函数的结果作为下一个执行函数的参数。
+const compose = (...) =&gt; {
+    
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>上面的需求就是 compose 函数，也是一个常考的面试题。如何实现实现一个 compose？一步一步来。</p> <p>首先 compose 接受的是一系列函数。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const compose = (...fns) =&gt; {
+    
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>从右到左执行，我们采用数组的 reduce 方法，利用惰性求值的方式。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const compose = (...fns) =&gt; fns.reduce((f,g) =&gt; (...args) =&gt; f(g(args)));
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="applaymiddleware"><a href="#applaymiddleware" class="header-anchor">#</a> applayMiddleware</h3> <p>redux 中的中间件就是对 dispatch 的一种增强，在 createStore 中实现这个东西很简单。源码如下：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const createStore = (reducer,state,enhancer) =&gt; {
+    //判断第三个参数的存在。
+    if(enhancer &amp;&amp; type enhancer === 'function') {
+        //满足enhance存在的条件，直接return，组织后面的运行。
+        //通过柯里化的方式传参
+        //为什么传入createStore？
+            //虽然是增强，自然返回之后依然是一个store对象，所以要使用createStore做一些事情。
+        //后面两个参数
+            //中间件是增强，必要的reducer和state也必要通过createStore传进去。
+        return enhancer(crateStore)(reducer,state);
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>上面就是中间件再 createStore 中的实现。</p> <p>中间件的构建通过 applyMiddleware 实现，来看一下 applyMiddleware 是怎么实现。由上面可以看出 applyMiddleware 是一个柯里化函数</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const applyMiddleware = (crateStore) =&gt; (...args) =&gt; {
+    
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>在 applyMiddleware 中需要执行 createStore 来得到接口方法。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>
+const applyMiddleware =(...middlewares) =&gt; (createStore) =&gt; (...args) =&gt; {
+    let store = createStore(...args);
+    //占位dispatch，避免在中间件过程中调用
+    let dispatch = () =&gt; {
+        throw new Error('error')
+    }
+    let midllewareAPI = {
+        getState: store.getState,
+        dispatch,
+    }
+    //把middlewareAPI传入每一个中间件中
+    const chain = middlewares.map(middleware =&gt; middleware(middlewareAPI));
+    //增强dispatch生成，重写占位dispatch,把store的默认dispatch传进去，
+    dispatch = compose(...chain)(store.dispatch);
+    
+    //最后把增强的dispatch和store返回出去。
+    return {
+        ...store,
+        dispatch
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h4 id="如何写一个中间件"><a href="#如何写一个中间件" class="header-anchor">#</a> 如何写一个中间件</h4> <p>根据 applyMiddleware 中间件参数的传入，可以想出一个基本的中间件是这样的：</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const middleware = (store) =&gt; next =&gt; action =&gt; {
+    //业务逻辑
+    //store是传入的middlewareAPI
+    //next是store基础的dispatch
+    //action是dispatch的action
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h4 id="异步-action"><a href="#异步-action" class="header-anchor">#</a> 异步 action</h4> <p>在写逻辑的时候必然会用到异步数据的，我们知道 reducer 是纯函数，不允许有副作用操作的，从上面到现在也可以明白整个 redux 都是函数式编程的思想，是不存在副作用的，那么异步数据怎么实现呢？必然是通过 applyMiddleware 提供的中间件接口实现了。</p> <p>异步中间件必须要求 action 是一个函数，根据上面中间件的逻辑，我们来写一下。</p> <div class="language-plain line-numbers-mode"><pre class="language-text"><code>const middleware = (store) =&gt; next =&gt; action =&gt; {
+    if(typeof action === 'function'){
+        action(store.dispatch,store.getState);
+    }
+    next(action);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>判断传入的 action 是否是一个函数，如果是函数使用增强 dispatch，如果不是函数使用普通的 dispatch。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wendaoshuai66/blogs/edit/master/docs/blog/Redux原理.md" target="_blank" rel="noopener noreferrer">本文源码地址</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2/5/2020, 1:10:59 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/React入门必学[下].html" class="prev">
+        React 入门必学【下】
+      </a></span> <span class="next"><a href="/blog/TypeScript使用手册.html">
+        TypeScript 使用手册
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.ae0effdb.js" defer></script><script src="/assets/js/2.1f0a0a54.js" defer></script><script src="/assets/js/25.5e54128d.js" defer></script>
+  </body>
+</html>
